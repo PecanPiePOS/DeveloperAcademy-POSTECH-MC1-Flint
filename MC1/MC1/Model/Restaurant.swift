@@ -15,14 +15,14 @@ struct Restaurant: Identifiable{
 
 struct Menu: Identifiable{
     let id = UUID()
-    let name: String
-    let tag: [String]
-    let price: Int
+    var name: String
+    var tag: [String]
+    var price: Int
 }
 
 struct SelectedMenu: Identifiable{
     let id = UUID()
-    let menu: Menu
+    var menu: Menu
     var quantity: Int
     var isSet: Bool
 }

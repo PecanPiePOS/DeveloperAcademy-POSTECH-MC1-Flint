@@ -158,13 +158,13 @@
 			isa = PBXGroup;
 			children = (
 				DAABEC5F27FE957C00912015 /* HelpPageView.swift */,
-				DAABEC6927FF19B100912015 /* MenuQuantityView.swift */,
-				DAABEC6B27FF19C400912015 /* MenuSetChoiceView.swift */,
 				DAABEC6327FE959600912015 /* StartView.swift */,
 				DAABEC6127FE958B00912015 /* StoreChoiceView.swift */,
+				DADFAA0C27FE7C18006F613A /* MenuView.swift */,
 				DADFAA0A27FE7C18006F613A /* MenuCellView.swift */,
 				DADFAA0B27FE7C18006F613A /* MenuCheckView.swift */,
-				DADFAA0C27FE7C18006F613A /* MenuView.swift */,
+				DAABEC6B27FF19C400912015 /* MenuSetChoiceView.swift */,
+				DAABEC6927FF19B100912015 /* MenuQuantityView.swift */,
 				C564D27D27FEAC92000603BB /* OrderCheckView.swift */,
 				C564D28127FF1B01000603BB /* OrderView.swift */,
 			);
