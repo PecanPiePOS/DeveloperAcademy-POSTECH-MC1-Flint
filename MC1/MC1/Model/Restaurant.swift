@@ -20,6 +20,15 @@ struct Menu: Identifiable{
     let price: Int
 }
 
+struct SelectedMenu: Identifiable{
+    let id = UUID()
+    let menu: Menu
+    var quantity: Int
+    var isSet: Bool
+}
+
+var selectedMenuList: [SelectedMenu] = []
+
 let restaurantList: [Restaurant] = [
     Restaurant(name: "McDonald", menu: mcdonaldMenu),
     Restaurant(name: "Burger King", menu: burgerkingMenu),

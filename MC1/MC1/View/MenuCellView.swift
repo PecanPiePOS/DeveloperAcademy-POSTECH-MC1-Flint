@@ -36,7 +36,9 @@ struct MenuCellView_Previews: PreviewProvider {
     @State static var menu: Menu = Menu(name: "name", tag: ["tag"], price: 1000)
 
     static var previews: some View {
-        MenuCellView(menu: $menu)
-            .previewLayout(.fixed(width: 200, height: 300))
+        Group {
+            MenuCellView(menu: $menu)
+                .previewLayout(.fixed(width: 200, height: 300))
+        }
     }
 }
