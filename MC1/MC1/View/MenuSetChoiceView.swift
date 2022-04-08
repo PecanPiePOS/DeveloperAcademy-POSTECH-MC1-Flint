@@ -87,7 +87,10 @@ struct MenuSetChoiceView: View {
                 }
                 
                 HStack{
-                    Button(action: {presentationMode.wrappedValue.dismiss()}) {
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                        
+                    }) {
                         Image("PreviousButton")
                     }
                     
