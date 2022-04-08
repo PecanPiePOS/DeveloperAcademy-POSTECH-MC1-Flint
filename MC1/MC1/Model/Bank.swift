@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct Bank: Identifiable{
+    let id = UUID()
+    var name: String
+}
