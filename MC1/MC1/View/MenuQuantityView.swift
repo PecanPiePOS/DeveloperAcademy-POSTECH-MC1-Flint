@@ -10,7 +10,11 @@ import SwiftUI
 struct MenuQuantityView: View {
     @Environment(\.presentationMode) var presentationMode
     @Binding var menu: Menu
-    @Binding var isMenuSelected: Bool
+    
+    @Binding var isSetChoiceView: Bool
+    @Binding var isShoppingListView: Bool
+    
+    @Binding var isSetMenu: Bool
     @Binding var menuQuantity: Int
     
     var body: some View {
@@ -55,12 +59,16 @@ struct MenuQuantityView: View {
                 HStack{
                     Button(action: {
                         presentationMode.wrappedValue.dismiss()
-                        isMenuSelected.toggle()
+                        isSetChoiceView.toggle()
                     }) {
                         Image("PreviousButton")
                     }
 
                     Button(action: {
+                        selectedMenuList.append(SelectedMenu(menu: menu, quantity: menuQuantity, isSet: isSetMenu))
+                        isShoppingListView=true
+                        menuQuantity=1
+                        isSetMenu=false
                         presentationMode.wrappedValue.dismiss()
                     }) {
                         Image("NextButton")
@@ -74,6 +82,6 @@ struct MenuQuantityView: View {
 struct MenuQuantityView_Previews: PreviewProvider {
     @State static var menu = Menu(name: "트리플 치즈버거", tag: [], price: 5000)
     static var previews: some View {
-        MenuQuantityView(menu: $menu, isMenuSelected: .constant(true), menuQuantity: .constant(1))
+        MenuQuantityView(menu: $menu, isSetChoiceView: .constant(false), isShoppingListView: .constant(false), isSetMenu: .constant(false), menuQuantity: .constant(1))
     }
 }

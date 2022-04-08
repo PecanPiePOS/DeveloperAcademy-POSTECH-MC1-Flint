@@ -9,126 +9,135 @@ import SwiftUI
 
 struct MenuView: View {
     @State var menus = mcdonaldMenu
-    @State var isMenuSelected: Bool = false
-    @State var isSetChoiced: Bool = false
+    
+    /// 세트메뉴를 선택하는 뷰를 보여주는 변수
+    @State var isSetChoiceView: Bool = false
+    /// 메뉴 수량을 선택하는 뷰를 보여주는 변수
+    @State var isMenuQuantityView: Bool = false
+    /// 쇼핑카트 뷰를 보여주는 변수
+    @State var isShoppingListView: Bool = false
+    
     @State var curMenu: Menu = Menu(name: "", tag: [], price: 0)
     @State var isSetMenu = false
     @State var menuQuantity = 1
     var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
     
     var body: some View {
-        ScrollView {
-            HStack {
-                Text("어떤 메뉴를\n드시고 싶으세요?")
-                    .font(Font.titleFont)
+        if isShoppingListView{
+            MenuCheckView(isShoppingListView: $isShoppingListView)
+        }else{
+            ScrollView {
+                HStack {
+                    Text("어떤 메뉴를\n드시고 싶으세요?")
+                        .font(Font.titleFont)
+                        .foregroundColor(Color.whiteColor)
+                    Spacer()
+                }
+                .padding(.bottom, 30)
+                
+                VStack(alignment: .leading) {
+                    Section("추천 메뉴") {
+                        LazyVGrid(columns: columns) {
+                            ForEach($menus){ $menu in
+                                if menu.tag.contains("추천"){
+                                    Button(action: {
+                                        isSetChoiceView.toggle()
+                                        curMenu=menu
+                                    }) {
+                                        MenuCellView(menu: $menu)
+                                    }
+                                    .halfSheet(showSheet: $isSetChoiceView) {
+                                        MenuSetChoiceView(menu: $curMenu, isSetChoiceView: $isSetChoiceView, isMenuQuantityView: $isMenuQuantityView, isSetMenu: $isSetMenu)
+                                    }
+                                    .halfSheet(showSheet: $isMenuQuantityView) {
+                                        MenuQuantityView(menu: $curMenu, isSetChoiceView: $isSetChoiceView, isShoppingListView: $isShoppingListView, isSetMenu: $isSetMenu, menuQuantity: $menuQuantity)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .font(Font.mainFont)
                     .foregroundColor(Color.whiteColor)
-                Spacer()
+                    .padding(.bottom)
+                    
+                    Section("소고기 버거") {
+                        LazyVGrid(columns: columns) {
+                            ForEach($menus){ $menu in
+                                if menu.tag.contains("소고기"){
+                                    Button(action: {
+                                        isSetChoiceView.toggle()
+                                        
+                                    }) {
+                                        MenuCellView(menu: $menu)
+                                    }
+                                    .halfSheet(showSheet: $isSetChoiceView) {
+                                        MenuSetChoiceView(menu: $curMenu, isSetChoiceView: $isSetChoiceView, isMenuQuantityView: $isMenuQuantityView, isSetMenu: $isSetMenu)
+                                    }
+                                    .halfSheet(showSheet: $isMenuQuantityView) {
+                                        MenuQuantityView(menu: $curMenu, isSetChoiceView: $isSetChoiceView, isShoppingListView: $isShoppingListView, isSetMenu: $isSetMenu, menuQuantity: $menuQuantity)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .font(Font.mainFont)
+                    .foregroundColor(Color.whiteColor)
+                    .padding(.bottom)
+                    
+                    Section("치킨 버거") {
+                        LazyVGrid(columns: columns) {
+                            ForEach($menus){ $menu in
+                                if menu.tag.contains("치킨"){
+                                    Button(action: {
+                                        isSetChoiceView.toggle()
+                                        curMenu=menu
+                                    }) {
+                                        MenuCellView(menu: $menu)
+                                    }
+                                    .halfSheet(showSheet: $isSetChoiceView) {
+                                        MenuSetChoiceView(menu: $curMenu, isSetChoiceView: $isSetChoiceView, isMenuQuantityView: $isMenuQuantityView, isSetMenu: $isSetMenu)
+                                    }
+                                    .halfSheet(showSheet: $isMenuQuantityView) {
+                                        MenuQuantityView(menu: $curMenu, isSetChoiceView: $isSetChoiceView, isShoppingListView: $isShoppingListView, isSetMenu: $isSetMenu, menuQuantity: $menuQuantity)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .font(Font.mainFont)
+                    .foregroundColor(Color.whiteColor)
+                    .padding(.bottom)
+                    
+                    Section("새우 버거") {
+                        LazyVGrid(columns: columns) {
+                            ForEach($menus){ $menu in
+                                if menu.tag.contains("새우"){
+                                    Button(action: {
+                                        isSetChoiceView.toggle()
+                                        curMenu=menu
+                                    }) {
+                                        MenuCellView(menu: $menu)
+                                    }
+                                    .halfSheet(showSheet: $isSetChoiceView) {
+                                        MenuSetChoiceView(menu: $curMenu, isSetChoiceView: $isSetChoiceView, isMenuQuantityView: $isMenuQuantityView, isSetMenu: $isSetMenu)
+                                    }
+                                    .halfSheet(showSheet: $isMenuQuantityView) {
+                                        MenuQuantityView(menu: $curMenu, isSetChoiceView: $isSetChoiceView, isShoppingListView: $isShoppingListView, isSetMenu: $isSetMenu, menuQuantity: $menuQuantity)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .font(Font.mainFont)
+                    .foregroundColor(Color.whiteColor)
+                    .padding(.bottom)
+                }
             }
-            .padding(.bottom, 30)
-            
-            VStack(alignment: .leading) {
-                Section("추천 메뉴") {
-                    LazyVGrid(columns: columns) {
-                        ForEach($menus){ $menu in
-                            if menu.tag.contains("추천"){
-                                Button(action: {
-                                    isMenuSelected.toggle()
-                                    curMenu=menu
-                                }) {
-                                    MenuCellView(menu: $menu)
-                                }
-                                .halfSheet(showSheet: $isMenuSelected) {
-                                    MenuSetChoiceView(menu: $curMenu, isMenuSelected: $isMenuSelected, isSetChoiced: $isSetChoiced, isSetMenu: $isSetMenu)
-                                }
-                                .halfSheet(showSheet: $isSetChoiced) {
-                                    MenuQuantityView(menu: $curMenu, isMenuSelected: $isMenuSelected, menuQuantity: $menuQuantity)
-                                }
-                            }
-                        }
-                    }
-                }
-                .font(Font.mainFont)
-                .foregroundColor(Color.whiteColor)
-                .padding(.bottom)
-                
-                Section("소고기 버거") {
-                    LazyVGrid(columns: columns) {
-                        ForEach($menus){ $menu in
-                            if menu.tag.contains("소고기"){
-                                Button(action: {
-                                    isMenuSelected.toggle()
-                                    
-                                }) {
-                                    MenuCellView(menu: $menu)
-                                }
-                                .halfSheet(showSheet: $isMenuSelected) {
-                                    MenuSetChoiceView(menu: $curMenu, isMenuSelected: $isMenuSelected, isSetChoiced: $isSetChoiced, isSetMenu: $isSetMenu)
-                                }
-                                .halfSheet(showSheet: $isSetChoiced) {
-                                    MenuQuantityView(menu: $curMenu, isMenuSelected: $isMenuSelected, menuQuantity: $menuQuantity)
-                                }
-                            }
-                        }
-                    }
-                }
-                .font(Font.mainFont)
-                .foregroundColor(Color.whiteColor)
-                .padding(.bottom)
-                
-                Section("치킨 버거") {
-                    LazyVGrid(columns: columns) {
-                        ForEach($menus){ $menu in
-                            if menu.tag.contains("치킨"){
-                                Button(action: {
-                                    isMenuSelected.toggle()
-                                    curMenu=menu
-                                }) {
-                                    MenuCellView(menu: $menu)
-                                }
-                                .halfSheet(showSheet: $isMenuSelected) {
-                                    MenuSetChoiceView(menu: $curMenu, isMenuSelected: $isMenuSelected, isSetChoiced: $isSetChoiced, isSetMenu: $isSetMenu)
-                                }
-                                .halfSheet(showSheet: $isSetChoiced) {
-                                    MenuQuantityView(menu: $curMenu, isMenuSelected: $isMenuSelected, menuQuantity: $menuQuantity)
-                                }
-                            }
-                        }
-                    }
-                }
-                .font(Font.mainFont)
-                .foregroundColor(Color.whiteColor)
-                .padding(.bottom)
-                
-                Section("새우 버거") {
-                    LazyVGrid(columns: columns) {
-                        ForEach($menus){ $menu in
-                            if menu.tag.contains("새우"){
-                                Button(action: {
-                                    isMenuSelected.toggle()
-                                    curMenu=menu
-                                }) {
-                                    MenuCellView(menu: $menu)
-                                }
-                                .halfSheet(showSheet: $isMenuSelected) {
-                                    MenuSetChoiceView(menu: $curMenu, isMenuSelected: $isMenuSelected, isSetChoiced: $isSetChoiced, isSetMenu: $isSetMenu)
-                                }
-                                .halfSheet(showSheet: $isSetChoiced) {
-                                    MenuQuantityView(menu: $curMenu, isMenuSelected: $isMenuSelected, menuQuantity: $menuQuantity)
-                                }
-                            }
-                        }
-                    }
-                }
-                .font(Font.mainFont)
-                .foregroundColor(Color.whiteColor)
-                .padding(.bottom)
-            }
+            .padding()
+            .background(Color.grayColor)
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarHidden(true)
         }
-        .padding()
-        .background(Color.grayColor)
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationBarHidden(true)
-        
     }
 }
 
@@ -138,6 +147,7 @@ struct MenuView_Previews: PreviewProvider {
     }
 }
 
+/// HalfSheet를 위한 코드
 extension View{
     func halfSheet<SheetView: View>(showSheet: Binding<Bool>, @ViewBuilder sheetView: @escaping ()->SheetView)->some View{
         

@@ -10,8 +10,8 @@ import SwiftUI
 struct MenuSetChoiceView: View {
     @Environment(\.presentationMode) var presentationMode
     @Binding var menu: Menu
-    @Binding var isMenuSelected: Bool
-    @Binding var isSetChoiced: Bool
+    @Binding var isSetChoiceView: Bool
+    @Binding var isMenuQuantityView: Bool
     @Binding var isSetMenu: Bool
     @State var disableNextButton = true
     @State var singleCheckImageName = "circle"
@@ -89,15 +89,13 @@ struct MenuSetChoiceView: View {
                 HStack{
                     Button(action: {
                         presentationMode.wrappedValue.dismiss()
-                        
                     }) {
                         Image("PreviousButton")
                     }
                     
                     Button(action: {
-//                        
                         presentationMode.wrappedValue.dismiss()
-                        isSetChoiced.toggle()
+                        isMenuQuantityView.toggle()
                     }) {
                         Image("NextButton")
                     }
@@ -112,6 +110,6 @@ struct MenuSetChoiceView_Previews: PreviewProvider {
     @State static var menu = Menu(name: "트리플 치즈버거", tag: [], price: 5000)
     
     static var previews: some View {
-        MenuSetChoiceView(menu: $menu, isMenuSelected: .constant(true), isSetChoiced: .constant(false), isSetMenu: .constant(false))
+        MenuSetChoiceView(menu: $menu, isSetChoiceView: .constant(true), isMenuQuantityView: .constant(false), isSetMenu: .constant(false))
     }
 }
