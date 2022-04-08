@@ -164,9 +164,9 @@ struct HalfSheetHelper<SheetView: View>: UIViewControllerRepresentable{
             let sheetController = CustomHostingController(rootView: sheetView)
             
             uiViewController.present(sheetController, animated: true){
-//                DispatchQueue.main.async {
+                DispatchQueue.main.async {
                     self.showSheet.toggle()
-//                }
+                }
             }
         }
     }

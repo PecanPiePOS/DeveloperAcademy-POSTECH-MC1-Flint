@@ -70,6 +70,7 @@
 		DADFAA0C27FE7C18006F613A /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		DADFAA1127FE7C24006F613A /* Preference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
 		DADFAA1227FE7C24006F613A /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		DAE98A4327FFE10B00473D00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +121,7 @@
 		C572506827FBF38F00E90997 /* MC1 */ = {
 			isa = PBXGroup;
 			children = (
+				DAE98A4327FFE10B00473D00 /* Info.plist */,
 				C572506927FBF38F00E90997 /* MC1App.swift */,
 				C572506D27FBF39000E90997 /* Assets.xcassets */,
 				DADFAA1027FE7C24006F613A /* Model */,
@@ -162,9 +164,9 @@
 				DAABEC6127FE958B00912015 /* StoreChoiceView.swift */,
 				DADFAA0C27FE7C18006F613A /* MenuView.swift */,
 				DADFAA0A27FE7C18006F613A /* MenuCellView.swift */,
-				DADFAA0B27FE7C18006F613A /* MenuCheckView.swift */,
 				DAABEC6B27FF19C400912015 /* MenuSetChoiceView.swift */,
 				DAABEC6927FF19B100912015 /* MenuQuantityView.swift */,
+				DADFAA0B27FE7C18006F613A /* MenuCheckView.swift */,
 				C564D27D27FEAC92000603BB /* OrderCheckView.swift */,
 				C564D28127FF1B01000603BB /* OrderView.swift */,
 			);
@@ -485,8 +487,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MC1/Preview Content\"";
+				DEVELOPMENT_TEAM = ZRTG6WMRW7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MC1/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -513,8 +517,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MC1/Preview Content\"";
+				DEVELOPMENT_TEAM = ZRTG6WMRW7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MC1/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
