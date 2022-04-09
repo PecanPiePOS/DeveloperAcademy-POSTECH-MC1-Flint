@@ -66,7 +66,7 @@ struct MenuView: View {
                                 if menu.tag.contains("소고기"){
                                     Button(action: {
                                         isSetChoiceView.toggle()
-                                        
+                                        curMenu=menu
                                     }) {
                                         MenuCellView(menu: $menu)
                                     }
