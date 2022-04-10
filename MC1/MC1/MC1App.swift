@@ -11,7 +11,7 @@ import SwiftUI
 struct MC1App: App {
     var body: some Scene {
         WindowGroup {
-            MenuView()
+            StoreChoiceView()
         }
     }
 }
