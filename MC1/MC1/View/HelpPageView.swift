@@ -9,7 +9,26 @@ import SwiftUI
 
 struct HelpPageView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Image("HelpView1")
+            
+            Button {
+                print("FrontWardButton")
+            } label: {
+                Image("FrontWardButton")
+                
+            }
+            .padding(.leading, 300.0)
+            .padding(.top, 350)
+            
+            Button {
+                print("GoMenuChoiceView")
+            } label: {
+                Image("MenuChoiceButton")
+            }
+            .padding(.top, 700)
+
+        }
     }
 }
 
