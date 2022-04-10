@@ -58,7 +58,7 @@ struct GuideHomeView: View {
                         
                         Spacer()
                     }
-                    .frame(width: 100, height: .infinity, alignment: .center)
+                    .frame(width: 120, height: .infinity, alignment: .center)
                     
                     Divider()
                 
