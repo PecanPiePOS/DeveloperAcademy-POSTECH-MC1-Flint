@@ -107,7 +107,7 @@ struct MenuSetChoiceView: View {
 }
 
 struct MenuSetChoiceView_Previews: PreviewProvider {
-    @State static var menu = Menu(name: "트리플 치즈버거", tag: [], price: 5000)
+    @State static var menu = Menu(name: "트리플 치즈버거", tag: [], price: 5000, setPrice: 6000)
     
     static var previews: some View {
         MenuSetChoiceView(menu: $menu, isSetChoiceView: .constant(true), isMenuQuantityView: .constant(false), isSetMenu: .constant(false))

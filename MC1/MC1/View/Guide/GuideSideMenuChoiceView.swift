@@ -8,36 +8,140 @@
 import SwiftUI
 
 struct GuideSideMenuChoiceView: View {
-    @Binding var isLargeSet: Bool
+    @State var isGuideDrinkChoiceView = false
     @Binding var menu: Menu
+    @Binding var count: Int
+    @Binding var isLargeSet: Bool
+    
+    @State var sideMenu: String = ""
+    var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
     
     var body: some View {
-        ZStack {
-            Color.whiteColor
-            
-            HStack {
-                VStack{
-                    Text(menu.name + (isLargeSet ? " 라지" : "") + " 세트")
-                        .foregroundColor(.grayColor)
-                        .font(.mainFont)
+        if isGuideDrinkChoiceView{
+            GuideDrinkChoiceView(menu: $menu, count: $count, isLargeSet: $isLargeSet, sideMenu: $sideMenu)
+        } else {
+            ZStack {
+                Color.whiteColor
+                    .ignoresSafeArea()
+                
+                HStack {
+                    VStack{
+                        altImage
+                            .foregroundColor(.grayColor)
+                            .frame(width: 50, height: 50, alignment: .center)
+                        
+                        Text(menu.name + (isLargeSet ? " 라지" : "") + " 세트")
+                            .foregroundColor(.grayColor)
+                            .font(.mainFont)
+                            .padding(.vertical)
+                        
+                        Text("세트메뉴 사이드를 선택해주세요.")
+                            .foregroundColor(.grayColor)
+                            .font(.mainFont)
+                            .padding(.vertical)
+                        
+                        Text("세트메뉴 음료를 선택해주세요.")
+                            .foregroundColor(.grayColor)
+                            .font(.mainFont)
+                            .padding(.vertical)
+                        
+                        Text("주문 확인하기")
+                            .foregroundColor(.grayColor)
+                            .font(.mainFont)
+                            .padding(.vertical)
+                        
+                        Spacer()
+                    }
+                    .frame(width: 120, alignment: .center)
                     
+                    Divider()
                     
+                    VStack {
+                        HStack {
+                            Text(menu.name + (isLargeSet ? " 라지" : "") + " 세트")
+                                .foregroundColor(.grayColor)
+                                .font(.mainFont)
+                            
+                            Text("영양 정보")
+                                .foregroundColor(.grayColor)
+                                .font(.mainFont)
+                                .padding()
+                                .border(Color.grayColor)
+                        }
+                        
+                        Text("세트 메뉴 사이드를 선택해주세요")
+                            .foregroundColor(.grayColor)
+                            .font(.mainFont)
+                        
+                        ScrollView{
+                            LazyVGrid(columns: columns) {
+                                Button(action: {
+                                    sideMenu="후렌치 후라이 - 미디엄"
+                                    isGuideDrinkChoiceView=true
+                                }) {
+                                    VStack{
+                                        altImage
+                                            .frame(width: 70, height: 70)
+                                        Text("후렌치 후라이 - 미디엄")
+                                            .font(Font.mainFont)
+                                            .foregroundColor(Color.grayColor)
+                                    }
+                                    .frame(width: 100, height: 150, alignment: .center)
+                                }
+                                
+                                Button(action: {
+                                    sideMenu="맥너겟 4조각"
+                                    isGuideDrinkChoiceView=true
+                                }) {
+                                    VStack{
+                                        altImage
+                                            .frame(width: 70, height: 70)
+                                        Text("맥너겟 4조각")
+                                            .font(Font.mainFont)
+                                            .foregroundColor(Color.grayColor)
+                                    }
+                                    .frame(width: 100, height: 150, alignment: .center)
+                                }
+                                
+                                Button(action: {
+                                    sideMenu="골든 모짜렐라 치즈스틱"
+                                    isGuideDrinkChoiceView=true
+                                }) {
+                                    VStack{
+                                        altImage
+                                            .frame(width: 70, height: 70)
+                                        Text("골든 모짜렐라 치즈스틱")
+                                            .font(Font.mainFont)
+                                            .foregroundColor(Color.grayColor)
+                                    }
+                                    .frame(width: 100, height: 150, alignment: .center)
+                                }
+                                
+                                Button(action: {
+                                    sideMenu="후렌치 후라이 + 골든 모짜렐라 치즈스틱"
+                                    isGuideDrinkChoiceView=true
+                                }) {
+                                    VStack{
+                                        altImage
+                                            .frame(width: 70, height: 70)
+                                        Text("후렌치 후라이 + 골든 모짜렐라 치즈스틱")
+                                            .font(Font.mainFont)
+                                            .foregroundColor(Color.grayColor)
+                                    }
+                                    .frame(width: 100, height: 150, alignment: .center)
+                                }
+                            }
+                        }
+                    }
                 }
-                .frame(width: 120, height: .infinity, alignment: .center)
-                
-                Divider()
-                
-                Text(menu.name + (isLargeSet ? " 라지" : "") + " 세트")
-                    .foregroundColor(.grayColor)
-                    .font(.mainFont)
             }
         }
     }
 }
 
 struct GuideSideMenuChoiceView_Previews: PreviewProvider {
-    @State static var menu = Menu(name: "더블 불고기 버거", tag: [], price: 5000)
+    @State static var menu = Menu(name: "더블 불고기 버거", tag: [], price: 5000, setPrice: 6000)
     static var previews: some View {
-        GuideSideMenuChoiceView(isLargeSet: .constant(true), menu: $menu)
+        GuideSideMenuChoiceView(menu: $menu, count: .constant(1), isLargeSet: .constant(true))
     }
 }

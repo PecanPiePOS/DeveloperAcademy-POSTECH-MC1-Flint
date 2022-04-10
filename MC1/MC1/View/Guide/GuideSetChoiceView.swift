@@ -9,11 +9,12 @@ import SwiftUI
 
 struct GuideSetChoiceView: View {
     @State var isGuideMenuCheckView = false
+    @State var isSetMenu = false
     @Binding var menu: Menu
     
     var body: some View {
         if isGuideMenuCheckView{
-            GuideMenuCheckView(menu: $menu)
+            GuideMenuCheckView(menu: $menu, isSetMenu: $isSetMenu)
         } else {
             ZStack{
                 Color.whiteColor
@@ -35,7 +36,10 @@ struct GuideSetChoiceView: View {
                         .font(.titleFont)
                     
                     HStack{
-                        Button(action: {isGuideMenuCheckView=true}) {
+                        Button(action: {
+                            isGuideMenuCheckView=true
+                            isSetMenu=true
+                        }) {
                             Text("세트 선택")
                                 .foregroundColor(.grayColor)
                                 .font(.mainFont)
@@ -43,7 +47,10 @@ struct GuideSetChoiceView: View {
                                 .border(Color.grayColor)
                         }
                         
-                        Button(action: {isGuideMenuCheckView=true}) {
+                        Button(action: {
+                            isGuideMenuCheckView=true
+                            isSetMenu=false
+                        }) {
                             Text("단품 선택")
                                 .foregroundColor(.grayColor)
                                 .font(.mainFont)
@@ -68,7 +75,7 @@ struct GuideSetChoiceView: View {
 }
 
 struct GuideSetChoiceView_Previews: PreviewProvider {
-    @State static var menu = Menu(name: "더블 불고기 버거", tag: [], price: 5000)
+    @State static var menu = Menu(name: "더블 불고기 버거", tag: [], price: 5000, setPrice: 6000)
     static var previews: some View {
         GuideSetChoiceView(menu: $menu)
     }

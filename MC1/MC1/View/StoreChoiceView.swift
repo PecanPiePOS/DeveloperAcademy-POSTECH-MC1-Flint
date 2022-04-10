@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StoreChoiceView: View {
-    @State var restaurant = restaurantList[0]
+    @State var restaurant = curRestuarant
     var body: some View {
         NavigationView{
             ScrollView(.vertical, showsIndicators:false){

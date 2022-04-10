@@ -9,11 +9,15 @@ import SwiftUI
 
 struct GuideSetSizeChoiceView: View {
     @State var isGuideSideMenuChoiceView = false
-    @State var isLargeSet: Bool = false
     @Binding var menu: Menu
+    @Binding var count: Int
+    @State var isLargeSet: Bool = false
+    
+    var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
+    
     var body: some View {
         if isGuideSideMenuChoiceView {
-            GuideSideMenuChoiceView(isLargeSet: $isLargeSet, menu: $menu)
+            GuideSideMenuChoiceView(menu: $menu, count: $count, isLargeSet: $isLargeSet)
         } else {
             ZStack{
                 Color.whiteColor
@@ -24,7 +28,7 @@ struct GuideSetSizeChoiceView: View {
                         Text("주문 확인하기")
                             .foregroundColor(.grayColor)
                             .font(.mainFont)
-                            .frame(width: 120, height: .infinity, alignment: .center)
+                            .frame(width: 120, alignment: .center)
                         Spacer()
                     }
                     .padding(.top, 100)
@@ -37,49 +41,46 @@ struct GuideSetSizeChoiceView: View {
                             .font(.mainFont)
                             .padding(.bottom, 70)
                         
-                        HStack{
-                            Button(action: {
-                                isLargeSet=false
-                                isGuideSideMenuChoiceView=true
-                            }) {
-                                VStack{
-                                    Image(menu.name)
-                                        .resizable()
-                                        .scaledToFit()
-                                    Text(menu.name+" 세트")
-                                        .font(Font.mainFont)
-                                        .foregroundColor(Color.grayColor)
-                                    Text(String(menu.price)+"원")
-                                        .font(Font.mainFont)
-                                        .foregroundColor(Color.grayColor)
+                        ScrollView{
+                            LazyVGrid(columns: columns) {
+                                Button(action: {
+                                    isLargeSet=false
+                                    isGuideSideMenuChoiceView=true
+                                }) {
+                                    VStack{
+                                        Image(menu.name)
+                                            .resizable()
+                                            .scaledToFit()
+                                        Text(menu.name+" 세트")
+                                            .font(Font.mainFont)
+                                            .foregroundColor(Color.grayColor)
+                                        Text("₩"+String(menu.setPrice))
+                                            .font(Font.mainFont)
+                                            .foregroundColor(Color.grayColor)
+                                    }
+                                    .frame(width: 100, height: 150, alignment: .center)
                                 }
-                                .frame(width: 100, height: 150, alignment: .center)
-                                .border(Color.grayColor)
-                            }
-                            
-                            Button(action: {
-                                isLargeSet=true
-                                isGuideSideMenuChoiceView=true
-                            }) {
-                                VStack{
-                                    Image(menu.name)
-                                        .resizable()
-                                        .scaledToFit()
-                                    Text(menu.name+" 라지 세트")
-                                        .font(Font.mainFont)
-                                        .foregroundColor(Color.grayColor)
-                                    Text(String(menu.price)+"원")
-                                        .font(Font.mainFont)
-                                        .foregroundColor(Color.grayColor)
+                                
+                                Button(action: {
+                                    isLargeSet=true
+                                    isGuideSideMenuChoiceView=true
+                                }) {
+                                    VStack{
+                                        Image(menu.name)
+                                            .resizable()
+                                            .scaledToFit()
+                                        Text(menu.name+" 라지 세트")
+                                            .font(Font.mainFont)
+                                            .foregroundColor(Color.grayColor)
+                                        Text("₩"+String(menu.setPrice+largeSetPrice))
+                                            .font(Font.mainFont)
+                                            .foregroundColor(Color.grayColor)
+                                    }
+                                    .frame(width: 100, height: 150, alignment: .center)
                                 }
-                                .frame(width: 100, height: 150, alignment: .center)
-                                .border(Color.grayColor)
                             }
-                            
-                            Spacer()
                         }
-                        
-                        Spacer()
+                        .frame(width: 250)
                     }
                 }
             }
@@ -88,8 +89,8 @@ struct GuideSetSizeChoiceView: View {
 }
 
 struct GuideSetSizeChoiceView_Previews: PreviewProvider {
-    @State static var menu = Menu(name: "더블 불고기 버거", tag: [], price: 5000)
+    @State static var menu = Menu(name: "빅맥®", tag: [], price: 5000, setPrice: 6000)
     static var previews: some View {
-        GuideSetSizeChoiceView(menu: $menu)
+        GuideSetSizeChoiceView(menu: $menu, count: .constant(1))
     }
 }

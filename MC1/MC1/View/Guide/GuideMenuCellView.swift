@@ -23,7 +23,7 @@ struct GuideMenuCellView: View {
                 Text(menu.name)
                     .font(Font.mainFont)
                     .foregroundColor(Color.grayColor)
-                Text(String(menu.price)+"원")
+                Text("₩"+String(menu.price))
                     .font(Font.mainFont)
                     .foregroundColor(Color.grayColor)
             }
@@ -34,7 +34,7 @@ struct GuideMenuCellView: View {
 }
 
 struct GuideMenuCellView_Previews: PreviewProvider {
-    @State static var menu = Menu(name: "더블 불고기 버거", tag: [], price: 5000)
+    @State static var menu = Menu(name: "더블 불고기 버거", tag: [], price: 5000, setPrice: 6000)
     static var previews: some View {
         GuideMenuCellView(menu: $menu)
     }

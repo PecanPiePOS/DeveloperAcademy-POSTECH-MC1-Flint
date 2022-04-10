@@ -80,7 +80,7 @@ struct MenuQuantityView: View {
 }
 
 struct MenuQuantityView_Previews: PreviewProvider {
-    @State static var menu = Menu(name: "트리플 치즈버거", tag: [], price: 5000)
+    @State static var menu = Menu(name: "트리플 치즈버거", tag: [], price: 5000, setPrice: 6000)
     static var previews: some View {
         MenuQuantityView(menu: $menu, isSetChoiceView: .constant(false), isShoppingListView: .constant(false), isSetMenu: .constant(false), menuQuantity: .constant(1))
     }

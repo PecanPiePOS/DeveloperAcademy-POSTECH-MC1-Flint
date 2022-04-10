@@ -17,7 +17,7 @@ struct MenuView: View {
     /// 쇼핑카트 뷰를 보여주는 변수
     @State var isShoppingListView: Bool = false
     
-    @State var curMenu: Menu = Menu(name: "", tag: [], price: 0)
+    @State var curMenu: Menu = Menu(name: "", tag: [], price: 0, setPrice: 0)
     @State var isSetMenu = false
     @State var menuQuantity = 1
     var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)

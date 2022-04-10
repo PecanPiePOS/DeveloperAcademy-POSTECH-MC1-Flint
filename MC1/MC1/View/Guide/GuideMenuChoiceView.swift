@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GuideMenuChoiceView: View {
     @State var isGuideSetChoiceView = false
-    @State var curMenu = Menu(name: "", tag: [], price: 0)
+    @State var curMenu = Menu(name: "", tag: [], price: 0, setPrice: 0)
     @State var menus = mcdonaldMenu
     var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
     
@@ -60,7 +60,7 @@ struct GuideMenuChoiceView: View {
                         
                         Spacer()
                     }
-                    .frame(width: 120, height: .infinity, alignment: .center)
+                    .frame(width: 120, alignment: .center)
                     
                     Divider()
                     

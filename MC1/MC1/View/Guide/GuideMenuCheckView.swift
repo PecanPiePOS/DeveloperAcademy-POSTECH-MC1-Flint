@@ -11,9 +11,14 @@ struct GuideMenuCheckView: View {
     @State var isGuideSetSizeChoiceView = false
     @State var count: Int = 1
     @Binding var menu: Menu
+    @Binding var isSetMenu: Bool
     var body: some View {
         if isGuideSetSizeChoiceView{
-            GuideSetSizeChoiceView(menu: $menu)
+            if isSetMenu{
+                GuideSetSizeChoiceView(menu: $menu, count: $count)
+            }else{
+                GuideFinalMenuCheckView(menu: $menu, count: $count, isSetMenu: .constant(false), isLargeSet: .constant(false), sideMenu: .constant(""), drink: .constant(""))
+            }
         } else {
             ZStack{
                 Color.whiteColor
@@ -87,8 +92,8 @@ struct GuideMenuCheckView: View {
 }
 
 struct GuideMenuCheckView_Previews: PreviewProvider {
-    @State static var menu = Menu(name: "더블 불고기 버거", tag: [], price: 4000)
+    @State static var menu = Menu(name: "더블 불고기 버거", tag: [], price: 4000, setPrice: 5600)
     static var previews: some View {
-        GuideMenuCheckView(menu: $menu)
+        GuideMenuCheckView(menu: $menu, isSetMenu: .constant(true))
     }
 }

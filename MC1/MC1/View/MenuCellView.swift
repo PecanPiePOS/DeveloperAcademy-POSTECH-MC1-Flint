@@ -33,7 +33,7 @@ struct MenuCellView: View {
 }
 
 struct MenuCellView_Previews: PreviewProvider {
-    @State static var menu: Menu = Menu(name: "name", tag: ["tag"], price: 1000)
+    @State static var menu: Menu = Menu(name: "name", tag: ["tag"], price: 1000, setPrice: 6000)
 
     static var previews: some View {
         Group {

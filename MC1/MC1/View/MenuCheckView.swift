@@ -95,7 +95,7 @@ struct MenuCheckView: View {
 }
 
 struct MenuDetailView_Previews: PreviewProvider {
-    @State static var menu: Menu = Menu(name: "name", tag: ["tag"], price: 1000)
+    @State static var menu: Menu = Menu(name: "name", tag: ["tag"], price: 1000, setPrice: 600)
     
     static var previews: some View {
         MenuCheckView(isShoppingListView: .constant(true))
