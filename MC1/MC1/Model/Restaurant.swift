@@ -29,7 +29,7 @@ struct SelectedMenu: Identifiable{
 
 var selectedMenuList: [SelectedMenu] = []
 
-let restaurantList: [Restaurant] = [
+let restaurantList: [Restaurant] = [ 
     Restaurant(name: "McDonald", menu: mcdonaldMenu),
     Restaurant(name: "Burger King", menu: burgerkingMenu),
 ]
