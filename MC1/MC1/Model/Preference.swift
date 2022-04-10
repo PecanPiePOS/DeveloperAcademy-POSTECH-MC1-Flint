@@ -25,6 +25,7 @@ extension Color{
     static let primaryColor = Color(hex: "#FFE456")
     static let whiteColor = Color(hex: "#F9F9F9")
     static let grayColor = Color(hex: "#1F1E1E")
+    static let grayBackgound = Color("grayBackground")
 }
 
 extension Font{
