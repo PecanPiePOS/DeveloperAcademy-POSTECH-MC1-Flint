@@ -56,7 +56,7 @@ func deleteAnOrder(){
 }
 
 struct OrderView_Previews: PreviewProvider {
-    @State static var smenu: SelectedMenu = SelectedMenu(menu: Menu(name: "더블 빅맥", tag: ["소고기"], price: 7000), quantity: 2,isSet: true)
+    @State static var smenu: SelectedMenu = SelectedMenu(menu: Menu(name: "더블 빅맥", tag: ["소고기"], price: 7000, setPrice: 5000), quantity: 2, isSet: true)
 
     static var previews: some View {
         OrderView(smenu: $smenu)
