@@ -8,8 +8,34 @@
 import SwiftUI
 
 struct BeforeGuideStartView: View {
+    @State var BackButton = false
+    @State var GoGuideStartview = false
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        if GoGuideStartview{
+            GuideStartView()
+        }else if BackButton{
+            OrderCheckView()
+        }else{
+            ZStack {
+                Image("BeforeGuideStartView")
+                
+                Button {
+                    BackButton=true
+                } label: {
+                    Image("BackButton")
+                        .padding(.bottom, 750.0)
+                        .padding(.trailing, 200)
+                }
+
+                
+                Button {
+                    GoGuideStartview=true
+                } label: {
+                    Image("GuideStartButton")
+                }.padding(.top, 700.0)
+
+            }
+        }
     }
 }
 
