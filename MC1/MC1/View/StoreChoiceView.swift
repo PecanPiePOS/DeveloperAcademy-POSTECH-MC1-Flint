@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct StoreChoiceView: View {
+    @State var restaurant = restaurantList[0]
     var body: some View {
         NavigationView{
             ScrollView(.vertical, showsIndicators:false){
@@ -31,7 +32,7 @@ struct StoreChoiceView: View {
                                      
                     HStack {
                         
-                        NavigationLink(destination: MenuView()){
+                        NavigationLink(destination: MenuView(restaurant: $restaurant)){
                             Image("McdonaldBox")
                                 .resizable()
                                 .frame(width:164, height: 164)
@@ -106,6 +107,7 @@ struct StoreChoiceView: View {
                                 .resizable()
                                 .frame(width:164, height: 164)
                         }
+                        Spacer()
                         Button(action: {}) {
                             Image("BustagoBox")
                                 .resizable()
@@ -127,25 +129,17 @@ struct StoreChoiceView: View {
                                 .resizable()
                                 .frame(width:164, height: 164)
                         }
+                        Spacer()
                         Button(action: {}) {
                             Image("BurgerKingBox")
                                 .resizable()
                                 .frame(width:164, height: 164)
                         }
                     }
-
-                    
-                    
-                    
-                    
                 }
-                .frame(width: 344.0)
-                
             }
             .frame(width: 344.0)
-
         }
-               
     }
 }
 
