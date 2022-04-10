@@ -31,3 +31,5 @@ extension Font{
     static let mainFont = Font.system(size: 18)
     static let titleFont = Font.system(size: 32, weight: .bold)
 }
+
+let altImage = Image(systemName: "nosign")
