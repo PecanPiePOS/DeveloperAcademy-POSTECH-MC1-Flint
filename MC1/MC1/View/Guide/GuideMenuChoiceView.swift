@@ -8,8 +8,86 @@
 import SwiftUI
 
 struct GuideMenuChoiceView: View {
+    @State var isGuideSetChoiceView = false
+    @State var curMenu = Menu(name: "", tag: [], price: 0)
+    @State var menus = mcdonaldMenu
+    var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        if isGuideSetChoiceView{
+            GuideSetChoiceView(menu :$curMenu)
+        }else{
+            ZStack {
+                Color.whiteColor
+                    .ignoresSafeArea()
+                
+                HStack {
+                    VStack {
+                        altImage
+                            .foregroundColor(.grayColor)
+                            .frame(width: 50, height: 50, alignment: .center)
+                        
+                        VStack{
+                            Text("홈")
+                                .padding(.bottom)
+                            
+                            Text("추천메뉴")
+                                .padding(.bottom)
+                        
+                            Text("맥런치")
+                                .padding(.bottom)
+                            
+                            Text("버거")
+                                .padding(.bottom)
+                            
+                            Text("해피스낵")
+                                .padding(.bottom)
+                            
+                            Text("사이드")
+                                .padding(.bottom)
+                        
+                            Text("커피")
+                                .padding(.bottom)
+                        
+                            Text("디저트")
+                                .padding(.bottom)
+                        
+                            Text("음료")
+                        }
+                        .font(.mainFont)
+                        .foregroundColor(.grayColor)
+                        .padding()
+                        
+                        Spacer()
+                    }
+                    .frame(width: 100, height: .infinity, alignment: .center)
+                    
+                    Divider()
+                    
+                    VStack{
+                        Text("버거")
+                            .foregroundColor(.grayColor)
+                            .font(.titleFont)
+                        Text("아래에서 세부메뉴를 확인하세요")
+                            .foregroundColor(.grayColor)
+                            .font(.mainFont)
+                        
+                        ScrollView{
+                            LazyVGrid(columns: columns){
+                                ForEach($menus){ $menu in
+                                    Button(action: {
+                                        curMenu=menu
+                                        isGuideSetChoiceView=true
+                                    }) {
+                                        GuideMenuCellView(menu: $menu)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
