@@ -9,10 +9,14 @@ import SwiftUI
 
 struct StartView: View {
     @State var GoHelpPageView = false
+    @State var GoStoreChoceView = false
+    
     var body: some View {
         if GoHelpPageView{
             HelpPageView()
-        } else {
+        }else if GoStoreChoceView{
+            StoreChoiceView()
+        }else {
             VStack(alignment: .center){
                 Text("안녕하세요! 어떤 매장의 안내가 필요하신가요?")
                 //title에 .kerning .tracking -2정도 필요한듯
@@ -24,7 +28,7 @@ struct StartView: View {
                     .padding(.top, 80)
 
                 Button {
-                    print("StartViewButton")
+                    GoStoreChoceView = true
                 } label: {
                     Image("StartViewButton")
                         .resizable()
