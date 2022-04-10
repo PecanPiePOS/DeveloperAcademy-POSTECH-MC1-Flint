@@ -8,26 +8,32 @@
 import SwiftUI
 
 struct HelpPageView: View {
+    @State var GoStoreChoceView = false
     var body: some View {
-        ZStack {
-            Image("HelpView1")
-            
-            Button {
-                print("FrontWardButton")
-            } label: {
-                Image("FrontWardButton")
+        if GoStoreChoceView{
+            StoreChoiceView()
+        }else{
+            ZStack {
+                Image("HelpView1")
                 
-            }
-            .padding(.leading, 300.0)
-            .padding(.top, 350)
-            
-            Button {
-                print("GoMenuChoiceView")
-            } label: {
-                Image("MenuChoiceButton")
-            }
-            .padding(.top, 700)
+                Button {
+                    print("FrontWardButton")
+                } label: {
+                    Image("FrontWardButton")
+                    
+                }
+                .padding(.leading, 300.0)
+                .padding(.top, 350)
+                
+                Button {
+                    GoStoreChoceView=true
+                } label: {
+                    Image("MenuChoiceButton")
+                }
+                .padding(.top, 700)
 
+            }
+        
         }
     }
 }
