@@ -13,7 +13,7 @@ struct GuideMenuCheckView: View {
     @Binding var menu: Menu
     var body: some View {
         if isGuideSetSizeChoiceView{
-            
+            GuideSetSizeChoiceView(menu: $menu)
         } else {
             ZStack{
                 Color.whiteColor
@@ -46,11 +46,16 @@ struct GuideMenuCheckView: View {
                         .border(Color.grayColor)
                     
                     HStack{
-                        Button(action: {}) {
+                        Button(action: {
+                            if count>1{
+                                count-=1
+                            }
+                        }) {
                             Text("-")
                                 .padding()
                                 .border(Color.grayColor)
                         }
+                        .disabled(count>1 ? false : true)
                         
                         Text(String(count))
                             .foregroundColor(.grayColor)
@@ -59,14 +64,16 @@ struct GuideMenuCheckView: View {
                             .padding(.horizontal, 50)
                             .border(Color.grayColor)
                         
-                        Button(action: {}) {
+                        Button(action: {
+                            count+=1
+                        }) {
                             Text("+")
                                 .padding()
                                 .border(Color.grayColor)
                         }
                     }
                     
-                    Button(action: {}) {
+                    Button(action: {isGuideSetSizeChoiceView=true}) {
                         Text("장바구니에 추가")
                             .foregroundColor(.grayColor)
                             .padding()

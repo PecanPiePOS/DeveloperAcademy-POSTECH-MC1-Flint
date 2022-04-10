@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MenuView: View {
-    @State var menus = mcdonaldMenu
+    @Binding var restaurant: Restaurant
     
     /// 세트메뉴를 선택하는 뷰를 보여주는 변수
     @State var isSetChoiceView: Bool = false
@@ -38,7 +38,7 @@ struct MenuView: View {
                 VStack(alignment: .leading) {
                     Section("추천 메뉴") {
                         LazyVGrid(columns: columns) {
-                            ForEach($menus){ $menu in
+                            ForEach($restaurant.menu){ $menu in
                                 if menu.tag.contains("추천"){
                                     Button(action: {
                                         isSetChoiceView.toggle()
@@ -62,7 +62,7 @@ struct MenuView: View {
                     
                     Section("소고기 버거") {
                         LazyVGrid(columns: columns) {
-                            ForEach($menus){ $menu in
+                            ForEach($restaurant.menu){ $menu in
                                 if menu.tag.contains("소고기"){
                                     Button(action: {
                                         isSetChoiceView.toggle()
@@ -86,7 +86,7 @@ struct MenuView: View {
                     
                     Section("치킨 버거") {
                         LazyVGrid(columns: columns) {
-                            ForEach($menus){ $menu in
+                            ForEach($restaurant.menu){ $menu in
                                 if menu.tag.contains("치킨"){
                                     Button(action: {
                                         isSetChoiceView.toggle()
@@ -110,7 +110,7 @@ struct MenuView: View {
                     
                     Section("새우 버거") {
                         LazyVGrid(columns: columns) {
-                            ForEach($menus){ $menu in
+                            ForEach($restaurant.menu){ $menu in
                                 if menu.tag.contains("새우"){
                                     Button(action: {
                                         isSetChoiceView.toggle()
@@ -142,8 +142,9 @@ struct MenuView: View {
 }
 
 struct MenuView_Previews: PreviewProvider {
+    @State static var restaurant = Restaurant(name: "맥도날드", menu: mcdonaldMenu)
     static var previews: some View {
-        MenuView()
+        MenuView(restaurant: $restaurant)
     }
 }
 
