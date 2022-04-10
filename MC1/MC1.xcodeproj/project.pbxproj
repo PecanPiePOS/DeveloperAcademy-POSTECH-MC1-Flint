@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		58D8B79727FFC87900334164 /* OnboardingStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D8B79627FFC87900334164 /* OnboardingStartView.swift */; };
 		58D8B79927FFC88B00334164 /* OnboardingEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D8B79827FFC88B00334164 /* OnboardingEndView.swift */; };
+		C0C5ED2E2802D79100956BC5 /* BeforeGuideStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C5ED2D2802D79100956BC5 /* BeforeGuideStartView.swift */; };
 		C564D27E27FEAC92000603BB /* OrderCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564D27D27FEAC92000603BB /* OrderCheckView.swift */; };
 		C564D28227FF1B01000603BB /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564D28127FF1B01000603BB /* OrderView.swift */; };
 		C572506A27FBF38F00E90997 /* MC1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C572506927FBF38F00E90997 /* MC1App.swift */; };
@@ -65,6 +66,7 @@
 /* Begin PBXFileReference section */
 		58D8B79627FFC87900334164 /* OnboardingStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStartView.swift; sourceTree = "<group>"; };
 		58D8B79827FFC88B00334164 /* OnboardingEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingEndView.swift; sourceTree = "<group>"; };
+		C0C5ED2D2802D79100956BC5 /* BeforeGuideStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeGuideStartView.swift; sourceTree = "<group>"; };
 		C564D27D27FEAC92000603BB /* OrderCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCheckView.swift; sourceTree = "<group>"; };
 		C564D28127FF1B01000603BB /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		C572506627FBF38F00E90997 /* MC1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MC1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -222,6 +224,7 @@
 				DADFAA0B27FE7C18006F613A /* MenuCheckView.swift */,
 				C564D27D27FEAC92000603BB /* OrderCheckView.swift */,
 				C564D28127FF1B01000603BB /* OrderView.swift */,
+				C0C5ED2D2802D79100956BC5 /* BeforeGuideStartView.swift */,
 				58D8B79627FFC87900334164 /* OnboardingStartView.swift */,
 				58D8B79827FFC88B00334164 /* OnboardingEndView.swift */,
 				DA3E41AD2802642500E979EB /* Guide */,
@@ -401,6 +404,7 @@
 				DA3E41C72802650100E979EB /* GuidePayChoiceView.swift in Sources */,
 				DAABEC6827FE95C800912015 /* Traffic.swift in Sources */,
 				C572506A27FBF38F00E90997 /* MC1App.swift in Sources */,
+				C0C5ED2E2802D79100956BC5 /* BeforeGuideStartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
