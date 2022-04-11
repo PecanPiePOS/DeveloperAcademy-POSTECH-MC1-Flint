@@ -11,119 +11,123 @@ struct OnboardingStartView: View {
 
     @State private var buttonNumbers = 0
     @State private var showEndView = false
-    
-    var body: some View {
-        if showEndView {
-            OnboardingEndView()
-        } else {
-            VStack(alignment: .center, spacing: 10) {
-                //MARK: TOP TEXT
-                TabView(selection: $buttonNumbers) {
-                    ForEach(onboardingDatas){ i in
-                        ZStack {
-                            Text(i.topText)
-                                .font(.system(size: 32, weight: .heavy))
-                                .multilineTextAlignment(.center)
-                        }
-                    }
-                }
-                .frame(width: .infinity, height: 130, alignment: .center)
-                .padding(.top, 140)
-                
-                //MARK: Buttons and Images transitions
-                ZStack {
-                    HStack {
-                        Button {
-                            if buttonNumbers > 0 {
-                                buttonNumbers -= 1
-                            }
-                        } label: {
-                            if buttonNumbers > 0 {
-                                Image(systemName: "lessthan.circle.fill")
-                                    .resizable()
-                                    .foregroundColor(.white)
-                                    .opacity(0.7)
-                            }
-                        }
-                        .scaledToFit()
-                        .frame(width: 40, height: 40, alignment: .leading)
-                        .padding(.leading, 20)
 
-                        TabView(selection: $buttonNumbers){
-                            ForEach(onboardingDatas){ i in
-                                ZStack {
-                                    Image(i.image)
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(height: .infinity, alignment: .center)
-                                        .padding(.bottom, 40)
-                                }
-                            }
-                        }
-                        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
-                        
-                        Button {
-                            if buttonNumbers < 3 {
-                                buttonNumbers += 1
-                            }
-                        } label: {
-                            if buttonNumbers < 3 {
-                                Image(systemName: "greaterthan.circle.fill")
-                                    .resizable()
-                                    .foregroundColor(.white)
-                                    .opacity(0.7)
-                            }
-                        }
-                        .scaledToFit()
-                        .frame(width: 40, height: 40, alignment: .trailing)
-                        .padding(.trailing, 20)
+    var body: some View {
+//        if showEndView {
+//            OnboardingEndView()
+//        } else {
+        VStack(alignment: .center, spacing: 10) {
+            //MARK: TOP TEXT
+            TabView(selection: $buttonNumbers) {
+                ForEach(onboardingDatas){ i in
+                    ZStack {
+                        Text(i.topText)
+                            .font(.system(size: 32, weight: .black))
+                            .multilineTextAlignment(.center)
                     }
                 }
-                .padding(.top)
-                .frame(width: .infinity, height: 200, alignment: .center)
-                
-                //MARK: Bottom Text
-                TabView(selection: $buttonNumbers){
-                    ForEach(onboardingDatas){ i in
-                        ZStack {
-                            Text(i.bottomText)
-                                .multilineTextAlignment(.leading)
-                                .font(.system(size: 17, weight: .light))
+            }
+            .frame(width: .infinity, height: 130, alignment: .center)
+            .padding(.top, 140)
+
+            //MARK: Buttons and Images transitions
+            ZStack {
+                HStack {
+                    Button {
+                        if buttonNumbers > 0 {
+                            buttonNumbers -= 1
+                        }
+                    } label: {
+                        if buttonNumbers > 0 {
+                            Image(systemName: "lessthan.circle.fill")
+                                .resizable()
                                 .foregroundColor(.white)
                                 .opacity(0.7)
-                                .frame(height: 140, alignment: .leading)
-                                .padding(.top, 40)
-                                .padding()
                         }
                     }
-                }
-                .padding(.top)
-                
-                //MARK: Half Sheet Action Button
-                Button {
-                    if buttonNumbers == 3 {                            showEndView.toggle()
+                    .scaledToFit()
+                    .frame(width: 40, height: 40, alignment: .leading)
+                    .padding(.leading, 20)
+
+                    TabView(selection: $buttonNumbers){
+                        ForEach(onboardingDatas){ i in
+                            ZStack {
+                                Image(i.image)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(height: .infinity, alignment: .center)
+                                    .padding(.bottom, 40)
+                            }
+                        }
                     }
-                } label: {
-                    if buttonNumbers != 3 {
-                        Capsule()
-                            .fill(Color.grayBackgound)
-                            .frame(width: .infinity, height: 90, alignment: .center)
-                            .opacity(0.3)
-                            .overlay(Text("시작하기").font(.system(size: 26, weight: .medium)).foregroundColor(.white).opacity(0.4))
-                            .padding(.top, 30)
-                            .padding()
-                    } else {
-                        Capsule()
-                            .fill(Color.primaryColor)
-                            .frame(width: .infinity, height: 90, alignment: .center)
-                            .overlay(Text("시작하기").font(.system(size: 26, weight: .bold)).foregroundColor(.black))
-                            .padding(.top, 30)
-                            .padding()
+                    .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+
+                    Button {
+                        if buttonNumbers < 3 {
+                            buttonNumbers += 1
+                        }
+                    } label: {
+                        if buttonNumbers < 3 {
+                            Image(systemName: "greaterthan.circle.fill")
+                                .resizable()
+                                .foregroundColor(.white)
+                                .opacity(0.7)
+                        }
                     }
+                    .scaledToFit()
+                    .frame(width: 40, height: 40, alignment: .trailing)
+                    .padding(.trailing, 20)
                 }
-                .padding(.bottom, 30)
             }
+            .padding(.top)
+            .frame(width: .infinity, height: 200, alignment: .center)
+
+            //MARK: Bottom Text
+            TabView(selection: $buttonNumbers){
+                ForEach(onboardingDatas){ i in
+                    ZStack {
+                        Text(i.bottomText)
+                            .multilineTextAlignment(.leading)
+                            .font(.system(size: 17, weight: .light))
+                            .foregroundColor(.white)
+                            .opacity(0.7)
+                            .frame(height: 140, alignment: .leading)
+                            .padding(.top, 40)
+                            .padding()
+                    }
+                }
+            }
+            .padding(.top)
+
+            //MARK: Half Sheet Action Button
+            Button {
+                if buttonNumbers == 3 {
+                    showEndView.toggle()
+                }
+            } label: {
+                if buttonNumbers != 3 {
+                    Capsule()
+                        .fill(Color.grayBackgound)
+                        .frame(width: .infinity, height: 90, alignment: .center)
+                        .opacity(0.3)
+                        .overlay(Text("시작하기").font(.system(size: 26, weight: .medium)).foregroundColor(.white).opacity(0.4))
+                        .padding(.top, 30)
+                        .padding()
+                } else {
+                    Capsule()
+                        .fill(Color.primaryColor)
+                        .frame(width: .infinity, height: 90, alignment: .center)
+                        .overlay(Text("시작하기").font(.system(size: 26, weight: .bold)).foregroundColor(.black))
+                        .padding(.top, 30)
+                        .padding()
+                        .halfSheet(showSheet: $showEndView) {
+                            secondSheetView()
+                        }
+                }
+            }
+            .padding(.bottom, 30)
         }
+//        }
     }
 }
 
@@ -151,5 +155,180 @@ let onboardingDatas = [
 struct OnboardingStartView_Previews: PreviewProvider {
     static var previews: some View {
         OnboardingStartView()
+            .preferredColorScheme(.dark)
+    }
+}
+
+struct secondSheetView: View {
+    var body: some View {
+        VStack{
+            Spacer()
+            ZStack{
+                Color.primaryColor.ignoresSafeArea()
+                Spacer()
+                VStack(spacing:10){
+                    Text("더 편리한 사용을 위해 권한을 허용해주세요.")
+                        .font(.system(size: 30, weight: .black))
+                        .frame(width: .infinity, height: 100, alignment: .center)
+                        .lineLimit(3)
+                        .foregroundColor(.black)
+                        .padding(30)
+                        .padding(.top, 10)
+                    
+                    HStack(spacing: 10){
+                        Image(systemName: "bell.badge")
+                            .resizable()
+                            .scaledToFit()
+                            .symbolRenderingMode(.palette)
+                            .foregroundStyle(.red, .black)
+                            .foregroundColor(.black)
+                            .frame(width: 40, height: 40, alignment: .center)
+                            .padding(.leading, 20)
+                            .padding(.bottom, 10)
+                            
+                        VStack(spacing: 0){
+                            Text("알림")
+                                .font(.system(size: 22, weight: .black))
+                                .foregroundColor(.black)
+                                .frame(width: 60, height: 30, alignment: .leading)
+                                .padding(.trailing, 180)
+                                
+                            Text("앱을 사용 중이 아닐 때에도, 도움을 드릴 수 있도록 알림을 드려요.")
+                                .font(.system(size: 13, weight: .light))
+                                .foregroundColor(.black)
+                                .frame(width: 240, height: 40, alignment: .leading)
+                                .padding(.leading, 10)
+                                .padding(.trailing, 10)
+                        }
+                        
+                    }
+                    .padding()
+                    .padding(.bottom, 20)
+                    .padding(.top, -50)
+                    
+                    HStack(spacing: 10){
+                        Image(systemName: "paperplane.circle.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundColor(.black)
+                            .frame(width: 40, height: 40, alignment: .center)
+                            .padding(.leading, 20)
+                            .padding(.bottom, 10)
+                            
+                        VStack(spacing: 8){
+                            Text("현재 위치 정보")
+                                .font(.system(size: 22, weight: .black))
+                                .foregroundColor(.black)
+                                .frame(width: 140, height: 30, alignment: .leading)
+                                .padding(.trailing, 100)
+                                
+                            Text("검색 과정을 간소화 하기 위해 위치 정보를 활용해 주변의 키오스크 안내를 도와드려요.")
+                                .font(.system(size: 13, weight: .light))
+                                .foregroundColor(.black)
+                                .frame(width: 240, height: 40, alignment: .leading)
+                                .padding(.leading, 10)
+                                .padding(.trailing, 10)
+                        }
+                        
+                    }
+                    .padding(.top, -30)
+                    .padding(.bottom, 20)
+                    
+                    Capsule()
+                        .fill(.black)
+                        .frame(width: 330, height: 80, alignment: .center)
+                        .overlay(Text("시작하기").font(.system(size: 26, weight: .bold)).foregroundColor(.white))
+                        .padding(.top, 0)
+                        .padding()
+                    //                        .halfSheet(showSheet: $showEndView) {
+                    //                            secondSheetView()
+                    
+                    
+                }
+                
+            }
+        }
+        .ignoresSafeArea()
+//        ZStack{
+//            Color.primaryColor.ignoresSafeArea()
+//            Spacer()
+//            VStack(spacing:10){
+//                Text("더 편리한 사용을 위해 권한을 허용해주세요.")
+//                    .font(.titleFont)
+//                    .fontWeight(.black)
+//                    .frame(width: .infinity, alignment: .leading)
+//                    .foregroundColor(.black)
+//                    .padding()
+//
+//                HStack(spacing: 10){
+//                    Image(systemName: "bell.badge")
+//                        .resizable()
+//                        .scaledToFit()
+//                        .symbolRenderingMode(.palette)
+//                        .foregroundStyle(.red, .black)
+//                        .foregroundColor(.black)
+//                        .frame(width: 40, height: 40, alignment: .center)
+//                        .padding(.leading, 20)
+//                        .padding(.bottom, 10)
+//
+//                    VStack(spacing: 0){
+//                        Text("알림")
+//                            .font(.system(size: 22, weight: .black))
+//                            .foregroundColor(.black)
+//                            .frame(width: 60, height: 40, alignment: .leading)
+//                            .padding(.trailing, 180)
+//
+//                        Text("앱을 사용 중이 아닐 때에도, 도움을 드릴 수 있도록 알림을 드려요.")
+//                            .font(.system(size: 13, weight: .light))
+//                            .foregroundColor(.black)
+//                            .frame(width: 240, height: 60, alignment: .leading)
+//                            .padding(.leading, 10)
+//                            .padding(.trailing, 10)
+//                    }
+//
+//                }
+//                .padding()
+//
+//                HStack(spacing: 10){
+//                    Image(systemName: "paperplane.circle.fill")
+//                        .resizable()
+//                        .scaledToFit()
+//                        .foregroundColor(.black)
+//                        .frame(width: 40, height: 40, alignment: .center)
+//                        .padding(.leading, 20)
+//                        .padding(.bottom, 10)
+//
+//                    VStack(spacing: 8){
+//                        Text("현재 위치 정보")
+//                            .font(.system(size: 22, weight: .black))
+//                            .foregroundColor(.black)
+//                            .frame(width: 140, height: 40, alignment: .leading)
+//                            .padding(.trailing, 100)
+//
+//                        Text("검색 과정을 간소화 하기 위해 위치 정보를 활용해 주변의 키오스크 안내를 도와드려요.")
+//                            .font(.system(size: 13, weight: .light))
+//                            .foregroundColor(.black)
+//                            .frame(width: 240, height: 60, alignment: .leading)
+//                            .padding(.leading, 10)
+//                            .padding(.trailing, 10)
+//                    }
+//
+//                }
+////                .padding(.bottom, 60)
+//
+//                Capsule()
+//                    .fill(.black)
+//                    .frame(width: .infinity, height: 80, alignment: .center)
+//                    .overlay(Text("시작하기").font(.system(size: 26, weight: .bold)).foregroundColor(.white))
+//                    .padding(.top, 30)
+//                    .padding()
+//                //                        .halfSheet(showSheet: $showEndView) {
+//                //                            secondSheetView()
+//
+//
+//            }
+//
+//        }
+
     }
 }
