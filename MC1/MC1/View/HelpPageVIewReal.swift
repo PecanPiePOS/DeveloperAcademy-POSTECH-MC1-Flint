@@ -63,8 +63,8 @@ struct HelpPageViewReal: View {
                             Spacer().frame(height: 350)
                             Button {
                                 if buttonNumbers == 3{
-                                    showEndView.toggle()
                                     presentationMode.wrappedValue.dismiss()
+                                    showEndView.toggle()
                                     
                                 }
                             } label: {
