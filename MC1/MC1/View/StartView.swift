@@ -8,18 +8,15 @@
 import SwiftUI
 
 struct StartView: View {
-    @State var GoHelpPageView = false
-    @State var GoStoreChoceView = false
+    @State var GoHelpView = false
+    @State var showEndView = false
     
     var body: some View {
-        if GoHelpPageView{
-            HelpPageView()
-        }else if GoStoreChoceView{
+        if showEndView{
             StoreChoiceView()
         }else {
             VStack(alignment: .center){
                 Text("안녕하세요! 어떤 매장의 안내가 필요하신가요?")
-                //title에 .kerning .tracking -2정도 필요한듯
                     .font(.system(size: 32, weight: .black, design: .rounded))
                     .lineLimit(2)
                     .allowsTightening(true)
@@ -28,7 +25,7 @@ struct StartView: View {
                     .padding(.top, 80)
 
                 Button {
-                    GoStoreChoceView = true
+                    showEndView = true
                 } label: {
                     Image("StartViewButton")
                         .resizable()
@@ -50,20 +47,22 @@ struct StartView: View {
                         .lineLimit(3)
                         .frame(width: 263, height: 81)
                         .multilineTextAlignment(.leading)
-                }.padding(.bottom, 90)
+                    Spacer()
+                }
                 
                 HStack {
                     Spacer()
                     Button {
-                        GoHelpPageView = true
+                        GoHelpView = true
                     } label: {
                         Image("HelpButton")
-                            .frame(width: 84, height: 27, alignment: .trailing)
+                    }.halfSheet(showSheet: $GoHelpView) {
+                        HelpPageViewReal(showEndView: $showEndView)
+                        
                     }
                 }
                 .padding()
             }
-        
         }
     }
 }
