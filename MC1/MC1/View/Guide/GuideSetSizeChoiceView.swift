@@ -95,6 +95,7 @@ struct GuideSetSizeChoiceView: View {
                     }
                 }
             }
+            .frame(height: 600)
         }
     }
 }

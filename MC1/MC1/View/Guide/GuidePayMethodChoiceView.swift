@@ -38,6 +38,8 @@ struct GuidePayMethodChoiceView: View {
                                 .foregroundColor(.grayColor)
                                 .padding()
                                 .frame(width: 120, height: 120, alignment: .center)
+                                .background(Color.primaryColor)
+                                .border(Color.grayColor)
                             }
                             
                             Button(action: {isGuidePayView=true}) {
@@ -52,11 +54,13 @@ struct GuidePayMethodChoiceView: View {
                                 .foregroundColor(.grayColor)
                                 .padding()
                                 .frame(width: 120, height: 120, alignment: .center)
+                                .border(Color.grayColor)
                             }
                         }
                     }
                 }
             }
+            .frame(height: 600)
         }
     }
 }

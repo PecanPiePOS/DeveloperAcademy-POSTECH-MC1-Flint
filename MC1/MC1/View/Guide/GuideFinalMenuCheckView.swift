@@ -78,6 +78,7 @@ struct GuideFinalMenuCheckView: View {
                     }
                 }
             }
+            .frame(height: 600)
         }
     }
 }

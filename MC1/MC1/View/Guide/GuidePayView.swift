@@ -14,6 +14,10 @@ struct GuidePayView: View {
                 .ignoresSafeArea()
             
             VStack {
+                Image("mcdonaldLogo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 50)
                 Text("아래 결제 단말기에서 결제를 진행해 주세요")
                     .font(.titleFont)
                     .foregroundColor(.grayColor)
@@ -42,6 +46,7 @@ struct GuidePayView: View {
                 Spacer()
             }
         }
+        .frame(height: 600)
     }
 }
 

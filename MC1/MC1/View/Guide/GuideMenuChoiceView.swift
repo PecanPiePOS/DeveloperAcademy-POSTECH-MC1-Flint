@@ -87,12 +87,13 @@ struct GuideMenuChoiceView: View {
                     }
                 }
             }
+            .frame(height: 600)
         }
     }
 }
-
-struct GuideMenuChoiceView_Previews: PreviewProvider {
-    static var previews: some View {
-        GuideMenuChoiceView()
-    }
-}
+//
+//struct GuideMenuChoiceView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        GuideMenuChoiceView()
+//    }
+//}

@@ -10,6 +10,7 @@ import SwiftUI
 struct GuideMainView: View {
     @State var description = "노란 부분을 눌러주세요"
     @State var isBeforeGuideStartView = false
+    
     var body: some View {
         if isBeforeGuideStartView{
             BeforeGuideStartView()
@@ -30,7 +31,6 @@ struct GuideMainView: View {
                     
                 Spacer()
                 GuideStartView()
-                    .frame(width: 300, height: 600, alignment: .center)
             }
         }
 

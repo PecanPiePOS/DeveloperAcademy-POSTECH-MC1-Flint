@@ -75,6 +75,7 @@ struct GuideStartView: View {
                 .padding()
             }
             .navigationBarHidden(true)
+            .frame(height: 600)
         }
     }
 }

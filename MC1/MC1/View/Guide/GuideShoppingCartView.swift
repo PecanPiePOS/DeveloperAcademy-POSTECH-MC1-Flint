@@ -121,6 +121,7 @@ struct GuideShoppingCartView: View {
                     }
                 }
             }
+            .frame(height: 600)
         }
     }
 }

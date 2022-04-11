@@ -105,6 +105,7 @@ struct GuideDrinkChoiceView: View {
                     }
                 }
             }
+            .frame(height: 600)
         }
     }
 }

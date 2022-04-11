@@ -79,6 +79,7 @@ struct GuideSetChoiceView: View {
                     Spacer()
                 }
             }
+            .frame(height: 600)
         }
     }
 }

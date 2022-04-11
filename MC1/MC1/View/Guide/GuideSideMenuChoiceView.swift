@@ -137,6 +137,7 @@ struct GuideSideMenuChoiceView: View {
                     }
                 }
             }
+            .frame(height: 600)
         }
     }
 }
