@@ -23,7 +23,7 @@ struct MenuView: View {
     
     var body: some View {
         if isShoppingListView{
-            MenuCheckView()
+            OrderCheckView()
         }else if isStoreChoiceView{
             StoreChoiceView()
         }else{

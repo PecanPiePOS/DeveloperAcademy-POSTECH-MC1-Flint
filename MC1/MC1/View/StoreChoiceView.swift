@@ -31,6 +31,7 @@ struct StoreChoiceView: View {
                         Spacer().frame(width: 100)
                         Text("매장 선택하기")
                     }
+                    .padding(.bottom, 20)
                     
                     ScrollView(.vertical, showsIndicators:false){
                         VStack(){
