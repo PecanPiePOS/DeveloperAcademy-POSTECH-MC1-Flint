@@ -88,7 +88,7 @@ struct OrderCheckView: View {
                     Spacer()
                     Button(action: {self.action=2}, label: {
                         ZStack{
-                            NavigationLink("finish order", destination: GuideStartView(isGuideTakeOutChoiceView: false), tag:2, selection: $action).hidden().disabled(true)
+                            NavigationLink("finish order", destination: BeforeGuideStartView(), tag:2, selection: $action).hidden().disabled(true)
                             Image("PrimaryButton")
                                 //.resizable().aspectRatio(contentMode: .fit)
                             Text("주문완료").font(Font.mainFont).foregroundColor(Color.grayColor)

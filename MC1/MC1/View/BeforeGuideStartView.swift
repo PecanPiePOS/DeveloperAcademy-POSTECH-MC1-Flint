@@ -12,7 +12,7 @@ struct BeforeGuideStartView: View {
     @State var GoGuideStartview = false
     var body: some View {
         if GoGuideStartview{
-            GuideStartView()
+            GuideMainView()
         }else if BackButton{
             OrderCheckView()
         }else{
@@ -35,6 +35,7 @@ struct BeforeGuideStartView: View {
                 }.padding(.top, 700.0)
 
             }
+            .navigationBarHidden(true)
         }
     }
 }
