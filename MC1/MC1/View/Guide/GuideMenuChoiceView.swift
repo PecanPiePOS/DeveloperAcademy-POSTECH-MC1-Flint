@@ -23,8 +23,8 @@ struct GuideMenuChoiceView: View {
                 
                 HStack {
                     VStack {
-                        altImage
-                            .foregroundColor(.grayColor)
+                        Image("mcdonaldLogo")
+                            .resizable()
                             .frame(width: 50, height: 50, alignment: .center)
                         
                         VStack{

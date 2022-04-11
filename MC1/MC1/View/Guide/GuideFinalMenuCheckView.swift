@@ -32,8 +32,10 @@ struct GuideFinalMenuCheckView: View {
                     .foregroundColor(.grayColor)
                     .font(.titleFont)
                     
-                    altImage
-                        .frame(width: 100, height: 100, alignment: .center)
+                    Image(menu.name)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 300)
                         .foregroundColor(.grayColor)
                     
                     HStack{

@@ -26,28 +26,32 @@ struct GuideSideMenuChoiceView: View {
                 
                 HStack {
                     VStack{
-                        altImage
-                            .foregroundColor(.grayColor)
+                        Image("mcdonaldLogo")
+                            .resizable()
                             .frame(width: 50, height: 50, alignment: .center)
                         
                         Text(menu.name + (isLargeSet ? " 라지" : "") + " 세트")
                             .foregroundColor(.grayColor)
-                            .font(.mainFont)
+//                            .font(.mainFont)
+                            .font(.caption)
                             .padding(.vertical)
                         
                         Text("세트메뉴 사이드를 선택해주세요.")
                             .foregroundColor(.grayColor)
-                            .font(.mainFont)
+//                            .font(.mainFont)
+                            .font(.caption)
                             .padding(.vertical)
                         
                         Text("세트메뉴 음료를 선택해주세요.")
                             .foregroundColor(.grayColor)
-                            .font(.mainFont)
+//                            .font(.mainFont)
+                            .font(.caption)
                             .padding(.vertical)
                         
                         Text("주문 확인하기")
                             .foregroundColor(.grayColor)
-                            .font(.mainFont)
+//                            .font(.mainFont)
+                            .font(.caption)
                             .padding(.vertical)
                         
                         Spacer()
@@ -60,11 +64,13 @@ struct GuideSideMenuChoiceView: View {
                         HStack {
                             Text(menu.name + (isLargeSet ? " 라지" : "") + " 세트")
                                 .foregroundColor(.grayColor)
-                                .font(.mainFont)
+//                                .font(.mainFont)
+                                .font(.caption)
                             
                             Text("영양 정보")
                                 .foregroundColor(.grayColor)
-                                .font(.mainFont)
+//                                .font(.mainFont)
+                                .font(.caption)
                                 .padding()
                                 .border(Color.grayColor)
                         }
@@ -83,7 +89,8 @@ struct GuideSideMenuChoiceView: View {
                                         altImage
                                             .frame(width: 70, height: 70)
                                         Text("후렌치 후라이 - 미디엄")
-                                            .font(Font.mainFont)
+//                                            .font(Font.mainFont)
+                                            .font(.caption)
                                             .foregroundColor(Color.grayColor)
                                     }
                                     .frame(width: 100, height: 150, alignment: .center)
@@ -97,7 +104,8 @@ struct GuideSideMenuChoiceView: View {
                                         altImage
                                             .frame(width: 70, height: 70)
                                         Text("맥너겟 4조각")
-                                            .font(Font.mainFont)
+//                                            .font(Font.mainFont)
+                                            .font(.caption)
                                             .foregroundColor(Color.grayColor)
                                     }
                                     .frame(width: 100, height: 150, alignment: .center)
@@ -111,7 +119,8 @@ struct GuideSideMenuChoiceView: View {
                                         altImage
                                             .frame(width: 70, height: 70)
                                         Text("골든 모짜렐라 치즈스틱")
-                                            .font(Font.mainFont)
+//                                            .font(Font.mainFont)
+                                            .font(.caption)
                                             .foregroundColor(Color.grayColor)
                                     }
                                     .frame(width: 100, height: 150, alignment: .center)
@@ -125,7 +134,8 @@ struct GuideSideMenuChoiceView: View {
                                         altImage
                                             .frame(width: 70, height: 70)
                                         Text("후렌치 후라이 + 골든 모짜렐라 치즈스틱")
-                                            .font(Font.mainFont)
+//                                            .font(Font.mainFont)
+                                            .font(.caption)
                                             .foregroundColor(Color.grayColor)
                                     }
                                     .frame(width: 100, height: 150, alignment: .center)

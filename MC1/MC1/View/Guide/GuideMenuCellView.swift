@@ -21,10 +21,12 @@ struct GuideMenuCellView: View {
                     .resizable()
                     .scaledToFit()
                 Text(menu.name)
-                    .font(Font.mainFont)
+//                    .font(Font.mainFont)
+                    .font(.caption)
                     .foregroundColor(Color.grayColor)
                 Text("₩"+String(menu.price))
-                    .font(Font.mainFont)
+//                    .font(Font.mainFont)
+                    .font(.caption)
                     .foregroundColor(Color.grayColor)
             }
         }

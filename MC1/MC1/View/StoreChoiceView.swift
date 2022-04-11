@@ -8,137 +8,162 @@
 import SwiftUI
 
 struct StoreChoiceView: View {
-    @State var restaurant = curRestuarant
+    @State var isStartView = false
+//    @State var restaurant = curRestuarant
     var body: some View {
-        NavigationView{
-            ScrollView(.vertical, showsIndicators:false){
-                VStack(){
-                    HStack(){
-                    Text("어떤 매장의 키오스크\n안내가 필요하세요?")
-                    .font(Font.titleFont)
-                    .foregroundColor(Color.whiteColor)
-                    .multilineTextAlignment(.leading)
-                        
-                        Spacer()
-                        
-                    }
-                    HStack(){
-                    Text("가까운 매장")
-                        .font(Font.body)
-                        .foregroundColor(Color.whiteColor)
-                        .padding(.top, 72.0)
-                        Spacer()
-                    }
-                                     
+        if isStartView{
+            StartView()
+        } else {
+            NavigationView{
+                VStack {
                     HStack {
-                        
-                        NavigationLink(destination: MenuView(restaurant: $restaurant)){
-                            Image("McdonaldBox")
-                                .resizable()
-                                .frame(width:164, height: 164)
-                        }
-                        Spacer()
-                        Button(action: {}) {
-                            Image("BurgerKingBox")
-                                .resizable()
-                                .frame(width:164, height: 164)
-                        }
-
+                        VStack {
+                            Button(action: {isStartView=true}) {
+                                Image("BackButton")
                             }
-                    Spacer()
-                    
-                    HStack(){
-                    Text("은행")
-                        .font(Font.body)
-                        .foregroundColor(Color.whiteColor)
+                        }
                         Spacer()
-                        
+                        Image("ProgressBar1")
                     }
-                    .padding(.top, 72.0)
-                    
-                }
-                 
-                VStack{
-                    Spacer()
+                    .padding(.horizontal)
                     
                     HStack {
-                        
-                        Button(action: {}) {
-                            Image("농협Box")
-                                .resizable()
-                                .frame(width:164, height: 164)
-                        }
-                        Spacer()
-                        Button(action: {}) {
-                            Image("신한Box")
-                                .resizable()
-                                .frame(width:164, height: 164)
-                        }
+                        Spacer().frame(width: 100)
+                        Text("매장 선택하기")
                     }
+                    .padding(.bottom, 20)
                     
-                    HStack {
-                        
-                        Button(action: {}) {
-                            Image("IBKBox")
-                                .resizable()
-                                .frame(width:164, height: 164)
+                    ScrollView(.vertical, showsIndicators:false){
+                        VStack(){
+                            HStack(){
+                            Text("어떤 매장의 키오스크\n안내가 필요하세요?")
+                            .font(Font.titleFont)
+                            .foregroundColor(Color.whiteColor)
+                            .multilineTextAlignment(.leading)
+                                
+                                Spacer()
+                                
+                            }
+                            HStack(){
+                            Text("가까운 매장")
+                                .font(Font.body)
+                                .foregroundColor(Color.whiteColor)
+                                .padding(.top, 72.0)
+                                Spacer()
+                            }
+                                             
+                            HStack {
+                                
+                                NavigationLink(destination: MenuView()){
+                                    Image("McdonaldBox")
+                                        .resizable()
+                                        .frame(width:164, height: 164)
+                                }
+                                Spacer()
+                                Button(action: {}) {
+                                    Image("BurgerKingBox")
+                                        .resizable()
+                                        .frame(width:164, height: 164)
+                                }
+
+                                    }
+                            Spacer()
+                            
+                            HStack(){
+                            Text("은행")
+                                .font(Font.body)
+                                .foregroundColor(Color.whiteColor)
+                                Spacer()
+                                
+                            }
+                            .padding(.top, 72.0)
+                            
                         }
-                        Spacer()
-                        Button(action: {}) {
-                            Image("KBBox")
-                                .resizable()
-                                .frame(width:164, height: 164)
+                         
+                        VStack{
+                            Spacer()
+                            
+                            HStack {
+                                
+                                Button(action: {}) {
+                                    Image("농협Box")
+                                        .resizable()
+                                        .frame(width:164, height: 164)
+                                }
+                                Spacer()
+                                Button(action: {}) {
+                                    Image("신한Box")
+                                        .resizable()
+                                        .frame(width:164, height: 164)
+                                }
+                            }
+                            
+                            HStack {
+                                
+                                Button(action: {}) {
+                                    Image("IBKBox")
+                                        .resizable()
+                                        .frame(width:164, height: 164)
+                                }
+                                Spacer()
+                                Button(action: {}) {
+                                    Image("KBBox")
+                                        .resizable()
+                                        .frame(width:164, height: 164)
+                                }
+                            }
+                            
+                            Spacer()
+                            
+                            HStack(){
+                            Text("교통")
+                                .font(Font.body)
+                                .foregroundColor(Color.whiteColor)
+                                Spacer()
+                            }
+                            .padding(.top, 72.0)
+                            
+                            HStack{
+                                Button(action: {}) {
+                                    Image("KTXBox")
+                                        .resizable()
+                                        .frame(width:164, height: 164)
+                                }
+                                Spacer()
+                                Button(action: {}) {
+                                    Image("BustagoBox")
+                                        .resizable()
+                                        .frame(width:164, height: 164)
+                                }
+                                
+                            }
+                            HStack(){
+                            Text("음식점")
+                                .font(Font.body)
+                                .foregroundColor(Color.whiteColor)
+                                Spacer()
+                            }
+                            .padding(.top, 72.0)
+                            
+                            HStack{
+                                Button(action: {}) {
+                                    Image("McdonaldBox")
+                                        .resizable()
+                                        .frame(width:164, height: 164)
+                                }
+                                Spacer()
+                                Button(action: {}) {
+                                    Image("BurgerKingBox")
+                                        .resizable()
+                                        .frame(width:164, height: 164)
+                                }
+                            }
                         }
                     }
-                    
-                    Spacer()
-                    
-                    HStack(){
-                    Text("교통")
-                        .font(Font.body)
-                        .foregroundColor(Color.whiteColor)
-                        Spacer()
-                    }
-                    .padding(.top, 72.0)
-                    
-                    HStack{
-                        Button(action: {}) {
-                            Image("KTXBox")
-                                .resizable()
-                                .frame(width:164, height: 164)
-                        }
-                        Spacer()
-                        Button(action: {}) {
-                            Image("BustagoBox")
-                                .resizable()
-                                .frame(width:164, height: 164)
-                        }
-                        
-                    }
-                    HStack(){
-                    Text("음식점")
-                        .font(Font.body)
-                        .foregroundColor(Color.whiteColor)
-                        Spacer()
-                    }
-                    .padding(.top, 72.0)
-                    
-                    HStack{
-                        Button(action: {}) {
-                            Image("McdonaldBox")
-                                .resizable()
-                                .frame(width:164, height: 164)
-                        }
-                        Spacer()
-                        Button(action: {}) {
-                            Image("BurgerKingBox")
-                                .resizable()
-                                .frame(width:164, height: 164)
-                        }
-                    }
+                    .frame(width: 344.0)
+                .navigationBarHidden(true)
                 }
             }
-            .frame(width: 344.0)
         }
     }
 }

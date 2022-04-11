@@ -22,8 +22,9 @@ struct GuideSetChoiceView: View {
                 
                 VStack {
                     HStack {
-                        altImage
-                            .foregroundColor(.grayColor)
+                        Image("mcdonaldLogo")
+                            .resizable()
+                            .frame(width: 50, height: 50, alignment: .center)
                         Text(menu.name)
                             .foregroundColor(.grayColor)
                             .font(.mainFont)

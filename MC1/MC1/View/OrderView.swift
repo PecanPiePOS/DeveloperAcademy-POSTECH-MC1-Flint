@@ -29,7 +29,7 @@ struct OrderView: View {
                     Spacer()
                     Text(smenu.menu.name).font(.system(size: 30, weight: .black)).foregroundColor(Color.grayColor).frame(minWidth: 164, alignment: .leading)
                     Spacer()
-                    Text(setIfSet(sm:smenu)+"\(smenu.quantity)개 \(smenu.menu.price)원").font(Font.mainFont).foregroundColor(Color.grayColor).multilineTextAlignment(.leading).frame(minWidth: 164, alignment: .leading)
+                    Text(setIfSet(sm:smenu)+"\(smenu.quantity)개 \(smenu.isSet ?  smenu.quantity * smenu.menu.setPrice : smenu.quantity * smenu.menu.price)원").font(Font.mainFont).foregroundColor(Color.grayColor).multilineTextAlignment(.leading).frame(minWidth: 164, alignment: .leading)
                 }.frame(minWidth: 150, idealWidth: 150, maxWidth: 164, minHeight: 25, idealHeight: 27, maxHeight: 30, alignment: .leading)
                 Spacer()
                 Button(action: {alertDel = true}, label: {

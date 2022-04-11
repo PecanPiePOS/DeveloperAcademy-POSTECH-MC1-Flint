@@ -22,20 +22,32 @@ struct GuideStartView: View {
                         .foregroundColor(.grayColor)
                         .frame(width: 300, height: 400, alignment: .center)
                         .border(.black)
+                        .background(Color.primaryColor)
                     
                     Spacer()
                     
                     HStack{
-                        altImage
-                            .foregroundColor(.grayColor)
-                            .frame(width: 150, height: 250, alignment: .center)
-                            .border(.black)
+//                        altImage
+//                            .foregroundColor(.grayColor)
+//                            .frame(width: 150, height: 250, alignment: .center)
+//                            .border(.black)
+                        
+                        VStack{
+                            Text("QR코드를 스캔하세요")
+                            Image(systemName: "qrcode")
+                                .resizable()
+                                .frame(width: 100, height: 100, alignment: .center)
+                            Image(systemName: "")
+                        }
+                        .frame(width: 150, height: 150, alignment: .center)
+                        .foregroundColor(.grayColor)
+                        .background(Color.primaryColor)
                         
                         VStack {
                             Button(action: {isGuideTakeOutChoiceView=true}) {
                                 ZStack {
                                     Rectangle()
-                                        .frame(width: 200, height: 150, alignment: .center)
+                                        .frame(width: 200, height: 100, alignment: .center)
                                         .foregroundColor(.white)
                                         .border(Color.grayColor)
                                     
@@ -49,13 +61,13 @@ struct GuideStartView: View {
                                 Text("언어")
                                     .foregroundColor(.grayColor)
                                     .font(.mainFont)
-                                    .frame(width: 95, height: 90)
+                                    .frame(width: 95, height: 50)
                                     .border(Color.grayColor)
                                 
                                 Text("도움 기능")
                                     .foregroundColor(.grayColor)
                                     .font(.mainFont)
-                                    .frame(width: 95, height: 90)
+                                    .frame(width: 95, height: 50)
                                     .border(Color.grayColor)
                             }
                         }
