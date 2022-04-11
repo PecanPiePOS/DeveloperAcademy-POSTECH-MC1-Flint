@@ -41,22 +41,30 @@ struct GuideSetChoiceView: View {
                             isGuideMenuCheckView=true
                             isSetMenu=true
                         }) {
-                            Text("세트 선택")
-                                .foregroundColor(.grayColor)
-                                .font(.mainFont)
-                                .frame(width: 150, height: 200, alignment: .center)
-                                .border(Color.grayColor)
+                            ZStack {
+                                selectedMenuList[iteration].isSet ? Color.primaryColor : Color.whiteColor
+                                
+                                Text("세트 선택")
+                                    .foregroundColor(.grayColor)
+                                    .font(.mainFont)
+                            }
+                            .frame(width: 150, height: 200, alignment: .center)
+                            .border(Color.grayColor)
                         }
                         
                         Button(action: {
                             isGuideMenuCheckView=true
                             isSetMenu=false
                         }) {
-                            Text("단품 선택")
-                                .foregroundColor(.grayColor)
-                                .font(.mainFont)
-                                .frame(width: 150, height: 200, alignment: .center)
-                                .border(Color.grayColor)
+                            ZStack {
+                                selectedMenuList[iteration].isSet ? Color.whiteColor : Color.primaryColor
+                                
+                                Text("단품 선택")
+                                    .foregroundColor(.grayColor)
+                                    .font(.mainFont)
+                            }
+                            .frame(width: 150, height: 200, alignment: .center)
+                            .border(Color.grayColor)
                         }
                     }
                     
@@ -74,10 +82,10 @@ struct GuideSetChoiceView: View {
         }
     }
 }
-
-struct GuideSetChoiceView_Previews: PreviewProvider {
-    @State static var menu = Menu(name: "더블 불고기 버거", tag: [], price: 5000, setPrice: 6000)
-    static var previews: some View {
-        GuideSetChoiceView(menu: $menu)
-    }
-}
+//
+//struct GuideSetChoiceView_Previews: PreviewProvider {
+//    @State static var menu = Menu(name: "더블 불고기 버거", tag: [], price: 5000, setPrice: 6000)
+//    static var previews: some View {
+//        GuideSetChoiceView(menu: $menu)
+//    }
+//}

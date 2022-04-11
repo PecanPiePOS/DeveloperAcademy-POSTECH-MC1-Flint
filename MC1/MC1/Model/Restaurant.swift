@@ -73,12 +73,14 @@ let mcdonaldMenu: [Menu] = [
 ]
 
 let mcdonaldDrink: [String] = [
-    "코카 콜라-미디엄", "스프라이트-미디엄", "환타-미디엄", "코카 콜라 제로-미디엄", "딸기 칠러-미디엄", "자두 칠러-미디엄", "아이스 드립 커피-미디엄", "아이스 아메리카노-미디엄", "아이스 카페라떼-미디엄", "아이스 바닐라 라떼-미디엄", "드립 커피-미디엄", "아메리카노-미디엄",
+    "코카 콜라", "스프라이트", "환타", "코카 콜라 제로", "딸기 칠러", "자두 칠러", "아이스 드립 커피", "아이스 아메리카노", "아이스 카페라떼", "아이스 바닐라 라떼", "드립 커피", "아메리카노",
 ]
 
 var guideShoppingList: [GuideSelectedMenu] = []
 
 let largeSetPrice = 600
+
+var iteration = 0
 
 //let burgerkingMenu: [Menu] = [
 //    Menu(name: "와퍼", tag: ["소고기"], price: 8000)

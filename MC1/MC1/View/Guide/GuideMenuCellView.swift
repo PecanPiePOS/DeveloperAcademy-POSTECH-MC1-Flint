@@ -13,7 +13,7 @@ struct GuideMenuCellView: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 15)
-                .foregroundColor(Color.whiteColor)
+                .foregroundColor((menu.name == selectedMenuList[iteration].menu.name) ? .primaryColor : .whiteColor)
                 .border(Color.grayColor)
             
             VStack{
@@ -35,9 +35,9 @@ struct GuideMenuCellView: View {
     }
 }
 
-struct GuideMenuCellView_Previews: PreviewProvider {
-    @State static var menu = Menu(name: "더블 불고기 버거", tag: [], price: 5000, setPrice: 6000)
-    static var previews: some View {
-        GuideMenuCellView(menu: $menu)
-    }
-}
+//struct GuideMenuCellView_Previews: PreviewProvider {
+//    @State static var menu = Menu(name: "더블 불고기 버거", tag: [], price: 5000, setPrice: 6000)
+//    static var previews: some View {
+//        GuideMenuCellView(menu: $menu)
+//    }
+//}

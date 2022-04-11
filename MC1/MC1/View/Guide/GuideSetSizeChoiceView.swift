@@ -47,20 +47,26 @@ struct GuideSetSizeChoiceView: View {
                                     isLargeSet=false
                                     isGuideSideMenuChoiceView=true
                                 }) {
-                                    VStack{
-                                        Image(menu.name)
-                                            .resizable()
-                                            .scaledToFit()
-                                        Text(menu.name+" 세트")
-//                                            .font(Font.mainFont)
-                                            .font(.caption)
-                                            .foregroundColor(Color.grayColor)
-                                        Text("₩"+String(menu.setPrice))
-//                                            .font(Font.mainFont)
-                                            .font(.caption)
-                                            .foregroundColor(Color.grayColor)
+                                    ZStack {
+                                        Color.primaryColor
+                                        VStack{
+                                            Image(menu.name)
+                                                .resizable()
+                                                .scaledToFit()
+                                            Text(menu.name+" 세트")
+    //                                            .font(Font.mainFont)
+                                                .font(.caption)
+                                                .foregroundColor(Color.grayColor)
+                                            Text("₩"+String(menu.setPrice))
+    //                                            .font(Font.mainFont)
+                                                .font(.caption)
+                                                .foregroundColor(Color.grayColor)
+                                        }
+                                        
                                     }
-                                    .frame(width: 100, height: 150, alignment: .center)
+                                    .frame(height: 150)
+                                    .border(Color.grayColor)
+//                                    .frame(width: 100, height: 150, alignment: .center)
                                 }
                                 
                                 Button(action: {
@@ -80,7 +86,8 @@ struct GuideSetSizeChoiceView: View {
                                             .font(.caption)
                                             .foregroundColor(Color.grayColor)
                                     }
-                                    .frame(width: 100, height: 150, alignment: .center)
+                                    .frame(height: 150)
+                                    .border(Color.grayColor)
                                 }
                             }
                         }

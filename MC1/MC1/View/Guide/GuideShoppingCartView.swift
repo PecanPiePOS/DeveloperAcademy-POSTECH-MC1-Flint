@@ -31,42 +31,59 @@ struct GuideShoppingCartView: View {
                                 HStack{
                                     Button(action: {}) {
                                         Text("취소")
+                                            .font(.system(size: 7))
                                             .foregroundColor(.grayColor)
-                                            .frame(width: 30, height: 30, alignment: .center)
+                                            .frame(width: 30, height: 20, alignment: .center)
                                             .border(Color.grayColor)
                                     }
                                     
-                                    altImage
-                                        .frame(width: 30, height: 30, alignment: .center)
+                                    Image(menu.menu.name)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 30)
+                                    
+                                    Spacer()
                                     
                                     VStack(alignment: .leading){
                                         Text(menu.menu.name + (menu.isLargeSet ? " 라지 " : " ") + (menu.isSetMenu ? "세트" : ""))
-                                            .font(.mainFont)
+//                                            .font(.mainFont)
+                                            .font(.system(size: 7))
                                         if menu.isSetMenu{
                                             Text(menu.drink + ", " + menu.sideMenu)
+                                                .font(.system(size: 7))
                                         }
                                         Text("세부정보표기")
-                                            .padding()
+                                            .font(.system(size: 7))
+//                                            .padding()
                                             .border(Color.grayColor)
                                     }
                                     .foregroundColor(.grayColor)
                                     
+                                    Spacer()
+                                    
                                     Button(action: {}) {
                                         Text("-")
-                                            .padding()
+                                            .font(.system(size: 7))
+                                            .frame(width: 20, height: 20, alignment: .center)
+//                                            .padding()
                                             .border(Color.grayColor)
                                     }
                                     Text(String(menu.quantity))
+                                        .font(.system(size: 7))
                                         .foregroundColor(.grayColor)
-                                        .padding()
+                                        .frame(width: 50, height: 20, alignment: .center)
+//                                        .padding()
                                         .border(Color.grayColor)
                                     Button(action: {}) {
                                         Text("+")
-                                            .padding()
+                                            .font(.system(size: 7))
+                                            .frame(width: 20, height: 20, alignment: .center)
+//                                            .padding()
                                             .border(Color.grayColor)
                                     }
                                     
                                     Text("₩"+String((menu.menu.setPrice+(menu.isLargeSet ? 600 : 0))*menu.quantity))
+                                        .font(.system(size: 7))
                                         .foregroundColor(.grayColor)
                                         .font(.mainFont)
                                 }
@@ -77,25 +94,29 @@ struct GuideShoppingCartView: View {
                     }
                     
                     HStack {
-                        Button(action: {isGuideMenuChoiceView=true}) {
-                            Text("추가 주문")
-                                .foregroundColor(.grayColor)
-                                .padding()
-                                .frame(width: 100, height: 50, alignment: .center)
-                                .border(Color.grayColor)
+                        Button(action: {
+                            isGuideMenuChoiceView=true
+                            iteration+=1
+                        }) {
+                            ZStack {
+                                Rectangle()
+                                    .foregroundColor(iteration<selectedMenuList.count-1 ? Color.primaryColor : Color.whiteColor)
+                                    .frame(width: 100, height: 50, alignment: .center)
+                                    .border(Color.grayColor)
+                                Text("추가 주문")
+                                    .foregroundColor(.grayColor)
+                            }
                         }
                         
                         Button(action: {isGuidePayMethodChoiceView=true}) {
                             ZStack {
                                 Rectangle()
+                                    .foregroundColor(iteration<selectedMenuList.count-1 ? Color.whiteColor : Color.primaryColor)
                                     .frame(width: 200, height: 50, alignment: .center)
-                                    .foregroundColor(.primaryColor)
-                                
+                                    .border(Color.grayColor)
                                 Text("주문 완료")
                                     .foregroundColor(.grayColor)
-                                    .padding()
                             }
-                                
                         }
                     }
                 }

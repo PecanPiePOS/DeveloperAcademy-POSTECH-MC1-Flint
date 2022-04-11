@@ -16,6 +16,7 @@ struct GuideTakeOutChoiceView: View {
         } else {
             ZStack{
                 Color.whiteColor
+                    .ignoresSafeArea()
                 
                 VStack {
                     Spacer()

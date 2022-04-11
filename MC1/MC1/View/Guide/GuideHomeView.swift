@@ -38,8 +38,15 @@ struct GuideHomeView: View {
                                 .padding(.bottom)
                             
                             Button(action: {isGuideMenuChoiceView=true}) {
-                                Text("버거")
-                                    .padding(.bottom)
+                                ZStack {
+                                    Rectangle()
+                                        .frame(width: 100, height: 30, alignment: .center)
+                                        .foregroundColor(.primaryColor)
+                                        .border(Color.grayColor)
+                                    Text("버거")
+                                        
+                                }
+                                .padding(.bottom)
                             }
                             
                             Text("해피스낵")
