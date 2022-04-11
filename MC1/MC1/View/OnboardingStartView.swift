@@ -228,6 +228,7 @@ struct secondSheetView: View {
                                 .frame(width: 240, height: 40, alignment: .leading)
                                 .padding(.leading, 10)
                                 .padding(.trailing, 10)
+                                .padding(.top, -7)
                         }
                         
                     }
@@ -249,86 +250,5 @@ struct secondSheetView: View {
             }
         }
         .ignoresSafeArea()
-//        ZStack{
-//            Color.primaryColor.ignoresSafeArea()
-//            Spacer()
-//            VStack(spacing:10){
-//                Text("더 편리한 사용을 위해 권한을 허용해주세요.")
-//                    .font(.titleFont)
-//                    .fontWeight(.black)
-//                    .frame(width: .infinity, alignment: .leading)
-//                    .foregroundColor(.black)
-//                    .padding()
-//
-//                HStack(spacing: 10){
-//                    Image(systemName: "bell.badge")
-//                        .resizable()
-//                        .scaledToFit()
-//                        .symbolRenderingMode(.palette)
-//                        .foregroundStyle(.red, .black)
-//                        .foregroundColor(.black)
-//                        .frame(width: 40, height: 40, alignment: .center)
-//                        .padding(.leading, 20)
-//                        .padding(.bottom, 10)
-//
-//                    VStack(spacing: 0){
-//                        Text("알림")
-//                            .font(.system(size: 22, weight: .black))
-//                            .foregroundColor(.black)
-//                            .frame(width: 60, height: 40, alignment: .leading)
-//                            .padding(.trailing, 180)
-//
-//                        Text("앱을 사용 중이 아닐 때에도, 도움을 드릴 수 있도록 알림을 드려요.")
-//                            .font(.system(size: 13, weight: .light))
-//                            .foregroundColor(.black)
-//                            .frame(width: 240, height: 60, alignment: .leading)
-//                            .padding(.leading, 10)
-//                            .padding(.trailing, 10)
-//                    }
-//
-//                }
-//                .padding()
-//
-//                HStack(spacing: 10){
-//                    Image(systemName: "paperplane.circle.fill")
-//                        .resizable()
-//                        .scaledToFit()
-//                        .foregroundColor(.black)
-//                        .frame(width: 40, height: 40, alignment: .center)
-//                        .padding(.leading, 20)
-//                        .padding(.bottom, 10)
-//
-//                    VStack(spacing: 8){
-//                        Text("현재 위치 정보")
-//                            .font(.system(size: 22, weight: .black))
-//                            .foregroundColor(.black)
-//                            .frame(width: 140, height: 40, alignment: .leading)
-//                            .padding(.trailing, 100)
-//
-//                        Text("검색 과정을 간소화 하기 위해 위치 정보를 활용해 주변의 키오스크 안내를 도와드려요.")
-//                            .font(.system(size: 13, weight: .light))
-//                            .foregroundColor(.black)
-//                            .frame(width: 240, height: 60, alignment: .leading)
-//                            .padding(.leading, 10)
-//                            .padding(.trailing, 10)
-//                    }
-//
-//                }
-////                .padding(.bottom, 60)
-//
-//                Capsule()
-//                    .fill(.black)
-//                    .frame(width: .infinity, height: 80, alignment: .center)
-//                    .overlay(Text("시작하기").font(.system(size: 26, weight: .bold)).foregroundColor(.white))
-//                    .padding(.top, 30)
-//                    .padding()
-//                //                        .halfSheet(showSheet: $showEndView) {
-//                //                            secondSheetView()
-//
-//
-//            }
-//
-//        }
-
     }
 }

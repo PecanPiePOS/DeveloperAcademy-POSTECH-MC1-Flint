@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5869F1662803D3CB003D093B /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5869F1652803D3CB003D093B /* LocationManager.swift */; };
 		58D8B79727FFC87900334164 /* OnboardingStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D8B79627FFC87900334164 /* OnboardingStartView.swift */; };
 		58D8B79927FFC88B00334164 /* OnboardingEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D8B79827FFC88B00334164 /* OnboardingEndView.swift */; };
 		C04157E62803AEE700E455D9 /* HelpPageVIewReal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04157E52803AEE700E455D9 /* HelpPageVIewReal.swift */; };
@@ -65,6 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5869F1652803D3CB003D093B /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		58D8B79627FFC87900334164 /* OnboardingStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStartView.swift; sourceTree = "<group>"; };
 		58D8B79827FFC88B00334164 /* OnboardingEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingEndView.swift; sourceTree = "<group>"; };
 		C04157E52803AEE700E455D9 /* HelpPageVIewReal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpPageVIewReal.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				DADFAA1227FE7C24006F613A /* Restaurant.swift */,
 				DAABEC6527FE95BB00912015 /* Bank.swift */,
 				DAABEC6727FE95C800912015 /* Traffic.swift */,
+				5869F1652803D3CB003D093B /* LocationManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				DAABEC6C27FF19C400912015 /* MenuSetChoiceView.swift in Sources */,
 				DADFAA0E27FE7C18006F613A /* MenuCheckView.swift in Sources */,
 				DA3E41C92802652C00E979EB /* GuidePayMethodChoiceView.swift in Sources */,
+				5869F1662803D3CB003D093B /* LocationManager.swift in Sources */,
 				C04157E62803AEE700E455D9 /* HelpPageVIewReal.swift in Sources */,
 				DA3E41C1280264CF00E979EB /* GuideDrinkChoiceView.swift in Sources */,
 				DAABEC6227FE958B00912015 /* StoreChoiceView.swift in Sources */,
