@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct OnboardingStartView: View {
-
+    
+    
     @State private var buttonNumbers = 0
     @State private var showEndView = false
-
+    
     var body: some View {
 //        if showEndView {
 //            OnboardingEndView()
@@ -28,7 +29,8 @@ struct OnboardingStartView: View {
                 }
             }
             .frame(width: .infinity, height: 130, alignment: .center)
-            .padding(.top, 140)
+            .padding(.top, 100)
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
 
             //MARK: Buttons and Images transitions
             ZStack {
@@ -55,12 +57,13 @@ struct OnboardingStartView: View {
                                 Image(i.image)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: .infinity, alignment: .center)
-                                    .padding(.bottom, 40)
+                                    .frame(height: UIScreen.main.bounds.height , alignment: .center)
+                                    .padding(.bottom, 20)
                             }
                         }
                     }
                     .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+                    .padding()
 
                     Button {
                         if buttonNumbers < 3 {
@@ -78,28 +81,34 @@ struct OnboardingStartView: View {
                     .frame(width: 40, height: 40, alignment: .trailing)
                     .padding(.trailing, 20)
                 }
+                .padding(.bottom, -20)
             }
-            .padding(.top)
+            .padding(.top, -30)
             .frame(width: .infinity, height: 200, alignment: .center)
 
+            Spacer().frame(height: 20)
+            
             //MARK: Bottom Text
             TabView(selection: $buttonNumbers){
                 ForEach(onboardingDatas){ i in
                     ZStack {
                         Text(i.bottomText)
                             .multilineTextAlignment(.leading)
-                            .font(.system(size: 17, weight: .light))
+                            .lineLimit(6)
+                            .frame(height: 60, alignment: .leading)
+                            .padding(.bottom, -10)
+                            .font(.system(size: 16, weight: .light))
                             .foregroundColor(.white)
                             .opacity(0.7)
-                            .frame(height: 140, alignment: .leading)
-                            .padding(.top, 40)
-                            .padding()
+                            .padding(20)
                     }
                 }
             }
-            .padding(.top)
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+            .padding(.top, -50)
 
             //MARK: Half Sheet Action Button
+            
             Button {
                 if buttonNumbers == 3 {
                     showEndView.toggle()
@@ -112,20 +121,21 @@ struct OnboardingStartView: View {
                         .opacity(0.3)
                         .overlay(Text("시작하기").font(.system(size: 26, weight: .medium)).foregroundColor(.white).opacity(0.4))
                         .padding(.top, 30)
-                        .padding()
+                        .padding(5)
                 } else {
                     Capsule()
                         .fill(Color.primaryColor)
                         .frame(width: .infinity, height: 90, alignment: .center)
                         .overlay(Text("시작하기").font(.system(size: 26, weight: .bold)).foregroundColor(.black))
                         .padding(.top, 30)
-                        .padding()
+                        .padding(5)
                         .halfSheet(showSheet: $showEndView) {
                             secondSheetView()
                         }
                 }
             }
             .padding(.bottom, 30)
+            .padding()
         }
 //        }
     }
@@ -147,7 +157,7 @@ struct Guides: Identifiable,Hashable {
 let onboardingDatas = [
     Guides(id: 0, topText: "키오스크 앞에서\n 난처했던 적이 있나요?", bottomText: "60대 이상의 어르신들의 79%가 키오스크 사용에 어려움을 겪은 적이 있다고 해요.",image: "onboarding1"),
     Guides(id: 1, topText: "ATM을 사용하기\n 어려웠던 적이 있나요?", bottomText: "무인 정보 단말기를 활용한 서비스는 앞으로 늘어나고 오프라인 대면 형식의 거래는 줄어들고 있는 추세에요.",image: "onboarding2"),
-    Guides(id: 2, topText: "내 주변 키오스크를\n 자동으로 쉽게 확인하고", bottomText: "'시니어 앱'은 디지털 기기에 익숙하지 않은 어르신들도 쉽게 접근할 수 있도록 위치 정보를 활용하여 자동으로 주변의 키오스크를 알려줄 거예요.",image: "onboarding3"),
+    Guides(id: 2, topText: "내 주변 키오스크를\n 자동으로 쉽게 확인하고", bottomText: "위치 정보를 활용하여 자동으로 주변의 키오스크를 알려줄 거예요.",image: "onboarding3"),
     Guides(id: 3, topText: "가이드를 통해 키오스크\n 사용 방법을 익혀보세요!", bottomText: "'시니어 앱'을 통해 키오스크로 겪는 어려움을 해결할 수 있습니다.",image: "onboarding4")
 ]
 
@@ -160,16 +170,17 @@ struct OnboardingStartView_Previews: PreviewProvider {
 }
 
 struct secondSheetView: View {
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         VStack{
-            Spacer()
+            Spacer().frame(height: 40)
             ZStack{
                 Color.primaryColor.ignoresSafeArea()
                 Spacer()
                 VStack(spacing:10){
                     Text("더 편리한 사용을 위해 권한을 허용해주세요.")
                         .font(.system(size: 30, weight: .black))
-                        .frame(width: .infinity, height: 100, alignment: .center)
+                        .frame(width: 300, height: 100, alignment: .center)
                         .lineLimit(3)
                         .foregroundColor(.black)
                         .padding(30)
@@ -233,14 +244,36 @@ struct secondSheetView: View {
                         
                     }
                     .padding(.top, -30)
-                    .padding(.bottom, 20)
+//                    .padding(.bottom, 20)
                     
-                    Capsule()
-                        .fill(.black)
-                        .frame(width: 330, height: 80, alignment: .center)
-                        .overlay(Text("시작하기").font(.system(size: 26, weight: .bold)).foregroundColor(.white))
-                        .padding(.top, 0)
-                        .padding()
+                    Button {
+                        presentationMode.wrappedValue.dismiss()
+                        LocationManager.shared.requestLocation()
+                        
+                    } label: {
+                        Text("시작하기")
+                            .font(.system(size: 26, weight: .heavy))
+                            .foregroundColor(.white)
+                            .padding()
+                    }
+                    .frame(width: UIScreen.main.bounds.width)
+                    .padding(.horizontal, -32)
+                    .background(Color.black)
+                    .clipShape(Capsule())
+                    .padding()
+                    
+                    Spacer().frame(height: 60)
+                    
+                    
+//                    Capsule()
+//                        .fill(.black)
+//                        .frame(width: 330, height: 80, alignment: .center)
+//                        .overlay(Text("시작하기").font(.system(size: 26, weight: .bold)).foregroundColor(.white))
+//                        .padding(.top, 0)
+//                        .padding()
+//                        .onTapGesture {
+//                            LocationManager.shared.requestLocation()
+//                        }
                     //                        .halfSheet(showSheet: $showEndView) {
                     //                            secondSheetView()
                     

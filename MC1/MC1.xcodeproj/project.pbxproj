@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5869F1662803D3CB003D093B /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5869F1652803D3CB003D093B /* LocationManager.swift */; };
+		5869F168280402AD003D093B /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5869F167280402AD003D093B /* FirstView.swift */; };
 		58D8B79727FFC87900334164 /* OnboardingStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D8B79627FFC87900334164 /* OnboardingStartView.swift */; };
 		58D8B79927FFC88B00334164 /* OnboardingEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D8B79827FFC88B00334164 /* OnboardingEndView.swift */; };
 		C04157E62803AEE700E455D9 /* HelpPageVIewReal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04157E52803AEE700E455D9 /* HelpPageVIewReal.swift */; };
@@ -68,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		5869F1652803D3CB003D093B /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		5869F167280402AD003D093B /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
 		58D8B79627FFC87900334164 /* OnboardingStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStartView.swift; sourceTree = "<group>"; };
 		58D8B79827FFC88B00334164 /* OnboardingEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingEndView.swift; sourceTree = "<group>"; };
 		C04157E52803AEE700E455D9 /* HelpPageVIewReal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpPageVIewReal.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				C0C5ED2D2802D79100956BC5 /* BeforeGuideStartView.swift */,
 				58D8B79627FFC87900334164 /* OnboardingStartView.swift */,
 				58D8B79827FFC88B00334164 /* OnboardingEndView.swift */,
+				5869F167280402AD003D093B /* FirstView.swift */,
 				DA3E41AD2802642500E979EB /* Guide */,
 			);
 			path = View;
@@ -403,6 +406,7 @@
 				5869F1662803D3CB003D093B /* LocationManager.swift in Sources */,
 				C04157E62803AEE700E455D9 /* HelpPageVIewReal.swift in Sources */,
 				DA3E41C1280264CF00E979EB /* GuideDrinkChoiceView.swift in Sources */,
+				5869F168280402AD003D093B /* FirstView.swift in Sources */,
 				DAABEC6227FE958B00912015 /* StoreChoiceView.swift in Sources */,
 				DADFAA0D27FE7C18006F613A /* MenuCellView.swift in Sources */,
 				C564D28227FF1B01000603BB /* OrderView.swift in Sources */,
@@ -579,11 +583,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MC1/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "앱을 사용하는 동안 주변 위치를 활용하기 위해 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -609,11 +615,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MC1/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "앱을 사용하는 동안 주변 위치를 활용하기 위해 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

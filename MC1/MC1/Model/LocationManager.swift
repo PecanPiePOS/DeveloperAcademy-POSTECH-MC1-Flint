@@ -20,6 +20,11 @@ class LocationManager: NSObject, ObservableObject {
 
     }
 
+    
+    func requestLocation() {
+        manager.requestWhenInUseAuthorization()
+    }
+    
 }
 
 extension LocationManager: CLLocationManagerDelegate {
@@ -44,7 +49,8 @@ extension LocationManager: CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        <#code#>
+        guard let location = locations.last else { return }
+        self.userLocation = location
     }
 }
 
