@@ -14,7 +14,8 @@ let testSMList: [SelectedMenu] = [
 ]
 
 struct OrderCheckView: View {
-    @State var smList = testSMList
+    @State var smList = selectedMenuList
+//    @State var smList = testSMList
     @State var action: Int?
 //test data
     @State var restaurantType: Restaurant = restaurantList[0]
@@ -22,9 +23,45 @@ struct OrderCheckView: View {
     var body: some View {
         NavigationView{
             VStack(alignment: .leading){
+                HStack {
+                    VStack {/*
+                        Button(action: {
+                            self.action=
+                        }, label:{
+                            ZStack{
+                                NavigationLink("BakcButton", destination: pop, tag:1, selection: $action).hidden().disabled(true)
+                                Image("WhiteButton")
+                                    .resizable().frame(width: 164).aspectRatio(contentMode: .fit)
+                                Text("더 주문하기").font(Font.mainFont).foregroundColor(Color.grayColor)
+
+                            }*/
+/*                        Button(action: {
+                            self.action = 0
+                            NavigationLink(destination: <#T##() -> _#>, label: <#T##() -> _#>)
+                        }) {
+                            Image("BackButton")
+                        }*/
+                    }
+                    Spacer()
+                    Image("ProgressBar2")
+                }
+                .padding(.horizontal)
+                
+                HStack {
+                    Spacer()
+                    Spacer()
+                    Spacer()
+                    Spacer()
+                    Spacer()
+                    Spacer()
+                    Text("메뉴 선택하기")
+                    Spacer()
+                }
+                
                 HStack{
                     Text("주문하신 \n내용이 맞나요?").font(Font.titleFont).foregroundColor(Color.whiteColor).padding(.leading, 20.0)
                 }
+                Spacer()
                 // OrderView list
                 List(){
                     ForEach($smList){sm in
@@ -60,7 +97,7 @@ struct OrderCheckView: View {
                     Spacer()
                 }.padding(.horizontal)
             }
-        }
+        }.navigationBarHidden(true)
         
     }
 }
@@ -68,8 +105,8 @@ struct OrderCheckView: View {
 func totalPrice(smList: [SelectedMenu])->Int{
     var price: Int = 0
     for i in smList{
-        if i.isSet {price += i.menu.setPrice}
-        else {price += i.menu.price}
+        if i.isSet {price += i.quantity * i.menu.setPrice}
+        else {price += i.quantity * i.menu.price}
     }
     return price
 }
