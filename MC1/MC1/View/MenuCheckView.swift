@@ -10,20 +10,24 @@ import SwiftUI
 /// 동작 확인용 코드
 struct MenuCheckView: View {
     @Environment(\.presentationMode) var presentation
-    @Binding var isShoppingListView: Bool
+    @State var isMenuView = false
     
     var body: some View {
-        VStack{
-            List{
-                ForEach(selectedMenuList){ menu in
-                    Text(menu.menu.name + (menu.isSet ? " 세트 " : " 단품 ") + String(menu.quantity) + "개")
+        if isMenuView{
+            MenuView()
+        } else {
+            VStack{
+                List{
+                    ForEach(selectedMenuList){ menu in
+                        Text(menu.menu.name + (menu.isSet ? " 세트 " : " 단품 ") + String(menu.quantity) + "개")
+                    }
                 }
-            }
-            
-            Button(action: {
-                isShoppingListView.toggle()
-            }) {
-                Text("주문 페이지로 돌아가기")
+                
+                Button(action: {
+                    isMenuView.toggle()
+                }) {
+                    Text("주문 페이지로 돌아가기")
+                }
             }
         }
         
@@ -98,6 +102,6 @@ struct MenuDetailView_Previews: PreviewProvider {
     @State static var menu: Menu = Menu(name: "name", tag: ["tag"], price: 1000, setPrice: 600)
     
     static var previews: some View {
-        MenuCheckView(isShoppingListView: .constant(true))
+        MenuCheckView()
     }
 }
