@@ -41,14 +41,13 @@ struct GuideStartView: View {
                         }
                         .frame(width: 150, height: 150, alignment: .center)
                         .foregroundColor(.grayColor)
-                        .background(Color.primaryColor)
                         
                         VStack {
                             Button(action: {isGuideTakeOutChoiceView=true}) {
                                 ZStack {
                                     Rectangle()
                                         .frame(width: 200, height: 100, alignment: .center)
-                                        .foregroundColor(.white)
+                                        .foregroundColor(.primaryColor)
                                         .border(Color.grayColor)
                                     
                                     Text("주문하기")

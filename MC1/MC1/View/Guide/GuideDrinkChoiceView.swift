@@ -87,8 +87,8 @@ struct GuideDrinkChoiceView: View {
                                         isGuideShoppingCartView=true
                                     }) {
                                         VStack{
-                                            altImage
-                                                .foregroundColor(.grayColor)
+                                            Image(d)
+                                                .resizable()
                                                 .frame(width: 70, height: 70)
                                             Text(d)
 //                                                .font(Font.mainFont)

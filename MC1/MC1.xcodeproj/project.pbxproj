@@ -34,6 +34,7 @@
 		DA3E41C72802650100E979EB /* GuidePayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3E41C62802650100E979EB /* GuidePayView.swift */; };
 		DA3E41C92802652C00E979EB /* GuidePayMethodChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3E41C82802652C00E979EB /* GuidePayMethodChoiceView.swift */; };
 		DA756B432803168200F83A87 /* GuideShoppingCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA756B422803168200F83A87 /* GuideShoppingCartView.swift */; };
+		DAA2924E280403F80037ADA0 /* GuideMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA2924D280403F80037ADA0 /* GuideMainView.swift */; };
 		DAABEC6027FE957C00912015 /* HelpPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABEC5F27FE957C00912015 /* HelpPageView.swift */; };
 		DAABEC6227FE958B00912015 /* StoreChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABEC6127FE958B00912015 /* StoreChoiceView.swift */; };
 		DAABEC6427FE959600912015 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABEC6327FE959600912015 /* StartView.swift */; };
@@ -96,6 +97,7 @@
 		DA3E41C62802650100E979EB /* GuidePayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidePayView.swift; sourceTree = "<group>"; };
 		DA3E41C82802652C00E979EB /* GuidePayMethodChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidePayMethodChoiceView.swift; sourceTree = "<group>"; };
 		DA756B422803168200F83A87 /* GuideShoppingCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideShoppingCartView.swift; sourceTree = "<group>"; };
+		DAA2924D280403F80037ADA0 /* GuideMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideMainView.swift; sourceTree = "<group>"; };
 		DAABEC5F27FE957C00912015 /* HelpPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpPageView.swift; sourceTree = "<group>"; };
 		DAABEC6127FE958B00912015 /* StoreChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreChoiceView.swift; sourceTree = "<group>"; };
 		DAABEC6327FE959600912015 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 		DA3E41AD2802642500E979EB /* Guide */ = {
 			isa = PBXGroup;
 			children = (
+				DAA2924D280403F80037ADA0 /* GuideMainView.swift */,
 				DA3E41AE2802643300E979EB /* GuideStartView.swift */,
 				DA3E41B02802644700E979EB /* GuideTakeOutChoiceView.swift */,
 				DA3E41B22802645300E979EB /* GuideHomeView.swift */,
@@ -411,6 +414,7 @@
 				DADFAA1327FE7C24006F613A /* Preference.swift in Sources */,
 				DA3E41C72802650100E979EB /* GuidePayView.swift in Sources */,
 				DAABEC6827FE95C800912015 /* Traffic.swift in Sources */,
+				DAA2924E280403F80037ADA0 /* GuideMainView.swift in Sources */,
 				C572506A27FBF38F00E90997 /* MC1App.swift in Sources */,
 				C0C5ED2E2802D79100956BC5 /* BeforeGuideStartView.swift in Sources */,
 			);

@@ -82,13 +82,14 @@ struct GuideSideMenuChoiceView: View {
                         ScrollView{
                             LazyVGrid(columns: columns) {
                                 Button(action: {
-                                    sideMenu="후렌치 후라이 - 미디엄"
+                                    sideMenu="후렌치 후라이"
                                     isGuideDrinkChoiceView=true
                                 }) {
                                     VStack{
-                                        altImage
+                                        Image("후렌치 후라이")
+                                            .resizable()
                                             .frame(width: 70, height: 70)
-                                        Text("후렌치 후라이 - 미디엄")
+                                        Text("후렌치 후라이")
 //                                            .font(Font.mainFont)
                                             .font(.caption)
                                             .foregroundColor(Color.grayColor)
@@ -99,13 +100,14 @@ struct GuideSideMenuChoiceView: View {
                                 }
                                 
                                 Button(action: {
-                                    sideMenu="맥너겟 4조각"
+                                    sideMenu="맥너겟"
                                     isGuideDrinkChoiceView=true
                                 }) {
                                     VStack{
-                                        altImage
+                                        Image("맥너겟")
+                                            .resizable()
                                             .frame(width: 70, height: 70)
-                                        Text("맥너겟 4조각")
+                                        Text("맥너겟")
 //                                            .font(Font.mainFont)
                                             .font(.caption)
                                             .foregroundColor(Color.grayColor)
@@ -119,7 +121,8 @@ struct GuideSideMenuChoiceView: View {
                                     isGuideDrinkChoiceView=true
                                 }) {
                                     VStack{
-                                        altImage
+                                        Image("골든 모짜렐라 치즈스틱")
+                                            .resizable()
                                             .frame(width: 70, height: 70)
                                         Text("골든 모짜렐라 치즈스틱")
 //                                            .font(Font.mainFont)
