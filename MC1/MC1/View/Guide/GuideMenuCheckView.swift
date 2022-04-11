@@ -75,6 +75,7 @@ struct GuideMenuCheckView: View {
                             Text("+")
                                 .padding()
                                 .border(Color.grayColor)
+                                .background((selectedMenuList[iteration].quantity == count) ? Color.whiteColor : Color.primaryColor)
                         }
                     }
                     
@@ -83,7 +84,9 @@ struct GuideMenuCheckView: View {
                             .foregroundColor(.grayColor)
                             .padding()
                             .padding(.horizontal, 50)
-                            .background(Color.primaryColor)
+                            .border(Color.grayColor)
+                            .background((selectedMenuList[iteration].quantity == count) ? Color.primaryColor : Color.whiteColor)
+//                            .background(Color.primaryColor)
                     }
                 }
             }
@@ -91,9 +94,9 @@ struct GuideMenuCheckView: View {
     }
 }
 
-struct GuideMenuCheckView_Previews: PreviewProvider {
-    @State static var menu = Menu(name: "더블 불고기 버거", tag: [], price: 4000, setPrice: 5600)
-    static var previews: some View {
-        GuideMenuCheckView(menu: $menu, isSetMenu: .constant(true))
-    }
-}
+//struct GuideMenuCheckView_Previews: PreviewProvider {
+//    @State static var menu = Menu(name: "더블 불고기 버거", tag: [], price: 4000, setPrice: 5600)
+//    static var previews: some View {
+//        GuideMenuCheckView(menu: $menu, isSetMenu: .constant(true))
+//    }
+//}

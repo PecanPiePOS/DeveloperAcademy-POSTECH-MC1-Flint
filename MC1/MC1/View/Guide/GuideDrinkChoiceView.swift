@@ -95,7 +95,9 @@ struct GuideDrinkChoiceView: View {
                                                 .font(.caption)
                                                 .foregroundColor(Color.grayColor)
                                         }
-                                        .frame(width: 100, height: 150, alignment: .center)
+                                        .frame(height: 120)
+                                        .background(d == "코카 콜라" ? Color.primaryColor : Color.whiteColor)
+                                        .border(Color.grayColor)
                                     }
                                 }
                             }

@@ -18,10 +18,10 @@ struct GuideStartView: View {
                     .ignoresSafeArea()
                 
                 VStack {
-                    altImage
-                        .foregroundColor(.grayColor)
-                        .frame(width: 300, height: 400, alignment: .center)
-                        .border(.black)
+                    Image("MainAdvertisement")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 350)
                         .background(Color.primaryColor)
                     
                     Spacer()
@@ -75,6 +75,7 @@ struct GuideStartView: View {
                 }
                 .padding()
             }
+            .navigationBarHidden(true)
         }
     }
 }

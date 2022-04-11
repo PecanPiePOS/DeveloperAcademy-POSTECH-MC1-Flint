@@ -93,7 +93,9 @@ struct GuideSideMenuChoiceView: View {
                                             .font(.caption)
                                             .foregroundColor(Color.grayColor)
                                     }
-                                    .frame(width: 100, height: 150, alignment: .center)
+                                    .frame(height: 120)
+                                    .border(Color.grayColor)
+                                    .background(Color.primaryColor)
                                 }
                                 
                                 Button(action: {
@@ -108,7 +110,8 @@ struct GuideSideMenuChoiceView: View {
                                             .font(.caption)
                                             .foregroundColor(Color.grayColor)
                                     }
-                                    .frame(width: 100, height: 150, alignment: .center)
+                                    .frame(height: 120)
+                                    .border(Color.grayColor)
                                 }
                                 
                                 Button(action: {
@@ -123,22 +126,8 @@ struct GuideSideMenuChoiceView: View {
                                             .font(.caption)
                                             .foregroundColor(Color.grayColor)
                                     }
-                                    .frame(width: 100, height: 150, alignment: .center)
-                                }
-                                
-                                Button(action: {
-                                    sideMenu="후렌치 후라이 + 골든 모짜렐라 치즈스틱"
-                                    isGuideDrinkChoiceView=true
-                                }) {
-                                    VStack{
-                                        altImage
-                                            .frame(width: 70, height: 70)
-                                        Text("후렌치 후라이 + 골든 모짜렐라 치즈스틱")
-//                                            .font(Font.mainFont)
-                                            .font(.caption)
-                                            .foregroundColor(Color.grayColor)
-                                    }
-                                    .frame(width: 100, height: 150, alignment: .center)
+                                    .frame(height: 120)
+                                    .border(Color.grayColor)
                                 }
                             }
                         }
