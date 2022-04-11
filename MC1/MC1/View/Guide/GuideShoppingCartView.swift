@@ -104,8 +104,8 @@ struct GuideShoppingCartView: View {
     }
 }
 
-struct GuideShoppingCartView_Previews: PreviewProvider {
-    static var previews: some View {
-        GuideShoppingCartView()
-    }
-}
+//struct GuideShoppingCartView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        GuideShoppingCartView()
+//    }
+//}

@@ -32,7 +32,8 @@ struct GuidePayMethodChoiceView: View {
                                         .resizable()
                                         .scaledToFit()
                                     Text("카드 결제")
-                                        .font(.mainFont)
+//                                        .font(.mainFont)
+                                        .font(.caption)
                                 }
                                 .foregroundColor(.grayColor)
                                 .padding()
@@ -45,7 +46,8 @@ struct GuidePayMethodChoiceView: View {
                                         .resizable()
                                         .scaledToFit()
                                     Text("모바일 상품권")
-                                        .font(.mainFont)
+//                                        .font(.mainFont)
+                                        .font(.caption)
                                 }
                                 .foregroundColor(.grayColor)
                                 .padding()

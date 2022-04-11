@@ -67,6 +67,7 @@ struct GuideTakeOutChoiceView: View {
                             .padding()
                             .frame(width: 120, height: 60)
                             .border(Color.grayColor)
+//                            .border(Color.primaryColor, width: 5)
                     }
                     
                     Spacer()

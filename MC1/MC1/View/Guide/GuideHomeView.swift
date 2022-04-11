@@ -19,8 +19,12 @@ struct GuideHomeView: View {
                 
                 HStack {
                     VStack {
-                        altImage
-                            .foregroundColor(.grayColor)
+//                        altImage
+//                            .foregroundColor(.grayColor)
+//                            .frame(width: 50, height: 50, alignment: .center)
+                        
+                        Image("mcdonaldLogo")
+                            .resizable()
                             .frame(width: 50, height: 50, alignment: .center)
                         
                         VStack{
@@ -120,6 +124,8 @@ struct GuideHomeView: View {
                                 .foregroundColor(.grayColor)
                                 .frame(width: 65, height: 100)
                         }
+                        
+                        Spacer()
                     }
                 }
             }
