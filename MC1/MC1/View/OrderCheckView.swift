@@ -24,7 +24,6 @@ struct OrderCheckView: View {
             VStack(alignment: .leading){
                 HStack{
                     Text("주문하신 \n내용이 맞나요?").font(Font.titleFont).foregroundColor(Color.whiteColor).padding(.leading, 20.0)
-                    Spacer()
                 }
                 // OrderView list
                 List(){
@@ -41,7 +40,7 @@ struct OrderCheckView: View {
                         self.action=1
                     }, label:{
                         ZStack{
-                            NavigationLink("more order", destination: MenuView(restaurant: $restaurantType), tag:1, selection: $action).hidden().disabled(true)
+                            NavigationLink("more order", destination: MenuView(), tag:1, selection: $action).hidden().disabled(true)
                             Image("WhiteButton")
                                 .resizable().frame(width: 164).aspectRatio(contentMode: .fit)
                             Text("더 주문하기").font(Font.mainFont).foregroundColor(Color.grayColor)
@@ -53,9 +52,7 @@ struct OrderCheckView: View {
                     Button(action: {self.action=2}, label: {
                         ZStack{
                             NavigationLink("finish order", destination: GuideStartView(isGuideTakeOutChoiceView: false), tag:2, selection: $action).hidden().disabled(true)
-
                             Image("PrimaryButton")
-                                
                                 //.resizable().aspectRatio(contentMode: .fit)
                             Text("주문완료").font(Font.mainFont).foregroundColor(Color.grayColor)
                         }
@@ -63,7 +60,7 @@ struct OrderCheckView: View {
                     Spacer()
                 }.padding(.horizontal)
             }
-        }.navigationBarTitle("test")
+        }
         
     }
 }
@@ -71,7 +68,8 @@ struct OrderCheckView: View {
 func totalPrice(smList: [SelectedMenu])->Int{
     var price: Int = 0
     for i in smList{
-        price += i.menu.price
+        if i.isSet {price += i.menu.setPrice}
+        else {price += i.menu.price}
     }
     return price
 }
