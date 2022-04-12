@@ -11,6 +11,7 @@
 		5869F168280402AD003D093B /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5869F167280402AD003D093B /* FirstView.swift */; };
 		58D8B79727FFC87900334164 /* OnboardingStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D8B79627FFC87900334164 /* OnboardingStartView.swift */; };
 		58D8B79927FFC88B00334164 /* OnboardingEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D8B79827FFC88B00334164 /* OnboardingEndView.swift */; };
+		7BE6A83B2805021C0026D722 /* FinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE6A83A2805021C0026D722 /* FinishView.swift */; };
 		C04157E62803AEE700E455D9 /* HelpPageVIewReal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04157E52803AEE700E455D9 /* HelpPageVIewReal.swift */; };
 		C0C5ED2E2802D79100956BC5 /* BeforeGuideStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C5ED2D2802D79100956BC5 /* BeforeGuideStartView.swift */; };
 		C564D27E27FEAC92000603BB /* OrderCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564D27D27FEAC92000603BB /* OrderCheckView.swift */; };
@@ -72,6 +73,7 @@
 		5869F167280402AD003D093B /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
 		58D8B79627FFC87900334164 /* OnboardingStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStartView.swift; sourceTree = "<group>"; };
 		58D8B79827FFC88B00334164 /* OnboardingEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingEndView.swift; sourceTree = "<group>"; };
+		7BE6A83A2805021C0026D722 /* FinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishView.swift; sourceTree = "<group>"; };
 		C04157E52803AEE700E455D9 /* HelpPageVIewReal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpPageVIewReal.swift; sourceTree = "<group>"; };
 		C0C5ED2D2802D79100956BC5 /* BeforeGuideStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeGuideStartView.swift; sourceTree = "<group>"; };
 		C564D27D27FEAC92000603BB /* OrderCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCheckView.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				58D8B79827FFC88B00334164 /* OnboardingEndView.swift */,
 				5869F167280402AD003D093B /* FirstView.swift */,
 				DA3E41AD2802642500E979EB /* Guide */,
+				7BE6A83A2805021C0026D722 /* FinishView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				DA3E41B92802648400E979EB /* GuideSetChoiceView.swift in Sources */,
 				C564D27E27FEAC92000603BB /* OrderCheckView.swift in Sources */,
 				DA3E41B52802645D00E979EB /* GuideMenuChoiceView.swift in Sources */,
+				7BE6A83B2805021C0026D722 /* FinishView.swift in Sources */,
 				DAABEC6427FE959600912015 /* StartView.swift in Sources */,
 				DADFAA0F27FE7C18006F613A /* MenuView.swift in Sources */,
 				DA3E41BB2802649400E979EB /* GuideMenuCheckView.swift in Sources */,
