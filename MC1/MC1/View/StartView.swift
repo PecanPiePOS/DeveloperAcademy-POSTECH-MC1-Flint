@@ -47,15 +47,18 @@ struct StartView: View {
                         .lineLimit(3)
                         .frame(width: 263, height: 81)
                         .multilineTextAlignment(.leading)
-                    Spacer()
+                    Spacer().frame(height: 80)
                 }
                 
                 HStack {
-                    Spacer()
+                    Spacer().frame(width: 200)
                     Button {
                         GoHelpView = true
                     } label: {
                         Image("HelpButton")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 110)
                     }.halfSheet(showSheet: $GoHelpView) {
                         HelpPageViewReal(showEndView: $showEndView)
                         
