@@ -242,9 +242,9 @@
 				58D8B79627FFC87900334164 /* OnboardingStartView.swift */,
 				58D8B79827FFC88B00334164 /* OnboardingEndView.swift */,
 				5869F167280402AD003D093B /* FirstView.swift */,
-				DA3E41AD2802642500E979EB /* Guide */,
 				7BE6A83A2805021C0026D722 /* FinishView.swift */,
 				58EC9A9B280528B70075B775 /* LaunchView.swift */,
+				DA3E41AD2802642500E979EB /* Guide */,
 			);
 			path = View;
 			sourceTree = "<group>";

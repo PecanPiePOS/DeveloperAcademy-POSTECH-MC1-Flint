@@ -14,7 +14,7 @@ struct MC1App: App {
     var body: some Scene {
         WindowGroup {
             if isSplashView{
-                GuideMainView()
+                LaunchView()
                     .onAppear{
                         let _ = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false, block: { timer in
                             isSplashView = false
