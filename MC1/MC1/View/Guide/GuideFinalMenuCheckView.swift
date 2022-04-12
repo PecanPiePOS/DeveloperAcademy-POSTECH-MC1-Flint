@@ -76,6 +76,7 @@ struct GuideFinalMenuCheckView: View {
                             .padding()
                             .padding(.horizontal, 50)
                             .background(Color.primaryColor)
+                            .border(Color.grayColor)
                     }
                 }
             }
