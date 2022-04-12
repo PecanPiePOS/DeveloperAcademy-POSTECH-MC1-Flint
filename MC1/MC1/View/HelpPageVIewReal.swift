@@ -23,10 +23,13 @@ struct HelpPageViewReal: View {
                         Image("background")
                         VStack {
                             Text(context.topText)
-                                .font(.system(size: 32, weight: .heavy))
+                                .font(.system(size: 28, weight: .heavy))
                                 .foregroundColor(Color.black)
                                 .multilineTextAlignment(.center)
                             Image(context.image)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 270)
                             Spacer().frame(height: 65)
                         }
                         HStack {
@@ -43,7 +46,7 @@ struct HelpPageViewReal: View {
                                     }
                                 }
                             
-                            Spacer().frame(width: 260)
+                            Spacer().frame(width: 230)
                             VStack {
                                 Button {
                                     if buttonNumbers < 3 {
@@ -60,7 +63,7 @@ struct HelpPageViewReal: View {
                             }
                         }
                         VStack {
-                            Spacer().frame(height: 350)
+                            Spacer().frame(height: 305)
                             Button {
                                 if buttonNumbers == 3{
                                     presentationMode.wrappedValue.dismiss()
@@ -70,8 +73,14 @@ struct HelpPageViewReal: View {
                             } label: {
                                 if buttonNumbers != 3 {
                                     Image("HelpingGuideStartButton")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 300)
                                 } else {
                                     Image("GuideStartLast")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 300)
                                 }
                             }
                         }
