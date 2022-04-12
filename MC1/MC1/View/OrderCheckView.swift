@@ -117,9 +117,9 @@ struct OrderCheckView: View {
                     }, label:{
                         ZStack{
                             //NavigationLink("more order", destination: MenuView(), tag:1, selection: $action).hidden().disabled(true)
-                            Image("WhiteButton")
+                            Image((selectedMenuList.count == 0) ? "PrimaryButton" : "WhiteButton")
                                 .resizable().frame(width: 164).aspectRatio(contentMode: .fit)
-                            Text("더 주문하기").font(Font.mainFont).foregroundColor(Color.grayColor)
+                            Text((selectedMenuList.count == 0) ? "주문하기" : "더 주문하기").font(Font.mainFont).foregroundColor(Color.grayColor)
 
                         }
                         
@@ -131,11 +131,12 @@ struct OrderCheckView: View {
                     }, label: {
                         ZStack{
                             //NavigationLink("finish order", destination: BeforeGuideStartView(), tag:2, selection: $action).hidden().disabled(true)
-                            Image("PrimaryButton")
+                            Image((selectedMenuList.count == 0) ? "WhiteButton" : "PrimaryButton")
                                 //.resizable().aspectRatio(contentMode: .fit)
                             Text("주문완료").font(Font.mainFont).foregroundColor(Color.grayColor)
                         }
                     })
+                    .disabled((selectedMenuList.count == 0) ? true : false)
                 
                     Spacer()
                 
