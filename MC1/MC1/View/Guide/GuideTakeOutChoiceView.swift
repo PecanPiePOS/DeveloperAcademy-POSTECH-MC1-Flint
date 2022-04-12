@@ -34,6 +34,7 @@ struct GuideTakeOutChoiceView: View {
                                 .font(.mainFont)
                                 .padding()
                                 .frame(width: 120, height: 150)
+                                .background(Color.primaryColor)
                                 .border(Color.grayColor)
                         }
                         
