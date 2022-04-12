@@ -27,7 +27,7 @@ struct HelpPageViewReal: View {
                                 .foregroundColor(Color.black)
                                 .multilineTextAlignment(.center)
                             Image(context.image)
-                            Spacer().frame(height: 60)
+                            Spacer().frame(height: 65)
                         }
                         HStack {
 

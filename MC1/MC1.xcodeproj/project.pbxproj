@@ -37,7 +37,6 @@
 		DA3E41C92802652C00E979EB /* GuidePayMethodChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3E41C82802652C00E979EB /* GuidePayMethodChoiceView.swift */; };
 		DA756B432803168200F83A87 /* GuideShoppingCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA756B422803168200F83A87 /* GuideShoppingCartView.swift */; };
 		DAA2924E280403F80037ADA0 /* GuideMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA2924D280403F80037ADA0 /* GuideMainView.swift */; };
-		DAABEC6027FE957C00912015 /* HelpPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABEC5F27FE957C00912015 /* HelpPageView.swift */; };
 		DAABEC6227FE958B00912015 /* StoreChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABEC6127FE958B00912015 /* StoreChoiceView.swift */; };
 		DAABEC6427FE959600912015 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABEC6327FE959600912015 /* StartView.swift */; };
 		DAABEC6627FE95BB00912015 /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABEC6527FE95BB00912015 /* Bank.swift */; };
@@ -102,7 +101,6 @@
 		DA3E41C82802652C00E979EB /* GuidePayMethodChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidePayMethodChoiceView.swift; sourceTree = "<group>"; };
 		DA756B422803168200F83A87 /* GuideShoppingCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideShoppingCartView.swift; sourceTree = "<group>"; };
 		DAA2924D280403F80037ADA0 /* GuideMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideMainView.swift; sourceTree = "<group>"; };
-		DAABEC5F27FE957C00912015 /* HelpPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpPageView.swift; sourceTree = "<group>"; };
 		DAABEC6127FE958B00912015 /* StoreChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreChoiceView.swift; sourceTree = "<group>"; };
 		DAABEC6327FE959600912015 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		DAABEC6527FE95BB00912015 /* Bank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
@@ -226,7 +224,6 @@
 		DADFAA0927FE7C18006F613A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DAABEC5F27FE957C00912015 /* HelpPageView.swift */,
 				C04157E52803AEE700E455D9 /* HelpPageVIewReal.swift */,
 				DAABEC6327FE959600912015 /* StartView.swift */,
 				DAABEC6127FE958B00912015 /* StoreChoiceView.swift */,
@@ -399,7 +396,6 @@
 				DADFAA0F27FE7C18006F613A /* MenuView.swift in Sources */,
 				DA3E41BB2802649400E979EB /* GuideMenuCheckView.swift in Sources */,
 				DA3E41B72802646900E979EB /* GuideMenuCellView.swift in Sources */,
-				DAABEC6027FE957C00912015 /* HelpPageView.swift in Sources */,
 				DAABEC6A27FF19B100912015 /* MenuQuantityView.swift in Sources */,
 				DA3E41BD280264B000E979EB /* GuideSetSizeChoiceView.swift in Sources */,
 				DA3E41AF2802643300E979EB /* GuideStartView.swift in Sources */,

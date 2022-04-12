@@ -51,14 +51,14 @@ struct StartView: View {
                 }
                 
                 HStack {
-                    Spacer().frame(width: 200)
+                    Spacer().frame(width: 235)
                     Button {
                         GoHelpView = true
                     } label: {
                         Image("HelpButton")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 110)
+                            .frame(width: 90)
                     }.halfSheet(showSheet: $GoHelpView) {
                         HelpPageViewReal(showEndView: $showEndView)
                         
