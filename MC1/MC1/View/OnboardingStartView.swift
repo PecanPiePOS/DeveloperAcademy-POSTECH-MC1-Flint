@@ -73,8 +73,8 @@ struct OnboardingStartView: View {
                         if buttonNumbers < 3 {
                             Image(systemName: "greaterthan.circle.fill")
                                 .resizable()
-                                .foregroundColor(.white)
-                                .opacity(0.7)
+                                .foregroundColor(Color.primaryColor)
+                                .opacity(1.0)
                         }
                     }
                     .scaledToFit()
@@ -125,7 +125,7 @@ struct OnboardingStartView: View {
                 } else {
                     Capsule()
                         .fill(Color.primaryColor)
-                        .frame(width: .infinity, height: 90, alignment: .center)
+                        .frame(width: UIScreen.main.bounds.width, height: 90, alignment: .center)
                         .overlay(Text("시작하기").font(.system(size: 26, weight: .bold)).foregroundColor(.black))
                         .padding(.top, 30)
                         .padding(5)
