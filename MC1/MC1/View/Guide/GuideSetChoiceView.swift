@@ -80,7 +80,7 @@ struct GuideSetChoiceView: View {
                     Spacer()
                 }
             }
-            .frame(height: 600)
+            .frame(height: 650)
         }
     }
 }

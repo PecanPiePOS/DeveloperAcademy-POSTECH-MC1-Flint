@@ -27,11 +27,12 @@ struct FinishView: View {
                     Image("FinishButton")
                         .resizable()
                         .frame(width: 344, height: 78)
-                
-                    
                 }
                 
             }
+        }
+        .onAppear{
+            selectedMenuList.removeAll()
         }
         
     }

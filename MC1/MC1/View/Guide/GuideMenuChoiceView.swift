@@ -88,7 +88,7 @@ struct GuideMenuChoiceView: View {
                     }
                 }
             }
-            .frame(height: 600)
+            .frame(height: 650)
         }
     }
 }

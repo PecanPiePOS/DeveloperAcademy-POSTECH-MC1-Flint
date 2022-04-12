@@ -77,7 +77,7 @@ struct GuideTakeOutChoiceView: View {
                 }
                 .padding()
             }
-            .frame(height: 600)
+            .frame(height: 650)
         }
     }
 }

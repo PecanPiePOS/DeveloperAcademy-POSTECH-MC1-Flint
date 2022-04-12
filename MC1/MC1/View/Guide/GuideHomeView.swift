@@ -138,7 +138,7 @@ struct GuideHomeView: View {
                     }
                 }
             }
-            .frame(height: 600)
+            .frame(height: 650)
         }
     }
 }
