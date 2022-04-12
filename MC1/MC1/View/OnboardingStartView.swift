@@ -28,7 +28,7 @@ struct OnboardingStartView: View {
                     }
                 }
             }
-            .frame(width: .infinity, height: 130, alignment: .center)
+            .frame(width: UIScreen.main.bounds.width, height: 130, alignment: .center)
             .padding(.top, 100)
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
 
@@ -84,7 +84,7 @@ struct OnboardingStartView: View {
                 .padding(.bottom, -20)
             }
             .padding(.top, -30)
-            .frame(width: .infinity, height: 200, alignment: .center)
+            .frame(width: UIScreen.main.bounds.width, height: 200, alignment: .center)
 
             Spacer().frame(height: 20)
             
@@ -117,7 +117,7 @@ struct OnboardingStartView: View {
                 if buttonNumbers != 3 {
                     Capsule()
                         .fill(Color.grayBackgound)
-                        .frame(width: .infinity, height: 90, alignment: .center)
+                        .frame(width: UIScreen.main.bounds.width, height: 90, alignment: .center)
                         .opacity(0.3)
                         .overlay(Text("시작하기").font(.system(size: 26, weight: .medium)).foregroundColor(.white).opacity(0.4))
                         .padding(.top, 30)

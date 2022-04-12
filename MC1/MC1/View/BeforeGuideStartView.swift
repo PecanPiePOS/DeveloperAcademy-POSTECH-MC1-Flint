@@ -23,8 +23,8 @@ struct BeforeGuideStartView: View {
                     BackButton=true
                 } label: {
                     Image("BackButton")
-                        .padding(.bottom, 750.0)
-                        .padding(.trailing, 200)
+                        .padding(.bottom, 705.0)
+                        .padding(.trailing, 235)
                 }
 
                 

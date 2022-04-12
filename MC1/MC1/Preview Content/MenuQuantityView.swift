@@ -44,18 +44,24 @@ struct MenuQuantityView: View {
                                 }
                             }) {
                                 Image(systemName: "minus.circle")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 40)
                             }
                             .foregroundColor(.grayColor)
                             
                             Text(String(menuQuantity)+"개")
                                 .foregroundColor(.grayColor)
-                                .font(.mainFont)
+                                .font(.system(size: 30))
                                 .padding(.horizontal, 70)
                             
                             Button(action: {
                                 menuQuantity+=1
                             }) {
                                 Image(systemName: "plus.circle")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 40)
                             }
                             .foregroundColor(.grayColor)
                         }

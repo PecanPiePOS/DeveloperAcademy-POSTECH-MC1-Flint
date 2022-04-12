@@ -85,7 +85,7 @@ struct OrderCheckView: View {
                                             $smList.wrappedValue.remove(at: i)
                                             selectedMenuList.remove(at: i)
                                             //self.action = 3
-                                            OrderCheckView()
+                                            //OrderCheckView()
                                             break
                                         }
                                     }
