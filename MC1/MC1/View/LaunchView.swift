@@ -22,7 +22,7 @@ struct LaunchView: View {
             Spacer()
             
             Text("from")
-                .font(.system(size: 18, weight: .black))
+                .font(.system(size: 15, weight: .medium))
                 .italic()
                 .foregroundColor(.gray)
                 .opacity(0.6)
