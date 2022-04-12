@@ -9,10 +9,22 @@ import SwiftUI
 
 @main
 struct MC1App: App {
+    @State var isSplashView = true
+    
     var body: some Scene {
         WindowGroup {
-            FirstView()
-            
+            if isSplashView{
+                GuideMainView()
+                    .onAppear{
+                        let _ = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false, block: { timer in
+                            isSplashView = false
+                        })
+                    }
+            }else{
+                FirstView()
+            }
         }
     }
 }
+
+
