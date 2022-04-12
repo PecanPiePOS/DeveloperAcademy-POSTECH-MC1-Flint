@@ -44,30 +44,33 @@ struct StoreChoiceView: View {
                                 Spacer()
                                 
                             }
-                            HStack(){
-                            Text("가까운 매장")
-                                .font(Font.body)
-                                .foregroundColor(Color.whiteColor)
-                                .padding(.top, 72.0)
+                            if !LocationManager.shared.locationDenied{
+                                HStack(){
+                                Text("가까운 매장")
+                                    .font(Font.body)
+                                    .foregroundColor(Color.whiteColor)
+                                    .padding(.top, 72.0)
+                                    Spacer()
+                                }
+                                                 
+                                HStack {
+                                    
+                                    NavigationLink(destination: MenuView()){
+                                        Image("McdonaldBox")
+                                            .resizable()
+                                            .frame(width:164, height: 164)
+                                    }
+                                    Spacer()
+                                    Button(action: {}) {
+                                        Image("BurgerKingBox")
+                                            .resizable()
+                                            .frame(width:164, height: 164)
+                                    }
+
+                                        }
                                 Spacer()
                             }
-                                             
-                            HStack {
-                                
-                                NavigationLink(destination: MenuView()){
-                                    Image("McdonaldBox")
-                                        .resizable()
-                                        .frame(width:164, height: 164)
-                                }
-                                Spacer()
-                                Button(action: {}) {
-                                    Image("BurgerKingBox")
-                                        .resizable()
-                                        .frame(width:164, height: 164)
-                                }
-
-                                    }
-                            Spacer()
+                            
                             
                             HStack(){
                             Text("은행")

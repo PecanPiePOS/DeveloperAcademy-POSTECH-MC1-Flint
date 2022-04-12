@@ -55,4 +55,3 @@ extension LocationManager: CLLocationManagerDelegate {
         self.userLocation = location
     }
 }
-
