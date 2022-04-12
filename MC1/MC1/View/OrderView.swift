@@ -22,7 +22,7 @@ struct OrderView: View {
         ZStack{
             RoundedRectangle(cornerRadius: 30)
                 .foregroundColor(Color.whiteColor)
-                .frame(/*minWidth: 343, idealWidth: 343, maxWidth: .infinity, minHeight: 92.96, idealHeight: 92.96, maxHeight: 92.96,*/width: .infinity, height: 92.96, alignment: .center)
+                .frame(height: 92.96)
             HStack(spacing: 5.0){
                 Spacer().frame(width: 10)
                 Image(smenu.menu.name)
