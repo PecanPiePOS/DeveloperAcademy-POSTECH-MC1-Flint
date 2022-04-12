@@ -12,10 +12,10 @@ struct LaunchView: View {
         VStack{
             Spacer()
             
-            Image(systemName: "doc.richtext")
+            Image("MainImage")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 60, height: 60, alignment: .center)
+                .frame(width: 100)
                 .foregroundColor(.primaryColor)
                 .padding(.bottom, -60)
             
