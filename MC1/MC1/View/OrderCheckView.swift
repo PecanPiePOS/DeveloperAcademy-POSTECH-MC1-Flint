@@ -13,6 +13,18 @@ import SwiftUI
 //    SelectedMenu(menu: mcdonaldMenu[0], quantity: 2, isSet: false)
 //]
 
+func delAction(sm: Binding<SelectedMenu>, smList: Binding<[SelectedMenu]>){
+    for i in 0...(smList.count-1) {
+        if smList[i].wrappedValue.menu.name == sm.wrappedValue.menu.name
+        {
+            smList.wrappedValue.remove(at: i)
+            selectedMenuList.remove(at: i)
+            //testSMList.remove(at: i)
+            break
+        }
+    }
+}
+
 func printArray(arr: [SelectedMenu]){
     print("arr.menu.name is: ")
     for i in arr{
@@ -32,7 +44,6 @@ struct OrderCheckView: View {
 //        NavigationView{
         if self.action == 1{MenuView()}
         else if self.action == 2{BeforeGuideStartView()}
-//        else if self.action == 3{OrderCheckView().refresh()}
         else{
             VStack(alignment: .leading){
                 HStack(alignment: .top) {
@@ -71,32 +82,22 @@ struct OrderCheckView: View {
                 Spacer()
                 
                 // OrderView list
-                List(){
+                List{
                     ForEach($smList){sm in
                         ZStack{
                             OrderView(smenu: sm)
                                 .padding(.bottom, 10.0)
                             HStack{
                                 Spacer()
-                                Button(action:{
-                                        // MARK: 어떻게 guard 나 optional binding 쓸 수 없을까?
-                                    for i in 0...($smList.count-1) {
-                                        if $smList[i].wrappedValue.menu.name == sm.wrappedValue.menu.name{
-                                            $smList.wrappedValue.remove(at: i)
-                                            selectedMenuList.remove(at: i)
-                                            //self.action = 3
-                                            //OrderCheckView()
-                                            break
-                                        }
-                                    }
-                                }, label: {
+                                
                                     //MARK: 영역 문제 있음
                                     ZStack{
-                                        Image("TrashButton").resizable().scaledToFit().frame(height: 92.96, alignment: .trailing).padding(.trailing)
-                                        //popup, delete
+                                        Image("TrashButton").resizable().scaledToFit().frame(height: 92.96, alignment: .trailing).onTapGesture {
+                                            delAction(sm: sm, smList: $smList)
+                                        }
                                         Text("취소").font(Font.mainFont.bold()).foregroundColor(Color.whiteColor)
                                     }
-                                })
+                                
                                 .padding(.bottom, 10.0)
                             }
                         }
@@ -105,7 +106,8 @@ struct OrderCheckView: View {
                     }
                 }.background(Color.black)
                 HStack{
-                    Text("총 금액  \(totalPrice(smList:selectedMenuList/*testSMList*/))원").font(Font.titleFont).padding(.all, 20.0)
+                    Text("총 금액  \(totalPrice(smList:selectedMenuList))원").font(Font.titleFont).padding(.all, 20.0)
+                    //Text("총 금액  \(totalPrice(smList:testSMList))원").font(Font.titleFont).padding(.all, 20.0)
                 }
                 HStack{
                     Spacer()
@@ -155,23 +157,6 @@ func totalPrice(smList: [SelectedMenu])->Int{
     }
     return price
 }
-
-func deleteAnOrder(smenu: SelectedMenu){
-    // MARK: 어떻게 guard 나 optional binding 쓸 수 없을까?
-    var index: Int = -1
-    for i in 0...(selectedMenuList.count-1) {
-        if selectedMenuList[i].id == smenu.menu.id{
-            index = i
-            break
-        }
-    }
-    if index != -1 {
-        print("index: \(index)")
-        selectedMenuList.remove(at: index)
-    }
-    //OrderCheckView()
-}
-
 
 struct OrderCheckView_Previews: PreviewProvider {
     static var previews: some View {
