@@ -10,11 +10,13 @@ import SwiftUI
 struct GuideShoppingCartView: View {
     @State var isGuideMenuChoiceView = false
     @State var isGuidePayMethodChoiceView = false
+    @Binding var isFinish: Bool
+    
     var body: some View {
         if isGuideMenuChoiceView{
-            GuideMenuChoiceView()
+            GuideMenuChoiceView(isFinish: $isFinish)
         } else if isGuidePayMethodChoiceView{
-            GuidePayMethodChoiceView()
+            GuidePayMethodChoiceView(isFinish: $isFinish)
         }else{
             ZStack {
                 Color.whiteColor
@@ -128,6 +130,6 @@ struct GuideShoppingCartView: View {
 
 //struct GuideShoppingCartView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        GuideShoppingCartView()
+//        GuideShoppingCartView(isFinish: .constant(false))
 //    }
 //}

@@ -9,10 +9,11 @@ import SwiftUI
 
 struct GuideTakeOutChoiceView: View {
     @State var isGuideHomeView = false
+    @Binding var isFinish: Bool
     
     var body: some View {
         if isGuideHomeView{
-            GuideHomeView()
+            GuideHomeView(isFinish: $isFinish)
         } else {
             ZStack{
                 Color.whiteColor
@@ -83,6 +84,6 @@ struct GuideTakeOutChoiceView: View {
 
 struct GuideTakeOutChoiceView_Previews: PreviewProvider {
     static var previews: some View {
-        GuideTakeOutChoiceView()
+        GuideTakeOutChoiceView(isFinish: .constant(false))
     }
 }
