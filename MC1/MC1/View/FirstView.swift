@@ -12,7 +12,7 @@ struct FirstView: View {
     @ObservedObject var locationManager = LocationManager.shared
     var body: some View {
         Group {
-            if locationManager.userLocation == nil {
+            if locationManager.locationDenied == false && locationManager.userLocation == nil {
                 OnboardingStartView()
 //                    .transition(.slide)
             } else {

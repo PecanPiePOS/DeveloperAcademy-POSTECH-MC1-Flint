@@ -10,6 +10,7 @@ import CoreLocation
 class LocationManager: NSObject, ObservableObject {
     private let manager = CLLocationManager()
     @Published var userLocation: CLLocation?
+    @Published var locationDenied: Bool = false
     static let shared = LocationManager ()
 
     override init() {
@@ -38,6 +39,7 @@ extension LocationManager: CLLocationManagerDelegate {
         case .restricted:
             print("DEBUG: Restricted")
         case .denied:
+            locationDenied = true
             print("DEBUG: Denied")
         case .authorizedAlways:
             print("DEBUG: Auth always")
