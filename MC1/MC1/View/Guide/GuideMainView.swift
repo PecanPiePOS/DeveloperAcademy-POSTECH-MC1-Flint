@@ -10,11 +10,14 @@ import SwiftUI
 struct GuideMainView: View {
     @State var description = "노란 부분을 눌러주세요"
     @State var isBeforeGuideStartView = false
+    @State var isFinish = false
     
     var body: some View {
         if isBeforeGuideStartView{
             BeforeGuideStartView()
-        } else {
+        } else if isFinish{
+            FinishView()
+        }else {
             VStack{
                 Button(action: {
                     isBeforeGuideStartView=true
@@ -30,7 +33,7 @@ struct GuideMainView: View {
                     .font(.titleFont)
                     
                 Spacer()
-                GuideStartView()
+                GuideStartView(isFinish: $isFinish)
             }
         }
 

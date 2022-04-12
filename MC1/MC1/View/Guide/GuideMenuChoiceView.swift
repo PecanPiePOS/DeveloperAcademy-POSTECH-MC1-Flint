@@ -12,10 +12,11 @@ struct GuideMenuChoiceView: View {
     @State var curMenu = Menu(name: "", tag: [], price: 0, setPrice: 0)
     @State var menus = mcdonaldMenu
     var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
+    @Binding var isFinish: Bool
     
     var body: some View {
         if isGuideSetChoiceView{
-            GuideSetChoiceView(menu :$curMenu)
+            GuideSetChoiceView(menu :$curMenu, isFinish: $isFinish)
         }else{
             ZStack {
                 Color.whiteColor
@@ -79,7 +80,7 @@ struct GuideMenuChoiceView: View {
                                         curMenu=menu
                                         isGuideSetChoiceView=true
                                     }) {
-                                        GuideMenuCellView(menu: $menu)
+                                        GuideMenuCellView(menu: $menu, isFinish: $isFinish)
                                     }
                                 }
                             }
@@ -94,6 +95,6 @@ struct GuideMenuChoiceView: View {
 //
 //struct GuideMenuChoiceView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        GuideMenuChoiceView()
+//        GuideMenuChoiceView(isFinish: .constant(false))
 //    }
 //}

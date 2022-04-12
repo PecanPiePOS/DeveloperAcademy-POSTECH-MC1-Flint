@@ -12,12 +12,13 @@ struct GuideSetSizeChoiceView: View {
     @Binding var menu: Menu
     @Binding var count: Int
     @State var isLargeSet: Bool = false
+    @Binding var isFinish: Bool
     
     var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
     
     var body: some View {
         if isGuideSideMenuChoiceView {
-            GuideSideMenuChoiceView(menu: $menu, count: $count, isLargeSet: $isLargeSet)
+            GuideSideMenuChoiceView(menu: $menu, count: $count, isLargeSet: $isLargeSet, isFinish: $isFinish)
         } else {
             ZStack{
                 Color.whiteColor
@@ -103,6 +104,6 @@ struct GuideSetSizeChoiceView: View {
 struct GuideSetSizeChoiceView_Previews: PreviewProvider {
     @State static var menu = Menu(name: "빅맥®", tag: [], price: 5000, setPrice: 6000)
     static var previews: some View {
-        GuideSetSizeChoiceView(menu: $menu, count: .constant(1))
+        GuideSetSizeChoiceView(menu: $menu, count: .constant(1), isFinish: .constant(false))
     }
 }

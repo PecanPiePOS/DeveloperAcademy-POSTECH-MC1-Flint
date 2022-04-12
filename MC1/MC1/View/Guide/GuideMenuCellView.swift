@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GuideMenuCellView: View {
     @Binding var menu: Menu
+    @Binding var isFinish: Bool
     
     var body: some View {
         ZStack {

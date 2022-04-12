@@ -15,10 +15,11 @@ struct GuideDrinkChoiceView: View {
     @Binding var sideMenu: String
     @State var drink: String = ""
     var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
+    @Binding var isFinish: Bool
     
     var body: some View {
         if isGuideShoppingCartView{
-            GuideFinalMenuCheckView(menu: $menu, count: $count, isSetMenu: .constant(true), isLargeSet: $isLargeSet, sideMenu: $sideMenu, drink: $drink)
+            GuideFinalMenuCheckView(menu: $menu, count: $count, isSetMenu: .constant(true), isLargeSet: $isLargeSet, sideMenu: $sideMenu, drink: $drink, isFinish: $isFinish)
         } else {
             ZStack {
                 Color.whiteColor
@@ -113,6 +114,6 @@ struct GuideDrinkChoiceView: View {
 struct GuideDrinkChoiceView_Previews: PreviewProvider {
     @State static var menu = Menu(name: "더블 불고기 버거", tag: [], price: 5000, setPrice: 6000)
     static var previews: some View {
-        GuideDrinkChoiceView(menu: $menu, count: .constant(1), isLargeSet: .constant(true), sideMenu: .constant("사이드메뉴"))
+        GuideDrinkChoiceView(menu: $menu, count: .constant(1), isLargeSet: .constant(true), sideMenu: .constant("사이드메뉴"), isFinish: .constant(false))
     }
 }

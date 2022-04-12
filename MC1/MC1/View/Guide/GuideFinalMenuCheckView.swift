@@ -15,10 +15,11 @@ struct GuideFinalMenuCheckView: View {
     @Binding var isLargeSet: Bool
     @Binding var sideMenu: String
     @Binding var drink: String
+    @Binding var isFinish: Bool
     
     var body: some View {
         if isGuideShoppingCartView{
-            GuideShoppingCartView()
+            GuideShoppingCartView(isFinish: $isFinish)
         } else {
             ZStack{
                 Color.whiteColor
@@ -86,6 +87,6 @@ struct GuideFinalMenuCheckView: View {
 struct GuideFinalMenuCheckView_Previews: PreviewProvider {
     @State static var menu = Menu(name: "더블 불고기 버거", tag: [], price: 5000, setPrice: 6000)
     static var previews: some View {
-        GuideFinalMenuCheckView(menu: $menu, count: .constant(1),isSetMenu: .constant(true), isLargeSet: .constant(true), sideMenu: .constant("사이드메뉴"), drink: .constant("음료"))
+        GuideFinalMenuCheckView(menu: $menu, count: .constant(1),isSetMenu: .constant(true), isLargeSet: .constant(true), sideMenu: .constant("사이드메뉴"), drink: .constant("음료"), isFinish: .constant(false))
     }
 }
