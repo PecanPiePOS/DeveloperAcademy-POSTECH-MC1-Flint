@@ -15,7 +15,7 @@ struct LaunchView: View {
             Image("MainImage")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 100)
+                .frame(width: 200)
                 .foregroundColor(.primaryColor)
                 .padding(.bottom, -60)
             
