@@ -57,6 +57,9 @@ struct MenuSetChoiceView: View {
                                 }
                                 
                                 Image(systemName: singleCheckImageName)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 25)
                                     .foregroundColor(.grayColor)
                                     .padding()
                             }
@@ -84,6 +87,9 @@ struct MenuSetChoiceView: View {
                                 }
                                 
                                 Image(systemName: setCheckImageName)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 25)
                                     .foregroundColor(.grayColor)
                                     .padding()
                             }
