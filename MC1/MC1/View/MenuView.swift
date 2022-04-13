@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MenuView: View {
     @State var restaurant = restaurantList[0]
-    @State var isTakeOUtView = false
+    @State var isTakeOutView = false
     
     
     @Binding var isTakeOut: Bool
@@ -26,14 +26,14 @@ struct MenuView: View {
     var body: some View {
         if isShoppingListView{
             OrderCheckView(isTakeOut: $isTakeOut)
-        }else if isTakeOUtView{
+        }else if isTakeOutView{
             TakeOutView()
         }else{
             VStack{
                 HStack {
                     VStack {
                         Button(action: {
-                            isTakeOUtView=true
+                            isTakeOutView=true
                         }) {
                             Image("BackButton")
                                 .resizable()
@@ -64,7 +64,16 @@ struct MenuView: View {
                     .padding(.bottom, 30)
                     
                     VStack(alignment: .leading) {
-                        Section("추천 메뉴") {
+                        HStack{
+                        Text("👍")
+                            .font(Font.largeTitle)
+                        Text("추천메뉴")
+                            .font(Font.body)
+                            
+                        }
+                        
+                        
+                        Section {
                             LazyVGrid(columns: columns) {
                                 ForEach($restaurant.menu){ $menu in
                                     if menu.tag.contains("추천"){
@@ -85,7 +94,14 @@ struct MenuView: View {
                         .foregroundColor(Color.whiteColor)
                         .padding(.bottom)
                         
-                        Section("소고기 버거") {
+                        HStack{
+                        Text("🐂")
+                            .font(Font.largeTitle)
+                        Text("소고기 버거")
+                            .font(Font.body)
+                            
+                        }
+                        Section() {
                             LazyVGrid(columns: columns) {
                                 ForEach($restaurant.menu){ $menu in
                                     if menu.tag.contains("소고기"){
@@ -105,7 +121,14 @@ struct MenuView: View {
                         .foregroundColor(Color.whiteColor)
                         .padding(.bottom)
                         
-                        Section("치킨 버거") {
+                        HStack{
+                        Text("🐓")
+                            .font(Font.largeTitle)
+                        Text("치킨 버거")
+                            .font(Font.body)
+                            
+                        }
+                        Section("") {
                             LazyVGrid(columns: columns) {
                                 ForEach($restaurant.menu){ $menu in
                                     if menu.tag.contains("치킨"){
@@ -125,8 +148,14 @@ struct MenuView: View {
                         .font(Font.mainFont)
                         .foregroundColor(Color.whiteColor)
                         .padding(.bottom)
-                        
-                        Section("새우 버거") {
+                        HStack{
+                        Text("🦐")
+                            .font(Font.largeTitle)
+                        Text("새우 버거")
+                            .font(Font.body)
+                            
+                        }
+                        Section("") {
                             LazyVGrid(columns: columns) {
                                 ForEach($restaurant.menu){ $menu in
                                     if menu.tag.contains("새우"){

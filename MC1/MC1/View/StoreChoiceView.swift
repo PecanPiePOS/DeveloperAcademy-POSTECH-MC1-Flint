@@ -52,6 +52,7 @@ struct StoreChoiceView: View {
                             }
                             if !LocationManager.shared.locationDenied{
                                 HStack(){
+                                    
                                 Text("가까운 매장")
                                     .font(Font.body)
                                     .foregroundColor(Color.whiteColor)
@@ -79,6 +80,8 @@ struct StoreChoiceView: View {
                             
                             
                             HStack(){
+                                Text("🏦")
+                                    .font(Font.largeTitle)
                             Text("은행")
                                 .font(Font.body)
                                 .foregroundColor(Color.whiteColor)
@@ -125,6 +128,8 @@ struct StoreChoiceView: View {
                             Spacer()
                             
                             HStack(){
+                                Text("🚄")
+                                    .font(Font.largeTitle)
                             Text("교통")
                                 .font(Font.body)
                                 .foregroundColor(Color.whiteColor)
@@ -147,6 +152,8 @@ struct StoreChoiceView: View {
                                 
                             }
                             HStack(){
+                                Text("🍔")
+                                    .font(Font.largeTitle)
                             Text("음식점")
                                 .font(Font.body)
                                 .foregroundColor(Color.whiteColor)
