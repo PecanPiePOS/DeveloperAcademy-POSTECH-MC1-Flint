@@ -73,6 +73,9 @@ struct MenuQuantityView: View {
                             isSetChoiceView.toggle()
                         }) {
                             Image("PreviousButton")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 103)
                         }
 
                         Button(action: {
@@ -83,6 +86,9 @@ struct MenuQuantityView: View {
                             isShoppingCartListView=true
                         }) {
                             Image("NextButton")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 225)
                         }
                     }
                 }

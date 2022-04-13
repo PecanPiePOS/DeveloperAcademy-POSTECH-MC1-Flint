@@ -158,7 +158,7 @@ let onboardingDatas = [
     Guides(id: 0, topText: "키오스크 앞에서\n 난처했던 적이 있나요?", bottomText: "60대 이상의 어르신들의 79%가 키오스크 사용에 어려움을 겪은 적이 있다고 해요.",image: "onboarding1"),
     Guides(id: 1, topText: "ATM을 사용하기\n 어려웠던 적이 있나요?", bottomText: "무인 정보 단말기를 활용한 서비스는 앞으로 늘어나고 오프라인 대면 형식의 거래는 줄어들고 있는 추세에요.",image: "onboarding2"),
     Guides(id: 2, topText: "내 주변 키오스크를\n 자동으로 쉽게 확인하고", bottomText: "위치 정보를 활용하여 자동으로 주변의 키오스크를 알려줄 거예요.",image: "onboarding3"),
-    Guides(id: 3, topText: "가이드를 통해 키오스크\n 사용 방법을 익혀보세요!", bottomText: "'시니어 앱'을 통해 키오스크로 겪는 어려움을 해결할 수 있습니다.",image: "onboarding4")
+    Guides(id: 3, topText: "가이드를 통해 키오스크\n 사용 방법을 익혀보세요!", bottomText: "'유캔터치'를 통해 키오스크로 겪는 어려움을 해결할 수 있습니다.",image: "onboarding4")
 ]
 
 

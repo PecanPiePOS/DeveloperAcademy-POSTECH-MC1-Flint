@@ -109,7 +109,7 @@ let helpingDatas = [
     helpGuides(id: 0, topText: "시작을 하면 주변\n 매장을 검색해 드려요", image: "HelpingGuideImg1"),
     helpGuides(id: 1, topText: "안내를 따라 도움이\n 필요한 서비스를 선택하세요", image: "HelpingGuideImg2"),
     helpGuides(id: 2, topText: "선택하신 서비스에 맞는\n 맞춤 사용법을 안내해드려요", image: "HelpingGuideImg3"),
-    helpGuides(id: 3, topText: "‘시니어 앱’을 따라\n 키오스크를 사용해보세요!", image: "HelpingGuideImg4")
+    helpGuides(id: 3, topText: "‘유캔터치'를 따라\n 키오스크를 사용해보세요!", image: "HelpingGuideImg4")
 ]
 
 

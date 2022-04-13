@@ -34,10 +34,16 @@ struct MenuView: View {
                             isStoreChoiceView=true
                         }) {
                             Image("BackButton")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 122)
                         }
                     }
                     Spacer()
                     Image("ProgressBar2")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 147)
                 }
                 .padding(.horizontal)
                 

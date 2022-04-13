@@ -20,10 +20,16 @@ struct StoreChoiceView: View {
                         VStack {
                             Button(action: {isStartView=true}) {
                                 Image("BackButton")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 122)
                             }
                         }
                         Spacer()
                         Image("ProgressBar1")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 147)
                     }
                     .padding(.horizontal)
                     

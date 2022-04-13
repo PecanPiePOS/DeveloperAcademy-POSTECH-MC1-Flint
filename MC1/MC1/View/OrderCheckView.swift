@@ -55,15 +55,17 @@ struct OrderCheckView: View {
                                 //MARK: navi pop 쓸 수 있는지
 //                                NavigationLink("BackButton", destination: MenuView()/*pop 쓸 수 있는지*/, tag:0, selection: $action)
 //                                    .hidden().disabled(true)
-                                Image("BackButton")
-//                                    .resizable()
-//                                    .scaledToFit()
-//                                    .frame(width: 164)
-                            //}
+                            Image("BackButton")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 122)
                         })
                     }
                     Spacer()
                     Image("ProgressBar3")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 147)
                 }
                 .padding(.horizontal)
                 

@@ -57,9 +57,6 @@ struct MenuSetChoiceView: View {
                                 }
                                 
                                 Image(systemName: singleCheckImageName)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 25)
                                     .foregroundColor(.grayColor)
                                     .padding()
                             }
@@ -87,9 +84,6 @@ struct MenuSetChoiceView: View {
                                 }
                                 
                                 Image(systemName: setCheckImageName)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 25)
                                     .foregroundColor(.grayColor)
                                     .padding()
                             }
@@ -101,12 +95,18 @@ struct MenuSetChoiceView: View {
                             presentationMode.wrappedValue.dismiss()
                         }) {
                             Image("PreviousButton")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 103)
                         }
                         
                         Button(action: {
                             isMenuQuantityView.toggle()
                         }) {
                             Image("NextButton")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 225)
                         }
                         .disabled(disableNextButton)
                     }

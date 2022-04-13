@@ -24,9 +24,13 @@ struct GuideMainView: View {
                 }) {
                     HStack {
                         Image("BackButton")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 122)
+                        
                         Spacer()
                     }
-                    .padding()
+                    .padding(.horizontal)
                 }
                 Text(description)
                     .foregroundColor(.whiteColor)

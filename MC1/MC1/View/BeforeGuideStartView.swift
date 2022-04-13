@@ -16,25 +16,36 @@ struct BeforeGuideStartView: View {
         }else if BackButton{
             OrderCheckView()
         }else{
-            ZStack {
-                Image("BeforeGuideStartView")
-                
-                Button {
-                    BackButton=true
-                } label: {
-                    Image("BackButton")
-                        .padding(.bottom, 705.0)
-                        .padding(.trailing, 235)
+            VStack {
+                HStack {
+                    Button {
+                        BackButton=true
+                    } label: {
+                        Image("BackButton")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 122)
+                    }
+                    Spacer()
                 }
-
+                
+                Spacer()
+                Image("BeforeGuideStartView")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 282)
+                Spacer()
                 
                 Button {
                     GoGuideStartview=true
                 } label: {
                     Image("GuideStartButton")
-                }.padding(.top, 700.0)
-
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 344)
+                }
             }
+            .padding(.horizontal)
             .navigationBarHidden(true)
         }
     }
