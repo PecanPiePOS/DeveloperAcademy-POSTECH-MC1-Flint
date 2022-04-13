@@ -28,7 +28,7 @@ struct FinishView: View {
                         .resizable()
                         .frame(width: 344, height: 78)
                 }
-                
+                Spacer()
             }
         }
         .onAppear{
