@@ -36,12 +36,15 @@ struct OrderCheckView: View {
     @State var smList = selectedMenuList
 //    @State var smList = testSMList
     @State var action: Int? //버튼용
-//    @State var alertDel: Bool = false //alert용
+    @State var showDelConfirmView: Bool = false //alert용
+//    @Environment(\.update) var update: Bool = false //update view
 //test data
     @State var restaurantType: Restaurant = restaurantList[0]
     
     var body: some View {
-//        NavigationView{
+        //        NavigationView{
+        
+        
         if self.action == 1{MenuView()}
         else if self.action == 2{BeforeGuideStartView()}
         else{
@@ -89,22 +92,29 @@ struct OrderCheckView: View {
                                 .padding(.bottom, 10.0)
                             HStack{
                                 Spacer()
-                                
-                                    //MARK: 영역 문제 있음
                                     ZStack{
                                         Image("TrashButton").resizable().scaledToFit().frame(height: 92.96, alignment: .trailing).onTapGesture {
-                                            delAction(sm: sm, smList: $smList)
+                                            self.showDelConfirmView = true
+                                            
+//                                            delAction(sm: sm, smList: $smList)
                                         }
                                         Text("취소").font(Font.mainFont.bold()).foregroundColor(Color.whiteColor)
+                                    }.sheet(isPresented: $showDelConfirmView){ OrderCancelConfirmView(smenu: sm, showDelConfirmView: $showDelConfirmView)
+                                        
                                     }
-                                
                                 .padding(.bottom, 10.0)
+//                                if update {
+//                                    delAction(sm: sm, smList: $smList)
+//                                }
+
                             }
                         }
                         .listRowInsets(EdgeInsets())
                         .listRowBackground(Color.black)
+
                     }
                 }.background(Color.black)
+                
                 HStack{
                     Text("총 금액  \(totalPrice(smList:selectedMenuList))원").font(Font.titleFont).padding(.all, 20.0)
                     //Text("총 금액  \(totalPrice(smList:testSMList))원").font(Font.titleFont).padding(.all, 20.0)
