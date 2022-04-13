@@ -33,6 +33,7 @@ struct FinishView: View {
         }
         .onAppear{
             selectedMenuList.removeAll()
+            guideShoppingList.removeAll()
         }
         
     }
