@@ -11,6 +11,8 @@ struct MenuView: View {
     @State var restaurant = restaurantList[0]
     @State var isStoreChoiceView = false
     
+    
+    @Binding var isTakeOut: Bool
     /// 세트메뉴를 선택하는 뷰를 보여주는 변수
     @State var isSetChoiceView: Bool = false
     /// 쇼핑카트 뷰를 보여주는 변수
@@ -23,7 +25,7 @@ struct MenuView: View {
     
     var body: some View {
         if isShoppingListView{
-            OrderCheckView()
+            OrderCheckView(isTakeOut: $isTakeOut)
         }else if isStoreChoiceView{
             StoreChoiceView()
         }else{
@@ -159,7 +161,7 @@ struct MenuView: View {
 struct MenuView_Previews: PreviewProvider {
     @State static var restaurant = Restaurant(name: "맥도날드", menu: mcdonaldMenu)
     static var previews: some View {
-        MenuView()
+        MenuView(isTakeOut: .constant(true))
     }
 }
 

@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct GuideMainView: View {
+    @Binding var isTakeOut: Bool
     @State var description = "노란 부분을 눌러주세요"
     @State var isBeforeGuideStartView = false
     @State var isFinish = false
     
     var body: some View {
         if isBeforeGuideStartView{
-            BeforeGuideStartView()
+            BeforeGuideStartView(isTakeOut: $isTakeOut)
         } else if isFinish{
             FinishView()
         }else {
@@ -37,7 +38,7 @@ struct GuideMainView: View {
                     .font(.titleFont)
                     
                 Spacer()
-                GuideStartView(isFinish: $isFinish)
+                GuideStartView(isTakeOut: $isTakeOut, isFinish: $isFinish)
             }
         }
 
@@ -46,6 +47,6 @@ struct GuideMainView: View {
 
 struct GuideMainView_Previews: PreviewProvider {
     static var previews: some View {
-        GuideMainView()
+        GuideMainView(isTakeOut: .constant(true))
     }
 }

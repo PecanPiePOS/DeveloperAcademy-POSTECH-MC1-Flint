@@ -61,7 +61,7 @@ struct StoreChoiceView: View {
                                                  
                                 HStack {
                                     
-                                    NavigationLink(destination: MenuView()){
+                                    NavigationLink(destination: TakeOutView()){
                                         Image("McdonaldBox")
                                             .resizable()
                                             .frame(width:164, height: 164)

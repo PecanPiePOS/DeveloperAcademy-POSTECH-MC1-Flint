@@ -21,8 +21,6 @@ struct MenuQuantityView: View {
     var body: some View {
         if isSetChoiceView{
             MenuSetChoiceView(menu: $menu, isSetMenu: $isSetMenu, menuQuantity: $menuQuantity, isShoppingCartListView: $isShoppingCartListView)
-        } else if isMenuCheckView{
-            OrderCheckView()
         } else {
             ZStack{
                 Image("SheetBackground")

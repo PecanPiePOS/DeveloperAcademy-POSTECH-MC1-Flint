@@ -33,6 +33,7 @@ func printArray(arr: [SelectedMenu]){
 }
 
 struct OrderCheckView: View {
+    @Binding var isTakeOut: Bool
     @State var smList = selectedMenuList
 //    @State var smList = testSMList
     @State var action: Int? //버튼용
@@ -42,8 +43,8 @@ struct OrderCheckView: View {
     
     var body: some View {
 //        NavigationView{
-        if self.action == 1{MenuView()}
-        else if self.action == 2{BeforeGuideStartView()}
+        if self.action == 1{MenuView(isTakeOut: $isTakeOut)}
+        else if self.action == 2{BeforeGuideStartView(isTakeOut: $isTakeOut)}
         else{
             VStack(alignment: .leading){
                 HStack(alignment: .top) {
@@ -163,6 +164,6 @@ func totalPrice(smList: [SelectedMenu])->Int{
 
 struct OrderCheckView_Previews: PreviewProvider {
     static var previews: some View {
-        OrderCheckView()
+        OrderCheckView(isTakeOut: .constant(true))
     }
 }

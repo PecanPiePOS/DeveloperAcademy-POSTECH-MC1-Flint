@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct BeforeGuideStartView: View {
+    @Binding var isTakeOut: Bool
     @State var BackButton = false
     @State var GoGuideStartview = false
     var body: some View {
         if GoGuideStartview{
-            GuideMainView()
+            GuideMainView(isTakeOut: $isTakeOut)
         }else if BackButton{
-            OrderCheckView()
+            OrderCheckView(isTakeOut: $isTakeOut)
         }else{
             VStack {
                 HStack {
@@ -53,6 +54,6 @@ struct BeforeGuideStartView: View {
 
 struct BeforeGuideStartView_Previews: PreviewProvider {
     static var previews: some View {
-        BeforeGuideStartView()
+        BeforeGuideStartView(isTakeOut: .constant(true))
     }
 }

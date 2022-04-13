@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GuideTakeOutChoiceView: View {
     @State var isGuideHomeView = false
+    @Binding var isTakeOut: Bool
     @Binding var isFinish: Bool
     
     var body: some View {
@@ -35,7 +36,7 @@ struct GuideTakeOutChoiceView: View {
                                 .font(.mainFont)
                                 .padding()
                                 .frame(width: 120, height: 150)
-                                .background(Color.primaryColor)
+                                .background(isTakeOut ? Color.clear : Color.primaryColor)
                                 .border(Color.grayColor)
                         }
                         
@@ -45,6 +46,7 @@ struct GuideTakeOutChoiceView: View {
                                 .font(.mainFont)
                                 .padding()
                                 .frame(width: 120, height: 150)
+                                .background(isTakeOut ? Color.primaryColor : Color.clear)
                                 .border(Color.grayColor)
                         }
                     }
@@ -84,6 +86,6 @@ struct GuideTakeOutChoiceView: View {
 
 struct GuideTakeOutChoiceView_Previews: PreviewProvider {
     static var previews: some View {
-        GuideTakeOutChoiceView(isFinish: .constant(false))
+        GuideTakeOutChoiceView(isTakeOut: .constant(true), isFinish: .constant(false))
     }
 }
