@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MenuView: View {
     @State var restaurant = restaurantList[0]
-    @State var isStoreChoiceView = false
+    @State var isTakeOUtView = false
     
     
     @Binding var isTakeOut: Bool
@@ -26,14 +26,14 @@ struct MenuView: View {
     var body: some View {
         if isShoppingListView{
             OrderCheckView(isTakeOut: $isTakeOut)
-        }else if isStoreChoiceView{
-            StoreChoiceView()
+        }else if isTakeOUtView{
+            TakeOutView()
         }else{
             VStack{
                 HStack {
                     VStack {
                         Button(action: {
-                            isStoreChoiceView=true
+                            isTakeOUtView=true
                         }) {
                             Image("BackButton")
                                 .resizable()

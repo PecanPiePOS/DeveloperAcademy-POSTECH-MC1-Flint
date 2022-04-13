@@ -46,9 +46,10 @@ struct TakeOutView: View {
                 .padding(.bottom, 30)
                 
                 HStack {
-                    Text("매장에서 드시고 싶으신가요?\n아니면 포장하고 싶으신가요?")
+                    Text("어디에서 드실건가요?😀")
                         .font(Font.titleFont)
                         .foregroundColor(Color.whiteColor)
+                        .padding(.horizontal)
                     Spacer()
                 }
                 .padding(.bottom, 30)
@@ -56,19 +57,28 @@ struct TakeOutView: View {
                 Spacer()
                 
                 // 매장에서 먹기/포장하기
-                HStack {
+                VStack {
                     Button(action: {
                         isTakeOut=false
                         isMenuView=true
                     }) {
-                        Text("매장")
+                        Image("InRestaurant")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 300)
                     }
+                    
+                    Spacer()
+                        .frame(height: 30)
                     
                     Button(action: {
                         isTakeOut=true
                         isMenuView=true
                     }){
-                        Text("포장")
+                        Image("TakeOut")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 300)
                     }
                 }
                 
