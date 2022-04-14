@@ -43,14 +43,20 @@ struct GuideMenuCheckView: View {
                         .font(.mainFont)
                         .padding(.horizontal)
                         .padding()
-                        .border(Color.grayColor)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 2)
+                                .stroke(Color.gray, lineWidth: 1)
+                        )
                     
                     Text("제품 추가/변경")
                         .foregroundColor(.grayColor)
                         .font(.mainFont)
                         .padding(.horizontal, 50)
                         .padding()
-                        .border(Color.grayColor)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 2)
+                                .stroke(Color.gray, lineWidth: 1)
+                        )
                     
                     HStack{
                         Button(action: {
@@ -60,7 +66,10 @@ struct GuideMenuCheckView: View {
                         }) {
                             Text("-")
                                 .padding()
-                                .border(Color.grayColor)
+                                .overlay(
+                            RoundedRectangle(cornerRadius: 2)
+                                .stroke(Color.gray, lineWidth: 1)
+                        )
                         }
                         .disabled(count>1 ? false : true)
                         
@@ -69,14 +78,20 @@ struct GuideMenuCheckView: View {
                             .font(.mainFont)
                             .padding()
                             .padding(.horizontal, 50)
-                            .border(Color.grayColor)
+                            .overlay(
+                            RoundedRectangle(cornerRadius: 2)
+                                .stroke(Color.gray, lineWidth: 1)
+                        )
                         
                         Button(action: {
                             count+=1
                         }) {
                             Text("+")
                                 .padding()
-                                .border(Color.grayColor)
+                                .overlay(
+                            RoundedRectangle(cornerRadius: 2)
+                                .stroke(Color.gray, lineWidth: 1)
+                        )
                                 .background((selectedMenuList[iteration].quantity == count) ? Color.whiteColor : Color.primaryColor)
                         }
                     }
@@ -86,7 +101,10 @@ struct GuideMenuCheckView: View {
                             .foregroundColor(.grayColor)
                             .padding()
                             .padding(.horizontal, 50)
-                            .border(Color.grayColor)
+                            .overlay(
+                            RoundedRectangle(cornerRadius: 2)
+                                .stroke(Color.gray, lineWidth: 1)
+                        )
                             .background((selectedMenuList[iteration].quantity == count) ? Color.primaryColor : Color.whiteColor)
 //                            .background(Color.primaryColor)
                     }

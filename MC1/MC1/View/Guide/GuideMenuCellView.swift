@@ -13,9 +13,12 @@ struct GuideMenuCellView: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 15)
+            RoundedRectangle(cornerRadius: 2)
                 .foregroundColor((menu.name == selectedMenuList[iteration].menu.name) ? .primaryColor : .whiteColor)
-                .border(Color.grayColor)
+                .overlay(
+                            RoundedRectangle(cornerRadius: 2)
+                                .stroke(Color.gray, lineWidth: 1)
+                        )
             
             VStack{
                 Image(menu.name)
@@ -31,8 +34,8 @@ struct GuideMenuCellView: View {
                     .foregroundColor(Color.grayColor)
             }
         }
-        .padding()
-        .frame(width: 100, height: 150, alignment: .center)
+        .padding(.horizontal)
+        .frame(width: 100, height: 120)
     }
 }
 

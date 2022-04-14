@@ -73,7 +73,10 @@ struct GuideDrinkChoiceView: View {
 //                                .font(.mainFont)
                                 .font(.caption)
                                 .padding()
-                                .border(Color.grayColor)
+                                .overlay(
+                            RoundedRectangle(cornerRadius: 2)
+                                .stroke(Color.gray, lineWidth: 1)
+                        )
                         }
                         
                         Text("세트메뉴 음료를 선택해주세요")
@@ -87,18 +90,26 @@ struct GuideDrinkChoiceView: View {
                                         drink=d
                                         isGuideShoppingCartView=true
                                     }) {
-                                        VStack{
-                                            Image(d)
-                                                .resizable()
-                                                .frame(width: 70, height: 70)
-                                            Text(d)
-//                                                .font(Font.mainFont)
-                                                .font(.caption)
-                                                .foregroundColor(Color.grayColor)
+                                        ZStack {
+                                            RoundedRectangle(cornerRadius: 2)
+                                                .foregroundColor(d == "코카 콜라" ? Color.primaryColor : Color.whiteColor)
+                                                .overlay(
+                                                            RoundedRectangle(cornerRadius: 2)
+                                                                .stroke(Color.gray, lineWidth: 1)
+                                                        )
+                                            
+                                            VStack{
+                                                Image(d)
+                                                    .resizable()
+                                                    .scaledToFit()
+                                                Text(d)
+                                //                    .font(Font.mainFont)
+                                                    .font(.caption)
+                                                    .foregroundColor(Color.grayColor)
+                                            }
                                         }
-                                        .frame(height: 120)
-                                        .background(d == "코카 콜라" ? Color.primaryColor : Color.whiteColor)
-                                        .border(Color.grayColor)
+                                        .padding(.horizontal)
+                                        .frame(width: 100, height: 110)
                                     }
                                 }
                             }

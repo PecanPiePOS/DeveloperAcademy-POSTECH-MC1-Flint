@@ -47,7 +47,10 @@ struct GuideFinalMenuCheckView: View {
                         }) {
                             Text("-")
                                 .padding()
-                                .border(Color.grayColor)
+                                .overlay(
+                            RoundedRectangle(cornerRadius: 2)
+                                .stroke(Color.gray, lineWidth: 1)
+                        )
                         }
                         .disabled(count>1 ? false : true)
                         
@@ -56,14 +59,20 @@ struct GuideFinalMenuCheckView: View {
                             .font(.mainFont)
                             .padding()
                             .padding(.horizontal, 50)
-                            .border(Color.grayColor)
+                            .overlay(
+                            RoundedRectangle(cornerRadius: 2)
+                                .stroke(Color.gray, lineWidth: 1)
+                        )
                         
                         Button(action: {
                             count+=1
                         }) {
                             Text("+")
                                 .padding()
-                                .border(Color.grayColor)
+                                .overlay(
+                            RoundedRectangle(cornerRadius: 2)
+                                .stroke(Color.gray, lineWidth: 1)
+                        )
                         }
                     }
                     
@@ -76,7 +85,10 @@ struct GuideFinalMenuCheckView: View {
                             .padding()
                             .padding(.horizontal, 50)
                             .background(Color.primaryColor)
-                            .border(Color.grayColor)
+                            .overlay(
+                            RoundedRectangle(cornerRadius: 2)
+                                .stroke(Color.gray, lineWidth: 1)
+                        )
                     }
                 }
             }

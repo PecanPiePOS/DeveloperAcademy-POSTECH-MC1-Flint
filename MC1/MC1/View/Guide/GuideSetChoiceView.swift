@@ -50,7 +50,10 @@ struct GuideSetChoiceView: View {
                                     .font(.mainFont)
                             }
                             .frame(width: 150, height: 200, alignment: .center)
-                            .border(Color.grayColor)
+                            .overlay(
+                            RoundedRectangle(cornerRadius: 2)
+                                .stroke(Color.gray, lineWidth: 1)
+                        )
                         }
                         
                         Button(action: {
@@ -65,7 +68,10 @@ struct GuideSetChoiceView: View {
                                     .font(.mainFont)
                             }
                             .frame(width: 150, height: 200, alignment: .center)
-                            .border(Color.grayColor)
+                            .overlay(
+                            RoundedRectangle(cornerRadius: 2)
+                                .stroke(Color.gray, lineWidth: 1)
+                        )
                         }
                     }
                     
@@ -74,7 +80,10 @@ struct GuideSetChoiceView: View {
                             .foregroundColor(.grayColor)
                             .font(.mainFont)
                             .frame(width: 310, height: 50, alignment: .center)
-                            .border(Color.grayColor)
+                            .overlay(
+                            RoundedRectangle(cornerRadius: 2)
+                                .stroke(Color.gray, lineWidth: 1)
+                        )
                     }
                     
                     Spacer()

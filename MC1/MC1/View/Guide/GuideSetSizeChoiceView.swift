@@ -49,47 +49,65 @@ struct GuideSetSizeChoiceView: View {
                                     isGuideSideMenuChoiceView=true
                                 }) {
                                     ZStack {
-                                        Color.primaryColor
+                                        RoundedRectangle(cornerRadius: 2)
+                                            .foregroundColor(.primaryColor)
+                                            .overlay(
+                                                        RoundedRectangle(cornerRadius: 2)
+                                                            .stroke(Color.gray, lineWidth: 1)
+                                                    )
+                                        
                                         VStack{
                                             Image(menu.name)
                                                 .resizable()
                                                 .scaledToFit()
                                             Text(menu.name+" 세트")
-    //                                            .font(Font.mainFont)
+                            //                    .font(Font.mainFont)
                                                 .font(.caption)
                                                 .foregroundColor(Color.grayColor)
                                             Text("₩"+String(menu.setPrice))
-    //                                            .font(Font.mainFont)
+                            //                    .font(Font.mainFont)
                                                 .font(.caption)
                                                 .foregroundColor(Color.grayColor)
                                         }
-                                        
                                     }
-                                    .frame(height: 150)
-                                    .border(Color.grayColor)
+                                    .padding(.horizontal)
+                                    .frame(width: 100, height: 110)
+                                    
+                                    
+
 //                                    .frame(width: 100, height: 150, alignment: .center)
                                 }
                                 
-                                Button(action: {
-                                    isLargeSet=true
-                                    isGuideSideMenuChoiceView=true
-                                }) {
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 2)
+                                        .foregroundColor(.whiteColor)
+                                        .overlay(
+                                                    RoundedRectangle(cornerRadius: 2)
+                                                        .stroke(Color.gray, lineWidth: 1)
+                                                )
+                                    
                                     VStack{
                                         Image(menu.name)
                                             .resizable()
                                             .scaledToFit()
-                                        Text(menu.name+" 라지 세트")
-//                                            .font(Font.mainFont)
+                                        Text(menu.name+" 라지세트")
+                        //                    .font(Font.mainFont)
                                             .font(.caption)
                                             .foregroundColor(Color.grayColor)
-                                        Text("₩"+String(menu.setPrice+largeSetPrice))
-//                                            .font(Font.mainFont)
+                                        Text("₩"+String(menu.setPrice+600))
+                        //                    .font(Font.mainFont)
                                             .font(.caption)
                                             .foregroundColor(Color.grayColor)
                                     }
-                                    .frame(height: 150)
-                                    .border(Color.grayColor)
                                 }
+                                .padding(.horizontal)
+                                .frame(width: 100, height: 110)
+                                
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 2)
+                                }
+                                .padding(.horizontal)
+                                .frame(width: 100, height: 110)
                             }
                         }
                         .frame(width: 250)

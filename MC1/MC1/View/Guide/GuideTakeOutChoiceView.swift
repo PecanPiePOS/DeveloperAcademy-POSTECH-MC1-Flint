@@ -37,7 +37,10 @@ struct GuideTakeOutChoiceView: View {
                                 .padding()
                                 .frame(width: 120, height: 150)
                                 .background(isTakeOut ? Color.clear : Color.primaryColor)
-                                .border(Color.grayColor)
+                                .overlay(
+                                            RoundedRectangle(cornerRadius: 2)
+                                                .stroke(Color.gray, lineWidth: 1)
+                                        )
                         }
                         
                         Button(action: {isGuideHomeView=true}) {
@@ -47,7 +50,10 @@ struct GuideTakeOutChoiceView: View {
                                 .padding()
                                 .frame(width: 120, height: 150)
                                 .background(isTakeOut ? Color.primaryColor : Color.clear)
-                                .border(Color.grayColor)
+                                .overlay(
+                                            RoundedRectangle(cornerRadius: 2)
+                                                .stroke(Color.gray, lineWidth: 1)
+                                        )
                         }
                     }
                     
@@ -64,14 +70,20 @@ struct GuideTakeOutChoiceView: View {
                             .foregroundColor(.grayColor)
                             .padding()
                             .frame(width: 120, height: 60)
-                            .border(Color.grayColor)
+                            .overlay(
+                                        RoundedRectangle(cornerRadius: 2)
+                                            .stroke(Color.gray, lineWidth: 1)
+                                    )
                         
                         Text("한국어")
                             .font(.mainFont)
                             .foregroundColor(.grayColor)
                             .padding()
                             .frame(width: 120, height: 60)
-                            .border(Color.grayColor)
+                            .overlay(
+                                        RoundedRectangle(cornerRadius: 2)
+                                            .stroke(Color.gray, lineWidth: 1)
+                                    )
 //                            .border(Color.primaryColor, width: 5)
                     }
                     

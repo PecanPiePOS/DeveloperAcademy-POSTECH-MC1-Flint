@@ -44,7 +44,10 @@ struct GuideHomeView: View {
                                     Rectangle()
                                         .frame(width: 100, height: 30, alignment: .center)
                                         .foregroundColor(.primaryColor)
-                                        .border(Color.grayColor)
+                                        .overlay(
+                                                    RoundedRectangle(cornerRadius: 2)
+                                                        .stroke(Color.gray, lineWidth: 1)
+                                                )
                                     Text("버거")
                                         
                                 }
@@ -88,13 +91,19 @@ struct GuideHomeView: View {
                                 .foregroundColor(.grayColor)
                                 .font(.mainFont)
                                 .frame(width: 100, height: 80, alignment: .center)
-                                .border(Color.grayColor)
+                                .overlay(
+                                            RoundedRectangle(cornerRadius: 2)
+                                                .stroke(Color.gray, lineWidth: 1)
+                                        )
 
                             Text("맥런치")
                                 .foregroundColor(.grayColor)
                                 .font(.mainFont)
                                 .frame(width: 100, height: 80, alignment: .center)
-                                .border(Color.grayColor)
+                                .overlay(
+                                            RoundedRectangle(cornerRadius: 2)
+                                                .stroke(Color.gray, lineWidth: 1)
+                                        )
                         }
                         
                         HStack{
@@ -102,13 +111,19 @@ struct GuideHomeView: View {
                                 .foregroundColor(.grayColor)
                                 .font(.mainFont)
                                 .frame(width: 100, height: 80, alignment: .center)
-                                .border(Color.grayColor)
+                                .overlay(
+                                            RoundedRectangle(cornerRadius: 2)
+                                                .stroke(Color.gray, lineWidth: 1)
+                                        )
 
                             Text("커피&디저트")
                                 .foregroundColor(.grayColor)
                                 .font(.mainFont)
                                 .frame(width: 100, height: 80, alignment: .center)
-                                .border(Color.grayColor)
+                                .overlay(
+                                            RoundedRectangle(cornerRadius: 2)
+                                                .stroke(Color.gray, lineWidth: 1)
+                                        )
                         }
                         
                         altImage

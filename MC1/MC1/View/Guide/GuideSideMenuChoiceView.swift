@@ -73,7 +73,10 @@ struct GuideSideMenuChoiceView: View {
 //                                .font(.mainFont)
                                 .font(.caption)
                                 .padding()
-                                .border(Color.grayColor)
+                                .overlay(
+                            RoundedRectangle(cornerRadius: 2)
+                                .stroke(Color.gray, lineWidth: 1)
+                        )
                         }
                         
                         Text("세트 메뉴 사이드를 선택해주세요")
@@ -86,52 +89,78 @@ struct GuideSideMenuChoiceView: View {
                                     sideMenu="후렌치 후라이"
                                     isGuideDrinkChoiceView=true
                                 }) {
-                                    VStack{
-                                        Image("후렌치 후라이")
-                                            .resizable()
-                                            .frame(width: 70, height: 70)
-                                        Text("후렌치 후라이")
-//                                            .font(Font.mainFont)
-                                            .font(.caption)
-                                            .foregroundColor(Color.grayColor)
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 2)
+                                            .foregroundColor(.primaryColor)
+                                            .overlay(
+                                                        RoundedRectangle(cornerRadius: 2)
+                                                            .stroke(Color.gray, lineWidth: 1)
+                                                    )
+                                        
+                                        VStack{
+                                            Image("후렌치 후라이")
+                                                .resizable()
+                                                .scaledToFit()
+                                            Text("후렌치 후라이")
+                            //                    .font(Font.mainFont)
+                                                .font(.caption)
+                                                .foregroundColor(Color.grayColor)
+                                        }
                                     }
-                                    .frame(height: 120)
-                                    .border(Color.grayColor)
-                                    .background(Color.primaryColor)
+                                    .padding(.horizontal)
+                                    .frame(width: 100, height: 110)
                                 }
                                 
                                 Button(action: {
                                     sideMenu="맥너겟"
                                     isGuideDrinkChoiceView=true
                                 }) {
-                                    VStack{
-                                        Image("맥너겟")
-                                            .resizable()
-                                            .frame(width: 70, height: 70)
-                                        Text("맥너겟")
-//                                            .font(Font.mainFont)
-                                            .font(.caption)
-                                            .foregroundColor(Color.grayColor)
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 2)
+                                            .foregroundColor(.whiteColor)
+                                            .overlay(
+                                                        RoundedRectangle(cornerRadius: 2)
+                                                            .stroke(Color.gray, lineWidth: 1)
+                                                    )
+                                        
+                                        VStack{
+                                            Image("맥너겟")
+                                                .resizable()
+                                                .scaledToFit()
+                                            Text("맥너겟")
+                            //                    .font(Font.mainFont)
+                                                .font(.caption)
+                                                .foregroundColor(Color.grayColor)
+                                        }
                                     }
-                                    .frame(height: 120)
-                                    .border(Color.grayColor)
+                                    .padding(.horizontal)
+                                    .frame(width: 100, height: 110)
                                 }
                                 
                                 Button(action: {
                                     sideMenu="골든 모짜렐라 치즈스틱"
                                     isGuideDrinkChoiceView=true
                                 }) {
-                                    VStack{
-                                        Image("골든 모짜렐라 치즈스틱")
-                                            .resizable()
-                                            .frame(width: 70, height: 70)
-                                        Text("골든 모짜렐라 치즈스틱")
-//                                            .font(Font.mainFont)
-                                            .font(.caption)
-                                            .foregroundColor(Color.grayColor)
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 2)
+                                            .foregroundColor(.whiteColor)
+                                            .overlay(
+                                                        RoundedRectangle(cornerRadius: 2)
+                                                            .stroke(Color.gray, lineWidth: 1)
+                                                    )
+                                        
+                                        VStack{
+                                            Image("골든 모짜렐라 치즈스틱")
+                                                .resizable()
+                                                .scaledToFit()
+                                            Text("골든 모짜렐라 치즈스틱")
+                            //                    .font(Font.mainFont)
+                                                .font(.caption)
+                                                .foregroundColor(Color.grayColor)
+                                        }
                                     }
-                                    .frame(height: 120)
-                                    .border(Color.grayColor)
+                                    .padding(.horizontal)
+                                    .frame(width: 100, height: 110)
                                 }
                             }
                         }

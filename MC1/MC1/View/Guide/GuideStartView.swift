@@ -50,7 +50,10 @@ struct GuideStartView: View {
                                     Rectangle()
                                         .frame(width: 200, height: 100, alignment: .center)
                                         .foregroundColor(.primaryColor)
-                                        .border(Color.grayColor)
+                                        .overlay(
+                                                    RoundedRectangle(cornerRadius: 2)
+                                                        .stroke(Color.gray, lineWidth: 1)
+                                                )
                                     
                                     Text("주문하기")
                                         .foregroundColor(.grayColor)
@@ -63,13 +66,19 @@ struct GuideStartView: View {
                                     .foregroundColor(.grayColor)
                                     .font(.mainFont)
                                     .frame(width: 95, height: 50)
-                                    .border(Color.grayColor)
+                                    .overlay(
+                                                RoundedRectangle(cornerRadius: 2)
+                                                    .stroke(Color.gray, lineWidth: 1)
+                                            )
                                 
                                 Text("도움 기능")
                                     .foregroundColor(.grayColor)
                                     .font(.mainFont)
                                     .frame(width: 95, height: 50)
-                                    .border(Color.grayColor)
+                                    .overlay(
+                                                RoundedRectangle(cornerRadius: 2)
+                                                    .stroke(Color.gray, lineWidth: 1)
+                                            )
                             }
                         }
                     }

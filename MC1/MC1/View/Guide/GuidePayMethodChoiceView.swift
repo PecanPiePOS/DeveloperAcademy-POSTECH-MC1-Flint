@@ -36,7 +36,10 @@ struct GuidePayMethodChoiceView: View {
                             .padding()
                             .frame(width: 120, height: 120, alignment: .center)
                             .background(Color.primaryColor)
-                            .border(Color.grayColor)
+                            .overlay(
+                            RoundedRectangle(cornerRadius: 2)
+                                .stroke(Color.gray, lineWidth: 1)
+                        )
                         }
                         
                         Button(action: {isFinish=true}) {
@@ -51,7 +54,10 @@ struct GuidePayMethodChoiceView: View {
                             .foregroundColor(.grayColor)
                             .padding()
                             .frame(width: 120, height: 120, alignment: .center)
-                            .border(Color.grayColor)
+                            .overlay(
+                            RoundedRectangle(cornerRadius: 2)
+                                .stroke(Color.gray, lineWidth: 1)
+                        )
                         }
                     }
                 }

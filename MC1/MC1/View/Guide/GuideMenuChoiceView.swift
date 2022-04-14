@@ -84,6 +84,7 @@ struct GuideMenuChoiceView: View {
                                     }
                                 }
                             }
+                            .padding()
                         }
                     }
                 }
@@ -92,7 +93,7 @@ struct GuideMenuChoiceView: View {
         }
     }
 }
-//
+////
 //struct GuideMenuChoiceView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        GuideMenuChoiceView(isFinish: .constant(false))
