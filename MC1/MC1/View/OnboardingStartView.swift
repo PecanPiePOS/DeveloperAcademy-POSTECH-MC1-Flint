@@ -41,7 +41,7 @@ struct OnboardingStartView: View {
                         }
                     } label: {
                         if buttonNumbers > 0 {
-                            Image(systemName: "lessthan.circle.fill")
+                            Image(systemName: "chevron.left.circle.fill")
                                 .resizable()
                                 .foregroundColor(.white)
                                 .opacity(0.7)
@@ -71,7 +71,7 @@ struct OnboardingStartView: View {
                         }
                     } label: {
                         if buttonNumbers < 3 {
-                            Image(systemName: "greaterthan.circle.fill")
+                            Image(systemName: "chevron.right.circle.fill")
                                 .resizable()
                                 .foregroundColor(Color.primaryColor)
                                 .opacity(1.0)
