@@ -73,10 +73,11 @@ struct MenuSetChoiceView: View {
                                         .frame(width: 150, height: 150, alignment: .center)
                                         .foregroundColor(.whiteColor)
                                     VStack {
-                                        Image(menu.name)
+                                        let menuname = "\(menu.name) 세트"
+                                        Image(menuname)
                                             .resizable()
                                             .scaledToFit()
-                                        .frame(width: 100, height: 100, alignment: .center)
+                                            .frame(width: 100, height: 100, alignment: .center)
                                         Text("세트")
                                             .font(.mainFont)
                                             .foregroundColor(.grayColor)

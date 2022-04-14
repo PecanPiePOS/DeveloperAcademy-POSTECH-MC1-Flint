@@ -25,7 +25,8 @@ struct OrderView: View {
                 .frame(height: 92.96)
             HStack(spacing: 5.0){
                 Spacer().frame(width: 10)
-                Image(smenu.menu.name)
+                let menuname = smenu.isSet ? "\(smenu.menu.name) 세트" : smenu.menu.name
+                Image(menuname)
                     .resizable()
                     .scaledToFit()
                     .frame(height: 64, alignment: .leading)
