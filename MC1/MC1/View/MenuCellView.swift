@@ -16,15 +16,20 @@ struct MenuCellView: View {
                 .foregroundColor(Color.primaryColor)
             
             VStack{
+                Spacer()
                 Image(menu.name)
                     .resizable()
                     .scaledToFit()
+                Spacer()
                 Text(menu.name)
-                    .font(Font.mainFont)
+                    .font(.system(size: 22))
+                    .fontWeight(.heavy)
                     .foregroundColor(Color.grayColor)
+                Spacer()
                 Text(String(menu.price)+"원")
                     .font(Font.mainFont)
                     .foregroundColor(Color.grayColor)
+                Spacer()
             }
         }
         .padding()
