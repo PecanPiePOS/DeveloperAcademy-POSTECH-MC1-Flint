@@ -39,7 +39,7 @@ struct GuideStartView: View {
                             Image(systemName: "qrcode")
                                 .resizable()
                                 .frame(width: 100, height: 100, alignment: .center)
-                            Image(systemName: "")
+//                            Image(systemName: "")
                         }
                         .frame(width: 150, height: 150, alignment: .center)
                         .foregroundColor(.grayColor)
