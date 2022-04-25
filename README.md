@@ -2,7 +2,7 @@
 Flint 
 
 
-![Logo](https://dummyimage.com/1000x300/000/fff.png)
+![Logo](https://github.com/EuniceNam/Flint/blob/main/Flint.png)
 
 
 # :iphone: UCanTouch
