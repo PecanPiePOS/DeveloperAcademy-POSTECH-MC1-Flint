@@ -27,12 +27,12 @@ An app that helps seniors easily follow the instruction for the use of Kiosk in 
 
 ## :fireworks: Screenshots
 
-![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
-![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
-![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
-![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
-![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
-![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
+![App Screenshot](https://github.com/EuniceNam/Flint/blob/main/17.png)
+![App Screenshot](https://github.com/EuniceNam/Flint/blob/main/10.png)
+![App Screenshot](https://github.com/EuniceNam/Flint/blob/main/15.png)
+![App Screenshot](https://github.com/EuniceNam/Flint/blob/main/19.png)
+![App Screenshot](https://github.com/EuniceNam/Flint/blob/main/22.png)
+![App Screenshot](https://github.com/EuniceNam/Flint/blob/main/23.png)
 
 
 ## :sparkles: Skills & Tech Stack
