@@ -8,7 +8,7 @@ Flint
 # :iphone: UCanTouch
 
 An app that helps seniors easily follow the instruction for the use of Kiosk in front of them.
-(Background: Kiosks everywhere in South Korea)
+(Background: Self-Service Kiosks are everywhere in South Korea)
 
 
 ## :pushpin: Features 
