@@ -1,5 +1,5 @@
 # Flint
-Flint 
+Mini Challenge
 
 
 ![Logo](https://github.com/EuniceNam/Flint/blob/main/Flint.png)
@@ -18,7 +18,7 @@ An app that helps seniors easily follow the instruction for the use of Kiosk in 
 
 ## :people_hugging: Authors
 
-- [@PecanPie](https://github.com/UnbusyHoneyBee) | [@Youth](https://github.com/kimscastle) | [@Poding](https://github.com/Poding0) | [@Ssoo](https://github.com/22Seongsoo) | [@Eunice](https://github.com/EuniceNam)
+- [@PecanPie](https://github.com/UnbusyHoneyBee) | [@Youth](https://github.com/kimscastle) | [@Poding](https://github.com/0w0-practice) | [@Ssoo](https://github.com/22Seongsoo) | [@Eunice](https://github.com/EuniceNam)
 
 
 ## :framed_picture: Demo
